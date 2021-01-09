@@ -20,6 +20,12 @@
 @import "pages/index";
 
 
+//* ================ PAGE
+@import "media-querys/navigation_query";
+@import "media-querys/index_query.scss";
+
+
+
 //* ================ FONTS
 @import "components/navigation/navigation.scss";
 

@@ -6,16 +6,17 @@ const index = () => {
       <div className="landing">
         <div className="landing_container">
           <div className="contact_message">
-            <div className="contact_message--heading">
-              <p className="black f-size-h1">საკონტრაქტო შეთავაზება</p>
+            <div className="heading">
+              <p className="black f-size-h1">
+                let's make your business the best in the biz
+              </p>
             </div>
-            <div className="contact_message--line"></div>
-            <div className=" contact_message--paragraph">
+            <div className="line"></div>
+            <div className="paragraph">
               <p className="regular f-size-p1">
-                <strong>Oxeni</strong> გახლავთ ვებ-დეველოპერული მიკრო ბიზნესი.
-                ჩვენ გვსურს, რომ დავეხმაროთ თქვენს ბიზნეს და შევქნმათ უნიკალური
-                ბრენდის სახე და საიტი, რომლითაც შეძლებთ უფრო მეტი კლიენტების
-                მოზიდვას.
+                <strong>Oxeni</strong> is a web development micro business. We want to start a business
+                and create something unique The face of the brand and the site
+                with which you will be able to get more customers Attraction.
               </p>
             </div>
           </div>

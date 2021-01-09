@@ -1,0 +1,31 @@
+@media only screen and (max-width: $medium-screen) {
+    .landing {
+        .landing_container {
+            padding: var(--medium-screen-padding);
+        }
+    }
+
+}
+
+@media only screen and (max-width: $small-screen) {
+    .landing {
+        .landing_container {
+            padding: var(--small-screen-padding) !important;
+        }
+    }
+
+    .landing .landing_container .contact_message .heading {
+        width: 90% !important;
+    }
+
+    .landing .landing_container .contact_message .paragraph {
+        width: 90% !important;
+    }
+
+    .landing .landing_container .contact_message .line {
+        margin: 4.8vw 0vw !important;
+    }
+    .landing .landing_container .contact_message{
+        top: 28% !important;
+    }
+}
