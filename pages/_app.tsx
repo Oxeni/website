@@ -5,6 +5,10 @@ import Navigation from "pages/components/navigation/navigation";
 function MyApp({ Component, pageProps }) {
   return (
     <>
+     <Head>
+        <title>Oxeni</title>
+        <link rel="shortcut icon" href="/svg/small_icon.svg" />
+      </Head>
       <Head>
         <meta name="title" content="🔵 Oxeni" />
         <meta name="description" content="cutting edge technology to create true technical beauty of the future"
