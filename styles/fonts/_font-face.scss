@@ -1,63 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+
 /// ====================== Noto
 
 @font-face {
-    font-family: "georgian-extra-bold";
+    font-family: "georgian";
+    font-weight: 900;
     src: url("/fonts/Noto/NotoSansGeorgian-ExtraBold.ttf");
 }
 
-@font-face {
-    font-family: "georgian-light";
-    src: url("/fonts/Noto/NotoSansGeorgian-Light.ttf");
-}
 
 @font-face {
-    font-family: "georgian-regular";
-    src: url("/fonts/Noto/NotoSansGeorgian-Regular.ttf");
-}
-
-@font-face {
-    font-family: "georgian-semi-bold";
-    src: url("/fonts/Noto/NotoSansGeorgian-SemiBold.ttf");
-}
-
-@font-face {
-    font-family: "georgian-bold";
+    font-family: "georgian";
+    font-weight: 800;
     src: url("/fonts/Noto/NotoSansGeorgian-Bold.ttf");
 }
 
 @font-face {
-    font-family: "georgian-medium";
+    font-family: "georgian";
+    font-weight: 700;
+    src: url("/fonts/Noto/NotoSansGeorgian-SemiBold.ttf");
+}
+
+
+@font-face {
+    font-family: "georgian";
+    font-weight: 500;
     src: url("/fonts/Noto/NotoSansGeorgian-Medium.otf");
 }
 
 
-// === === === === SAILEC
+
 @font-face {
-    font-family: "sailec-bold";
-    src: url("/fonts/Sailec/Sailec_Bold.woff2");
-}
-@font-face {
-    font-family: "sailec-medium";
-    src: url("/fonts/Sailec/Sailec_Medium.woff2");
-}
-@font-face {
-    font-family: "sailec-light";
-    src: url("/fonts/Sailec/Sailec_Light.woff2");
-}
-@font-face {
-    font-family: "sailec-thin";
-    src: url("/fonts/Sailec/Sailec_Thin.woff2");
+    font-family: "georgian";
+    font-weight: 400;
+    src: url("/fonts/Noto/NotoSansGeorgian-Regular.ttf");
 }
 
-// === === === === EINA
+
 @font-face {
-    font-family: "Eina-semibold";
-    src: url("/fonts/Eina/Eina-SemiBold.ttf");
+    font-family: "georgian";
+    font-weight: 100;
+    src: url("/fonts/Noto/NotoSansGeorgian-Light.ttf");
 }
-@font-face {
-    font-family: "Eina-regular";
-    src: url("/fonts/Eina/Eina03-Regular.ttf");
-}
+
+
+
+
+
 
 
 

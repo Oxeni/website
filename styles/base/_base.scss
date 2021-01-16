@@ -42,6 +42,7 @@ body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     box-sizing: border-box;
+    font-family: 'georgian', 'Inter';
 }
 
 ul[class],
@@ -70,9 +71,9 @@ select {
     font: inherit;
 }
 
-// img:not([alt]) {
-//   filter: blur(10px);
-// }
+img:not([alt]) {
+  filter: blur(10px);
+}
 
 // @media (prefers-reduced-motion: reduce) {
 //     * {
