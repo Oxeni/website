@@ -1,31 +1,57 @@
 @media only screen and (max-width: $medium-screen) {
     .landing {
-        .landing_container {
-            padding: var(--medium-screen-padding);
+        .contact_message {
+            left: 9% !important;
+
         }
+
     }
+
 
 }
 
 @media only screen and (max-width: $small-screen) {
+
     .landing {
+        height: 73vh;
+
+        background: {
+            image: url("/pictures/mobile_hero.jpg");
+            size: contain;
+            position: center;
+            repeat: no-repeat;
+        }
+
         .landing_container {
             padding: var(--small-screen-padding) !important;
         }
+
+        .contact_message {
+            left: 9% !important;
+
+            .paragraph {
+                width: 46% !important;
+            }
+        }
+
     }
 
-    .landing .landing_container .contact_message .heading {
-        width: 90% !important;
+    .contact_message {
+        display: none !important;
     }
 
-    .landing .landing_container .contact_message .paragraph {
-        width: 90% !important;
+    .mobile_contact_message {
+        margin: 6rem 0rem 3rem 0rem;
+        display: block !important;
+
+        padding: var(--small-screen-padding) !important;
+
+        .paragraph {
+            margin-top: 2rem;
+        }
+
+
     }
 
-    .landing .landing_container .contact_message .line {
-        margin: 4.8vw 0vw !important;
-    }
-    .landing .landing_container .contact_message{
-        top: 28% !important;
-    }
+
 }
