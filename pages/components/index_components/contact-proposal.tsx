@@ -10,8 +10,8 @@ export default function contactProposal() {
               </p>
             </div>
             <div className="paragraph">
-              <p className="f-weight-r f-size-p1">
-                <strong style={{fontWeight:600}}>Oxeni</strong> is a web development micro business. We want to start a business
+              <p className="f-weight-l f-size-p1">
+                <strong>Oxeni</strong> is a web development micro business. We want to start a business
                   and create something unique The face of the brand and the site
                   with which you will be able to get more customers Attraction.
               </p>
