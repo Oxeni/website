@@ -17,15 +17,18 @@
 
 
 //* ================ PAGE
-@import "pages/index";
+@import "components/pages/index/hero";
+@import "components/pages/index/projects";
 
 
-//* ================ PAGE
 @import "media-querys/navigation_query";
 @import "media-querys/index_query.scss";
 
 
 
 //* ================ FONTS
-@import "components/navigation/navigation.scss";
+@import "components/global/navigation/navigation";
+@import "components/global/cursor/cursor";
+
+
 

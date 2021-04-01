@@ -7,7 +7,7 @@
     z-index: 999;
 
     .navigation_container {
-        @include f-c-s;
+        @include flex(space-between,center,null);
         
         .logo {
             display: inline-block;

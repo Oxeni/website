@@ -1,8 +1,12 @@
 import Head from "next/head";
 import "../styles/main.scss";
-import Navigation from "pages/components/navigation/navigation";
+import type { AppProps  } from 'next/app'
 
-function MyApp({ Component, pageProps }) {
+import Navigation from "components/global/navigation/navigation";
+import Cursor from "components/global/cursor/Cursor";
+
+
+function MyApp({ Component, pageProps }:AppProps) {
   return (
     <>
      <Head>
@@ -29,9 +33,22 @@ function MyApp({ Component, pageProps }) {
         <meta property="twitter:image" content="/meta_images/og_image.png" />
       </Head>
 
-
-      <Navigation />
+      <Cursor/>
+      <Navigation />    
       <Component {...pageProps} />
+
+      <style jsx global> {`
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 100 900;
+        src: url(/fonts/Inter.ttf) format('ttf');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+          U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+          U+FEFF, U+FFFD;
+        }
+    
+      `}</style>
     </>
   );
 }

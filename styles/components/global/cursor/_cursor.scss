@@ -1,0 +1,27 @@
+
+.cursor_container,.cursor {
+    top: 0;
+    left: 0;
+    user-select: none;
+    pointer-events: none;
+}
+.cursor_container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 9999999;
+}
+
+
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--primary-black);
+    overflow: hidden;
+    transform-origin: 50% 50%;
+    transform: translate(-50%,-50%);
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function landing() {
+
+
+const Landing = () => {
     return (
         <>
         <div className="landing">
@@ -25,3 +27,4 @@ export default function landing() {
       </>
     )
 }
+export default Landing;

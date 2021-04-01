@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function contactProposal() {
+const ContactProposal = () => {
     return (
         <>
         <div className="mobile_contact_message">
@@ -20,3 +20,4 @@ export default function contactProposal() {
         </>
     )
 }
+export default ContactProposal;

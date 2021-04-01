@@ -1,14 +1,17 @@
 import React from "react";
 
-import ContactProposal from './components/index_components/contact-proposal';
-import Landing from './components/index_components/landing';
+import Landing from "components/pages/index/hero/Landing";
+import ContactProposal from "components/pages/index/hero/ContactProposal";
+import Projects from "components/pages/index/projects/Project";
 
 
 const index = () => {
+    
   return (
     <>
       <Landing/>
       <ContactProposal/>
+      <Projects/>
     </>
   );
 };
