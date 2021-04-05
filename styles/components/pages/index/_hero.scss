@@ -4,7 +4,7 @@
     width: 100%;
     position: relative;
     background: {
-        image: url("http://oxeni-sfs.vercel.app/img/img.jpg");
+        image: url("/pictures/hero_img.jpg");
         size: contain;
         position: 95% center;
         repeat: no-repeat;
@@ -21,7 +21,7 @@
             align-content: center;
             justify-content: center;
             flex-direction: column;
-            top: 26%;
+            top: 20%;
             // left: 10%;
 
 

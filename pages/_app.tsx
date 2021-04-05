@@ -3,7 +3,7 @@ import "../styles/main.scss";
 import type { AppProps  } from 'next/app'
 
 import Navigation from "components/global/navigation/navigation";
-import Cursor from "components/global/cursor/Cursor";
+// import Cursor from "components/global/cursor/Cursor";
 
 
 function MyApp({ Component, pageProps }:AppProps) {
@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }:AppProps) {
         <meta property="twitter:image" content="/meta_images/og_image.png" />
       </Head>
 
-      <Cursor/>
+      {/* <Cursor/> */}
       <Navigation />    
       <Component {...pageProps} />
 
