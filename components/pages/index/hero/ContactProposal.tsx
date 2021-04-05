@@ -14,6 +14,15 @@ const ContactProposal = () => {
                 <strong>Oxeni</strong> is a web development micro business. We want to start a business
                   and create something unique The face of the brand and the site
                   with which you will be able to get more customers Attraction.
+
+
+                  
+                  <br/>
+                  <br/>
+
+                  Contact us:
+                  <br/>
+                  hello@oxeni.dev
               </p>
             </div>
           </div>

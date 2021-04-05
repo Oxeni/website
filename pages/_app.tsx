@@ -1,10 +1,10 @@
 import Head from "next/head";
+// import dynamic from 'next/dynamic'
 import "../styles/main.scss";
 import type { AppProps  } from 'next/app'
 
 import Navigation from "components/global/navigation/navigation";
-// import Cursor from "components/global/cursor/Cursor";
-
+// const Cursor = dynamic(() => import('components/global/cursor/Cursor'),{ ssr: false })
 
 function MyApp({ Component, pageProps }:AppProps) {
   return (

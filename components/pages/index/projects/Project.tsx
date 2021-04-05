@@ -24,13 +24,13 @@ const Project = () => {
           </a>
 
           <a href="#"  className="project">
-            <div className="pic"></div>
+            <div className="pic" style={{backgroundImage:"url(/pictures/projects/crop2shop.png)"}}></div>
             <div className="project_heading">
-              <h1 className="f-size-h6 f-weight-bo">Atelier Melt</h1>
+              <h1 className="f-size-h6 f-weight-bo">Crop2Shop</h1>
             </div>
             <div className="paragraph">
               <p className="f-size-p4 f-weight-r">
-                Design workshop,Logo,Branding, UX/UI,Web development
+              Crop2shop is a USAID project to promote export-import development in Georgia. The project has already helped thousands of entrepreneurs.
               </p>
             </div>
           </a>

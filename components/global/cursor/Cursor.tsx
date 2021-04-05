@@ -1,11 +1,11 @@
-import { useEffect, memo } from "react";
+import { useEffect } from "react";
 
 const Cursor = () => {
     
     const followCursor = (e: any) => {
-        const object = document.getElementById("cursor");
+        const cursor = document.querySelector<HTMLElement>("#cursor");
 
-        object!.style.transform = `translateX(${e.clientX - 8 + "px"})
+        cursor!.style.transform = `translateX(${e.clientX - 8 + "px"})
             translateY(${e.clientY - 10 + "px"})`;
     };
 
@@ -27,4 +27,4 @@ const Cursor = () => {
     );
 };
 
-export default memo(Cursor);
+export default Cursor;
