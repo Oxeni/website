@@ -7,6 +7,7 @@ const Hero = () => {
         <>
         <div className="hero">
           <div className="hero_container">
+              <div className="img"></div>
             <div className="contact_message">
               <div className="heading">
                 <p className="f-weight-bl f-size-h1">
@@ -29,7 +30,6 @@ const Hero = () => {
                 </p>
               </div>
             </div>
-            <div className="hero_img"></div>
           </div>
         </div>
       </>
