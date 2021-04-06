@@ -15,9 +15,7 @@
             width: 50rem;
             margin-bottom: 13.6rem;
             text-decoration: none;
-
-          
-
+            
             .pic {
                 @include background-properties("/pictures/projects/one.jpg",cover,center);
                 max-width: 48.8rem;
