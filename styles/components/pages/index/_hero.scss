@@ -10,7 +10,7 @@
     .img {
         height: 100vh;
         width: 100%;
-        @include background-properties("/pictures/hero_img.jpg",contain,95% center)
+        @include background-properties("/pictures/hero_image.png",cover,95% center)
 
     }
 
