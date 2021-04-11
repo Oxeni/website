@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 
 
 import "../styles/main.scss";
-import Navigation from "components/global/navigation/Navigation";
+import Navigation from 'components/global/navigation/Navigation';
 const Cursor = dynamic(() => import('components/global/cursor/Cursor'),{ ssr: false })
 
 function MyApp({ Component, pageProps }:AppProps) {
