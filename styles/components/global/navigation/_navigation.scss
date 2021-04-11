@@ -5,24 +5,32 @@
     position: fixed;
     top: 0 !important;
     z-index: 999;
+    background-color: rgb(0, 68, 248,1);
 
     .navigation_container {
         @include flex(space-between,center,null);
         
         .logo {
             display: inline-block;
-
-            background: {
-                image: url("/svg/logo.svg");
-                size: contain;
-                position: center;
-                repeat: no-repeat;
-            }
-
-            width: 25rem;
-            height: 20rem;
+            @include background-properties("/svg/logo.svg",contain, center 60%);
+            width: clamp(6rem,17rem,23rem);
+            height: clamp(6rem,8rem,20rem);
             cursor: pointer;
         }
+    }
+
+}
+
+@media only screen and (max-width: $large-screen) {
+    .navigation {
+        padding: var(--medium-screen-padding) !important;
+    }
+}
+
+
+@media only screen and (max-width: $small-screen) {
+    .navigation {
+        padding: var(--small-screen-padding) !important;
     }
 
 }

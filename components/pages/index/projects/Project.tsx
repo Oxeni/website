@@ -4,7 +4,7 @@ const Project = () => {
 
   return (
     <>
-      <section className="project_container">
+      <section className="project_container" id="ElementToTrigger">
         <div className="projects_list">
           <h1 className="heading f-size-h4 f-weight-bo">
             What we've <br /> worked on

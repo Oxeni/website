@@ -1,15 +1,16 @@
 :root {
     //*===COLIRS
-    --primary-blue:#0044F8;
-    --primary-white:#FFFFFF;
-    --primary-black:#000000;
+    --primary-blue:rgb(0, 68, 248,1);
+    --primary-white:rgb(255, 255, 255,1);
+    --primary-black:rgb(0, 0, 0,1);
 
 
     //*===SIZES
     --primary-padding:0vw 14vw 0vw 14vw;
-    --medium-screen-padding:0vw 7vw 0vw 7vw;
-    --small-screen-padding:0vw 3vw 0vw 3vw;
+    --medium-screen-padding:0vw 4vw 0vw 4vw;
+    --small-screen-padding:0vw 2vw 0vw 2vw;
 }
-
-$medium-screen:1280px;
+$large-screen:1486px;
+$medium-screen:1200px;
 $small-screen:768px;
+$ultra-small-screen:568px;

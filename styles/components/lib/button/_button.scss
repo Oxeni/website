@@ -1,0 +1,19 @@
+
+
+
+@media only screen and (max-width: $small-screen) {
+    .hero_button {
+        background:rgb(0, 68, 248,1) !important;
+
+        
+        &:hover {
+            background:rgb(1, 63, 231) !important;
+        }
+        .contactUs {
+            color: white !important;
+
+        }
+    }
+
+
+}

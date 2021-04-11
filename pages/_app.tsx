@@ -1,10 +1,11 @@
-import Head from "next/head";
-// import dynamic from 'next/dynamic'
-import "../styles/main.scss";
 import type { AppProps  } from 'next/app'
+import Head from "next/head";
+import dynamic from 'next/dynamic'
 
-import Navigation from "components/global/navigation/navigation";
-// const Cursor = dynamic(() => import('components/global/cursor/Cursor'),{ ssr: false })
+
+import "../styles/main.scss";
+import Navigation from "components/global/navigation/Navigation";
+const Cursor = dynamic(() => import('components/global/cursor/Cursor'),{ ssr: false })
 
 function MyApp({ Component, pageProps }:AppProps) {
   return (
@@ -33,7 +34,7 @@ function MyApp({ Component, pageProps }:AppProps) {
         <meta property="twitter:image" content="/meta_images/og_image.png" />
       </Head>
 
-      {/* <Cursor/> */}
+      <Cursor/>
       <Navigation />    
       <Component {...pageProps} />
 

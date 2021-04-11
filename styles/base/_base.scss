@@ -30,12 +30,13 @@ dd {
 }
 
 html {
-    font-size: 62.5%;
+    // font-size: 62.5%;
     scroll-behavior: smooth;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased !important;
     font-weight: 400;
+
 }
 
 body {
@@ -43,6 +44,9 @@ body {
     line-height: 1.5;
     box-sizing: border-box;
     font-family: 'georgian', 'Inter';
+}
+a {
+    text-decoration: none !important;
 }
 
 ul[class],

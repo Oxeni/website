@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
+import { navigationScrollAnim } from "./Animation";
 
+const Navigation = () => {
+    
+    useEffect(() => {
+        init()
+    }, [])
 
-const navigation = () => {
+    const init = () => {
+        navigationScrollAnim("ElementToTrigger")
+    }
     return (
         <>
             <div className="navigation">
@@ -15,4 +23,4 @@ const navigation = () => {
 }
 
 
-export default navigation;
+export default Navigation;
