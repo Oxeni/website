@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { navigationScrollAnim } from "./Animation";
+import { navigationScrollAnim } from "./Animation.animation";
 
 const Navigation = () => {
     
@@ -9,7 +9,7 @@ const Navigation = () => {
     }, [])
 
     const init = () => {
-        navigationScrollAnim("ElementToTrigger")
+        navigationScrollAnim(".hero")
     }
     return (
         <>
