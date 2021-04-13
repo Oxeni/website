@@ -1,5 +1,4 @@
 import type { AppProps } from "next/app";
-import Head from "next/head";
 import dynamic from "next/dynamic";
 
 import "../styles/main.scss";
