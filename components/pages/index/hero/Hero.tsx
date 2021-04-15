@@ -1,6 +1,21 @@
+import { useEffect } from "react";
+
 import Button from "components/lib/button/Button";
+import { fadeOutFadeIn } from "components/pages/index/hero/animation/Animation";
+
+
 
 const Hero = () => {
+    
+    useEffect(() => {
+        window.innerWidth > 968 && init();
+    }, [])
+    
+    const init = () => {
+        fadeOutFadeIn([".hero_heading",".hero_line",".hero_paragraph",".hero_button"])
+    }
+
+
   return (
     <>
       <div className="hero">
@@ -9,17 +24,17 @@ const Hero = () => {
           <div className="img"></div>
 
           <div className="contact_message">
-            <div className="heading">
+            <div className="heading hero_heading">
 
-              <p className="f-weight-bl f-size-h1">
+              <p className="f-weight-bl f-size-h1" >
                 let's make your business the best in the biz
               </p>
 
             </div>
 
-            <div className="line"></div>
+            <div className="line hero_line"></div>
 
-            <div className="paragraph">
+            <div className="paragraph hero_paragraph">
 
               <p className="f-weight-l f-size-p1">
                 <strong>Oxeni</strong> is a web development micro business. We

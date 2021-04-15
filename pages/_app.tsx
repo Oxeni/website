@@ -1,33 +1,48 @@
+import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
-import Head from "next/head";
 import dynamic from "next/dynamic";
-
 import "../styles/main.scss";
+
+
+
 import HeadAndMeta from "./../components/global/head/HeadAndMeta";
 import Navigation from "components/global/navigation/Navigation";
-const Cursor = dynamic(() => import("components/global/cursor/Cursor"), {
-  ssr: false,
-});
+const Cursor = dynamic(() => import("components/global/cursor/Cursor"), {ssr: false,});
+import Loading from "components/global/loading/Loading"
+
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <HeadAndMeta
-        title="Oxeni"
-        description="cutting edge technology to create true technical beauty of the future"
-        favIconImagePath="/svg/small_icon.svg"
-        baseUrl="https://oxeni.dev/meta_images/og_image.png"
-        ogTitle="🔵 Oxeni"
-        ogDescription="cutting edge technology to create true technical beauty of the future"
-        ogImagePath="/meta_images/og_image.png"
-      />
 
-      <Cursor />
-      <Navigation />
-      <Component {...pageProps} />
+    const [loading, setLoading] = useState(true)
 
-      <style jsx global>
-        {`
+    useEffect(() => {
+        setTimeout(() => setLoading(false), 2000)
+
+    }, [])
+    return (
+        <>
+            <HeadAndMeta
+                title="Oxeni"
+                description="cutting edge technology to create true technical beauty of the future"
+                favIconImagePath="/svg/small_icon.svg"
+                baseUrl="https://oxeni.dev/meta_images/og_image.png"
+                ogTitle="🔵 Oxeni"
+                ogDescription="cutting edge technology to create true technical beauty of the future"
+                ogImagePath="/meta_images/og_image.png"
+            />
+
+            {!loading ?
+                <>
+                    <Cursor />
+                    <Navigation />
+                    <Component {...pageProps} />
+                </>
+                : <Loading />
+            }
+
+
+            <style jsx global>
+                {`
           @font-face {
             font-family: "Inter";
             font-style: normal;
@@ -38,9 +53,9 @@ function MyApp({ Component, pageProps }: AppProps) {
               U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
           }
         `}
-      </style>
-    </>
-  );
+            </style>
+        </>
+    );
 }
 
 export default MyApp;
