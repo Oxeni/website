@@ -24,7 +24,7 @@ const Project = () => {
           </a>
 
           <a href="#"  className="project">
-            <div className="pic" style={{backgroundImage:"url(/pictures/projects/crop2shop.png)"}}></div>
+            <div className="pic"></div>
             <div className="project_heading">
               <h1 className="f-size-h6 f-weight-bo">Crop2Shop</h1>
             </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import "../styles/main.scss";
@@ -7,18 +7,13 @@ import "../styles/main.scss";
 
 import HeadAndMeta from "./../components/global/head/HeadAndMeta";
 import Navigation from "components/global/navigation/Navigation";
-const Cursor = dynamic(() => import("components/global/cursor/Cursor"), {ssr: false,});
+const Cursor = dynamic(() => import("components/global/cursor/Cursor"), { ssr: false, });
 import Loading from "components/global/loading/Loading"
 
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-    const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        setTimeout(() => setLoading(false), 2000)
-
-    }, [])
     return (
         <>
             <HeadAndMeta
@@ -31,18 +26,21 @@ function MyApp({ Component, pageProps }: AppProps) {
                 ogImagePath="/meta_images/og_image.png"
             />
 
-            {!loading ?
-                <>
-                    <Cursor />
-                    <Navigation />
-                    <Component {...pageProps} />
-                </>
-                : <Loading />
-            }
+
+
+            <Loading />
+
+            <Cursor />
+
+            <Navigation />
+
+            <Component {...pageProps} />
+
+
 
 
             <style jsx global>
-                {`
+            {`
           @font-face {
             font-family: "Inter";
             font-style: normal;

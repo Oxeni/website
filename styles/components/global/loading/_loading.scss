@@ -1,4 +1,30 @@
-.loading-wrapper {
+@mixin arc($border-top,$border-left,$border-right,$border-bottom,$animation) {
+  border-top: $border-top;
+  border-left: $border-left;
+  border-right: $border-right;
+  border-bottom: $border-bottom;
+  animation: $animation;
+}
+
+$gradient-color-1: #2b2b2b;
+$gradient-color-2: #2b2b2bc0;
+
+// Keyframes
+@keyframes animationgradienttitle {
+  0% {
+    background-position: 0 0px;
+  }
+  50% {
+    background-position: 0 400px;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+
+
+.loading-screen {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -6,93 +32,74 @@
   top: 0;
   z-index: 1000;
   background-color: var(--primary-blue);
-}
 
-.loading-text {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: var(--primary-white);
-  width: 100px;
-  height: 30px;
-  margin: -7px 0 0 -45px;
-  text-align: center;
-}
+  .loading-screen_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 30rem;
+    height: 30rem;
+    @include flex(center, center, null);
 
-.loading-content {
-  display: block;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  width: 170px;
-  height: 170px;
-  margin: -85px 0 0 -85px;
-  border: 3px solid #F00;
-}
+    .outer_circle {
+      @include pseudo_elem;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      @include arc(
+        1px solid transparent,
+        3px solid white,
+        1px solid transparent,
+        1px solid transparent,
+        rotate 3s infinite linear
+      );
+    }
 
-.loading-content:after {
-  content: "";
-  position: absolute;
-  border: 3px solid #0F0;
-  left: 15px;
-  right: 15px;
-  top: 15px;
-  bottom: 15px;
-}
+    .inside_circle {
+      @include pseudo_elem;
+      width: 120%;
+      height: 120%;
+      border-radius: 50%;
+      @include arc(
+        3px solid rgb(255, 234, 41),
+        1px solid transparent,
+        1px solid transparent,
+        none,
+        rotate 2s infinite linear
+      );
+    }
 
-.loading-content:before {
-  content: "";
-  position: absolute;
-  border: 3px solid #00F;
-  left: 5px;
-  right: 5px;
-  top: 5px;
-  bottom: 5px;
-}
+    .loading_poligon {
+      @include background-properties(
+        "/svg/loading_poligon.svg",
+        contain,
+        center
+      );
+      width: 20rem;
+      height: 20rem;
+      filter: drop-shadow(0px 34px 37px #103ab4);
+      @include flex(center, center, null);
 
-.loading-content {
-  border: 3px solid transparent;
-  border-top-color: #4D658D;
-  border-bottom-color: #4D658D;
-  border-radius: 50%;
-  -webkit-animation: loader 2s linear infinite;
-  -moz-animation: loader 2s linear infinite;
-  -o-animation: loader 2s linear infinite;
-  animation: loader 2s linear infinite;
-}
-
-.loading-content:before {
-  border: 3px solid transparent;
-  border-top-color: #D4CC6A;
-  border-bottom-color: #D4CC6A;
-  border-radius: 50%;
-  -webkit-animation: loader 3s linear infinite;
-    -moz-animation: loader 2s linear infinite;
-  -o-animation: loader 2s linear infinite;
-  animation: loader 3s linear infinite;
-}
-
-.loading-content:after {
-  border: 3px solid transparent;
-  border-top-color: #84417C;
-  border-bottom-color: #84417C;
-  border-radius: 50%;
-  -webkit-animation: loader 1.5s linear infinite;
-  animation: loader 1.5s linear infinite;
-    -moz-animation: loader 2s linear infinite;
-  -o-animation: loader 2s linear infinite;
-}
-
-@keyframes loader {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
+      h1 {
+        //   color: var(--primary-black);
+        background: -webkit-linear-gradient(bottom,$gradient-color-2,$gradient-color-1
+        );
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation-duration: 4s;
+        animation-name: animationgradienttitle;
+        animation-iteration-count: infinite;
+        animation-fill-mode:both;
+      }
+    }
   }
 }
+
+// @keyframes rotate {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }

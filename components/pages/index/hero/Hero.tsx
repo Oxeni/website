@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import Button from "components/lib/button/Button";
-import { fadeOutFadeIn } from "components/pages/index/hero/animation/Animation";
+import { fadeOutFadeIn } from "components/pages/index/hero/animation/Hero.Animation";
 
 
 
