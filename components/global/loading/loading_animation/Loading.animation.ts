@@ -4,38 +4,28 @@ import gsap from "gsap";
 
 
 export const counter = () => {
-  let start = { val: 55 },
-    end = 100;
+  const tl = gsap.timeline()
 
-  const counter = document.getElementById("counter");
-  const loading_screen = document.querySelector<HTMLElement>(".loading-screen");
-  const circle = document.querySelectorAll<HTMLElement>(".circle");
+  let time = { start: 10 }
+  
 
-  //* atrialebs gare wreebs
-  gsap.fromTo(circle,
-    { rotate: 0 },
-    { rotate: 360, duration: 3, ease: "power1.out" }
-  );
+  tl.to(time, {
+    duration: 3.5,
+    start: 100,
+    roundProps: "start",
 
-  //* tvis animacia
-  gsap.to(start, {duration: 3.5,ease: "power4.inOut",val: end, roundProps: "val",
-
-    onUpdate: function () {
-      if (!counter) {
-        counter!.innerHTML = "100";
-        return;
-      }
-      counter!.innerHTML = start.val.toString();
-
-
-      //* aq roca 100 miagwevs mere zemot aiweva
-      if (start.val === 100) {
-        gsap.to(loading_screen, {
-          duration: 1.5,
-          y: `${-100}%`,
-          ease: "slow( 0.4,0.4, false)",
-        });
-      }
+    onUpdate: () => {
+      document.getElementById("counter")!.innerHTML = `${time.start}`;
     },
-  });
+  })
+
+
+    .fromTo('.loading-screen', {
+      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
+    }, {
+      delay: .5,
+      ease: "Expo.easeOut",
+      duration: 1.2,
+      clipPath: 'polygon(0 0, 100% 0, 100% 0%, 0% 0%)'
+    })
 };

@@ -6,21 +6,23 @@ import { fadeOutFadeIn } from "components/pages/index/hero/animation/Hero.Animat
 
 
 const Hero = () => {
-    
-    useEffect(() => {
-        window.innerWidth > 968 && init();
-    }, [])
-    
-    const init = () => {
-        fadeOutFadeIn([".hero_heading",".hero_line",".hero_paragraph",".hero_button"])
-    }
+
+  useEffect(() => {
+    window.innerWidth > 968 && init();
+  }, [])
+
+  const init = () => {
+    setTimeout(() => {
+      fadeOutFadeIn([".hero_heading", ".hero_paragraph", ".hero_button"])
+    }, 4000);
+  }
 
 
   return (
     <>
       <div className="hero">
         <div className="hero_container">
-            
+
           <div className="img"></div>
 
           <div className="contact_message">

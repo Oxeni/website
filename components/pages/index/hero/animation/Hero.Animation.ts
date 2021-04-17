@@ -1,21 +1,20 @@
 import gsap from "gsap";
-
+const tl = gsap.timeline()
 
 
 export const fadeOutFadeIn = (fadeInElementClassesArray: string[]) => {
 
-  fadeInElementClassesArray.forEach((className, i) => {
-    gsap.from(className, {
-      opacity:0,
-      translateX: -50,
-      delay: i * 0.2,
-    });
 
-    gsap.to(className, {
-      translateY: 0,
+  fadeInElementClassesArray.forEach((className, i) => {
+    tl.fromTo(className, {
+      opacity: 0,
+      translateY: 100,
+      skewY: 10,
+    }, {
       opacity: 1,
-      duration: 0.5,
-      delay: i * 0.2,
+      translateY: 0,
+      skewY: 0,
+      duration: 1 / (i + 1),
       ease: "Expo.easeOut",
     });
   });

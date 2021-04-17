@@ -1,24 +1,14 @@
-@mixin arc($border-top,$border-left,$border-right,$border-bottom,$animation) {
-  border-top: $border-top;
-  border-left: $border-left;
-  border-right: $border-right;
-  border-bottom: $border-bottom;
-  animation: $animation;
-}
-
-$gradient-color-1: #2b2b2b;
+$gradient-color-1: #ffffff00;
 $gradient-color-2: #2b2b2bc0;
 
-// Keyframes
-@keyframes animationgradienttitle {
+
+@keyframes animatePath {
   0% {
-    background-position: 0 0px;
+    background-position: 1282.6;
   }
-  50% {
-    background-position: 0 400px;
-  }
+
   100% {
-    background-position: 800px 0;
+    stroke-dashoffset: 0;
   }
 }
 
@@ -32,74 +22,58 @@ $gradient-color-2: #2b2b2bc0;
   top: 0;
   z-index: 1000;
   background-color: var(--primary-blue);
+  @include flex(center, center, null);
+
+
+
 
   .loading-screen_container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    width: 30rem;
-    height: 30rem;
-    @include flex(center, center, null);
+    position: relative;
 
-    .outer_circle {
-      @include pseudo_elem;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      @include arc(
-        1px solid transparent,
-        3px solid white,
-        1px solid transparent,
-        1px solid transparent,
-        rotate 3s infinite linear
-      );
+
+    .loading_circle {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      height: 85vw;
+      max-height: 35rem;
+      width: 85vw;
+      max-width: 35rem;
+
+      path {
+        stroke-dashoffset: 1282.6;
+        stroke-dasharray: 1282.6;
+        animation: animatePath 3.5s ease-in forwards;
+      }
     }
 
-    .inside_circle {
-      @include pseudo_elem;
-      width: 120%;
-      height: 120%;
-      border-radius: 50%;
-      @include arc(
-        3px solid rgb(255, 234, 41),
-        1px solid transparent,
-        1px solid transparent,
-        none,
-        rotate 2s infinite linear
-      );
-    }
+
 
     .loading_poligon {
-      @include background-properties(
-        "/svg/loading_poligon.svg",
+      @include background-properties("/svg/loading_poligon.svg",
         contain,
-        center
-      );
-      width: 20rem;
-      height: 20rem;
+        center);
       filter: drop-shadow(0px 34px 37px #103ab4);
       @include flex(center, center, null);
+      height: 45vw;
+      max-height: 18rem;
+      width: 45vw;
+      max-width: 18rem;
 
       h1 {
-        //   color: var(--primary-black);
-        background: -webkit-linear-gradient(bottom,$gradient-color-2,$gradient-color-1
-        );
-        background-clip: border-box;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation-duration: 4s;
-        animation-name: animationgradienttitle;
-        animation-iteration-count: infinite;
-        animation-fill-mode:both;
+        color: var(--black);
+        padding: calc(4.5rem + 2vw);
+        // background: linear-gradient(180deg,
+        //     rgba(255, 255, 255, 0) 0%,
+        //     #000000 51.04%,
+        //     rgba(255, 255, 255, 0) 100%);
+        // background-clip: border-box;
+        // background-size: 200px 400px;
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+        // animation: 4s animationgradienttitle infinite;
       }
     }
   }
 }
-
-// @keyframes rotate {
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }

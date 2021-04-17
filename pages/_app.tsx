@@ -8,7 +8,7 @@ import "../styles/main.scss";
 import HeadAndMeta from "./../components/global/head/HeadAndMeta";
 import Navigation from "components/global/navigation/Navigation";
 const Cursor = dynamic(() => import("components/global/cursor/Cursor"), { ssr: false, });
-import Loading from "components/global/loading/Loading"
+// import Loading from "components/global/loading/Loading"
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
 
-            <Loading />
+           
 
             <Cursor />
 
