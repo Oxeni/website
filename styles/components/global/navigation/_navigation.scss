@@ -1,36 +1,41 @@
-.navigation {
-    width: 100%;
-    padding: var(--primary-padding);
-    // background-color: var(--primary-blue);
-    position: fixed;
-    top: 0 !important;
-    z-index: 999;
-    background-color: rgb(0, 68, 248,1);
+.navigation_logo {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  mix-blend-mode: difference;
+  margin-left: var(--left-padding);
+  margin-top: 3.5rem;
 
-    .navigation_container {
-        @include flex(space-between,center,null);
-        
-        .logo {
-            display: inline-block;
-            @include background-properties("/svg/logo.svg",contain, center 60%);
-            width: clamp(6rem,17rem,23rem);
-            height: clamp(6rem,8rem,20rem);
-            cursor: pointer;
-        }
-    }
-
+  * {
+    mix-blend-mode: difference;
+  }
 }
+
+.navigation {
+  width: 100%;
+  padding: var(--primary-padding);
+
+  position: fixed;
+  top: 0 !important;
+  z-index: 999;
+
+  .navigation_container {
+    @include flex(space-between, center, null);
+  }
+}
+
+
+
 
 @media only screen and (max-width: $large-screen) {
-    .navigation {
-        padding: var(--medium-screen-padding) !important;
-    }
+  .navigation {
+    padding: var(--medium-screen-padding) !important;
+  }
 }
 
-
 @media only screen and (max-width: $small-screen) {
-    .navigation {
-        padding: var(--small-screen-padding) !important;
-    }
-
+  .navigation {
+    padding: var(--small-screen-padding) !important;
+  }
 }

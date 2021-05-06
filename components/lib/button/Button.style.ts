@@ -22,15 +22,15 @@ export const colorStyles = {
 
 export const sizeStyles = {
     large: {
-        padding: '20px 90px',
+        padding: '22px 50px',
         fontSizeClass: 'f-size-p2'
     },
     medium: {
-        padding: '18px 70px',
+        padding: '20px 30px',
         fontSizeClass: 'f-size-p3'
     },
     small: {
-        padding: '18px 30px',
+        padding: '18px 15px',
         fontSizeClass: 'f-size-p4'
     }
 }

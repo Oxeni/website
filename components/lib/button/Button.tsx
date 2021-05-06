@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, FC, ReactNode } from "react";
 import { colorStyles, sizeStyles, defaultStyles } from "./Button.style";
 
 interface buttonInterface {
@@ -10,6 +10,8 @@ interface buttonInterface {
   id?: string;
   style?: CSSProperties;
   children?: any;
+  icon?: ReactNode;
+  iconRight?: ReactNode;
 }
 
 const Button: FC<buttonInterface> = ({
@@ -21,6 +23,8 @@ const Button: FC<buttonInterface> = ({
   className,
   id,
   style,
+  icon,
+  iconRight,
 }) => {
   return (
     <>
@@ -29,8 +33,23 @@ const Button: FC<buttonInterface> = ({
         style={style}
         onClick={onClick}
         id={id}>
-            
-        {children}
+
+
+        <div className="btn_container">
+          {icon && <div className="base-icon_style icon">{icon && icon}</div>}
+
+          {children}
+
+          {iconRight && (
+            <div className="base-icon_style iconRight">{iconRight}</div>
+          )}
+
+
+        </div>
+
+
+
+
 
 
 
@@ -53,8 +72,21 @@ const Button: FC<buttonInterface> = ({
             border: ${color ? colorStyles[color].border : defaultStyles.border};
           }
 
-          .button:hover {
-            background: rgb(241, 241, 241);
+          .btn_container {
+            display: flex;
+            align-items: center;
+          }
+
+          .base-icon_style {
+            transform: translateY(4px);
+          }
+
+          .icon {
+            margin-right: calc(1rem + .5vw);
+          }
+
+          .iconRight {
+            margin-left: calc(1rem + .5vw);
           }
         `}</style>
       </div>

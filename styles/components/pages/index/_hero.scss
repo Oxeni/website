@@ -1,105 +1,114 @@
+:root {
+  --hero_container-margin: 13vw 0vw auto var(--left-padding);
+}
+
 .hero {
-    background-color: var(--primary-blue);
-    position: relative;
-  
+  //   background-color: var(--primary-blue);
+  overflow: hidden;
+  position: relative;
+  height: 100%;
 
   .hero_container {
     width: 100%;
+    height: 100vh;
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
-    .img {
-        height: 100vh;
-        width: 100%;
-        @include background-properties("/pictures/hero_image.png",cover,95% center)
+    .introduction {
+      margin: var(--hero_container-margin);
 
+      .introduction-container {
+        z-index: 1;
+        @include flex(center, initial, column);
+
+        .heading {
+          h1 {
+            color: var(--primary-black);
+            line-height: 121.7%;
+          }
+        }
+
+        .line {
+          width: 35px;
+          height: 3px;
+          background-color: var(--light-black);
+          margin: calc(1rem + 1.5vw) 0vw;
+        }
+
+        .paragraph {
+          width: 75%;
+          p {
+            color: var(--light-black);
+            line-height: 156.2%;
+          }
+        }
+
+        .hero_button {
+          margin-top: calc(3rem + 1.5vw);
+        }
+      }
     }
 
-
-
-    .contact_message {
+    .intro_video {
+      overflow: hidden;
+      width: 100%;
       z-index: 1;
-      position: absolute;
-      @include flex(center,initial,column);
-      width: 52%;
-      top: 20%;
-      padding: 0vw 0vw 0vw 15vw;
-     
-
-      .heading {
-        p {
-          color: var(--primary-white);
-          line-height: 136.2%;
-        }
+      video {
+        // z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%) translateY(-50%);
+        background-size: cover;
+        outline: none !important;
+        user-select: none;
       }
-
-      .line {
-        width: 110px;
-        height: 1px;
-        background-color: var(--primary-white);
-        margin: 1vw 0vw;
-      }
-
-      .paragraph {
-        p {
-          color: var(--primary-white);
-          line-height: 156.2%;
-        }
-      }
-
-      .hero_button {
-        margin-top: 2rem;
-        }
     }
   }
 }
 
-
-
-@media only screen and (max-width: $large-screen) {
-    .hero {
-        .hero_container {
-            .contact_message {
-                padding: 0vw 0vw 0vw 7vw !important;
-            }
-            
-        }
-    }
-}
-@media only screen and (max-width: $medium-screen) {
-    .hero {
-        .hero_container {
-            
-            .contact_message {
-               width: 60% !important;
-            }
-            
-        }
-    }
-}
 @media only screen and (max-width: $small-screen) {
-    .hero {
-        background-color:white !important;
-        .hero_container {
-            display: grid;
-            grid-template-rows: 1fr auto;
-            height: initial !important;
+  .hero {
+    background-color: white !important;
 
+    .hero_container {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      grid-template-columns: initial !important;
+      height: initial !important;
 
-            .img {
-                height: 100vh !important;
-                @include background-properties("/pictures/mobile_hero.jpg",cover,center)
-            }
-            
-            .contact_message {
-                position: initial !important;
-                width: initial !important;
-                padding: calc(2vw + 1rem) !important;
+      .intro_video {
+        grid-row: 1/2;
 
-                * > p {
-                    color: var(--primary-black) !important;
-                }
-            }
-            
+        video {
+          position: relative;
+          top: initial !important;
+          left: initial !important;
+          width: 100% !important;
+          transform: none !important;
+          min-height: initial !important;
         }
+      }
+
+      .introduction {
+        margin: 8vw 4vw 0vw 4vw;
+
+        .introduction-container {
+            
+          .paragraph {
+            width: 90%;
+          }
+
+          .hero_button {
+            width: 100% !important;
+          }
+        }
+      }
     }
+  }
 }

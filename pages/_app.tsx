@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
 
-           
+
 
             <Cursor />
 
@@ -40,8 +40,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
             <style jsx global>
-            {`
-          @font-face {
+                {`
+            @font-face {
             font-family: "Inter";
             font-style: normal;
             font-weight: 100 900;
@@ -49,7 +49,11 @@ function MyApp({ Component, pageProps }: AppProps) {
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
               U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
               U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-          }
+            }
+
+            #__next {
+                background-color: var(--primary-white) !important;
+            }
         `}
             </style>
         </>

@@ -3,13 +3,19 @@
     --primary-blue:rgb(0, 68, 248,1);
     --primary-white:rgb(255, 255, 255,1);
     --primary-black:rgb(0, 0, 0,1);
+    --light-black: rgb(66, 68, 67);
 
 
     //*===SIZES
-    --primary-padding:0vw 14vw 0vw 14vw;
+    --primary-padding:0vw 6vw 0vw 6vw;
     --medium-screen-padding:0vw 4vw 0vw 4vw;
     --small-screen-padding:0vw 2vw 0vw 2vw;
+
+    --left-padding:8vw;
 }
+
+
+
 $large-screen:1486px;
 $medium-screen:1286px;
 $small-screen:768px;

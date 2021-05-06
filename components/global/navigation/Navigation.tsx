@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 
-import { navigationScrollAnim } from "./Animation.animation";
+import { navigationScrollAnim } from "./animation/Navigation.animation";
+import Logo from './Logo';
 
 const Navigation = () => {
     
@@ -13,9 +14,10 @@ const Navigation = () => {
     }
     return (
         <>
+            <Logo className="navigation_logo"/>
+
             <div className="navigation">
                 <div className="navigation_container">
-                    <div className="logo"></div>
                 </div>
             </div>   
         </>

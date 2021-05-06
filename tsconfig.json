@@ -20,7 +20,7 @@
         "jsx": "preserve",
         "baseUrl": ".",
         "noImplicitAny": true,
-        "strictNullChecks": true,
+        // "strictNullChecks": true,
         "strictFunctionTypes": true,
         "strictBindCallApply": true,
         "noImplicitThis": true,
