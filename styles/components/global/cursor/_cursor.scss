@@ -1,27 +1,35 @@
-
-.cursor_container,.cursor {
-    top: 0;
-    left: 0;
-    user-select: none;
-    pointer-events: none;
+.cursor_container,
+.cursor {
+  top: 0;
+  left: 0;
+  user-select: none;
+  pointer-events: none;
 }
-.cursor_container{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 9999999;
+.cursor_container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 9999999;
+  mix-blend-mode: difference;
 }
 
-
+.cursor_black {
+    background-color: var(--primary-black) !important;
+}
 
 .cursor {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    position: absolute;
-    background-color: var(--primary-black);
-    overflow: hidden;
-    transform-origin: 50% 50%;
-    transform: translate(-50%,-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: var(--primary-white);
+  overflow: hidden;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%);
+  border: 0.5px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 
+    0px 12px 18px rgba(0, 0, 0, 0.17),
+    inset 0px 2px 5px rgba(0, 0, 0, 0.09);
 }

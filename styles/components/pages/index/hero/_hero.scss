@@ -1,9 +1,8 @@
 :root {
-  --hero_container-margin: 13vw 0vw auto var(--left-padding);
+  --hero_container-margin: 13vw 0vw auto var(--left-margin);
 }
 
 .hero {
-  //   background-color: var(--primary-blue);
   overflow: hidden;
   position: relative;
   height: 100%;
@@ -17,6 +16,7 @@
 
     .introduction {
       margin: var(--hero_container-margin);
+      z-index: 2;
 
       .introduction-container {
         z-index: 1;
@@ -33,11 +33,12 @@
           width: 35px;
           height: 3px;
           background-color: var(--light-black);
-          margin: calc(1rem + 1.5vw) 0vw;
+          margin: calc(1rem + .8vw) 0vw;
         }
 
         .paragraph {
-          width: 75%;
+          width: 100%;
+          max-width: 39rem;
           p {
             color: var(--light-black);
             line-height: 156.2%;
@@ -45,15 +46,17 @@
         }
 
         .hero_button {
-          margin-top: calc(3rem + 1.5vw);
+          margin-top: calc(2.5rem + 1vw);
         }
       }
     }
 
     .intro_video {
       overflow: hidden;
-      width: 100%;
+      //   width: 100vw;
       z-index: 1;
+      height: 100vh;
+
       video {
         // z-index: -1;
         position: absolute;
@@ -72,6 +75,8 @@
   }
 }
 
+// @media only screen and (max-width: $medium-screen) {}
+
 @media only screen and (max-width: $small-screen) {
   .hero {
     background-color: white !important;
@@ -84,6 +89,7 @@
 
       .intro_video {
         grid-row: 1/2;
+        height: 50vh;
 
         video {
           position: relative;
@@ -96,16 +102,12 @@
       }
 
       .introduction {
-        margin: 8vw 4vw 0vw 4vw;
+        margin: 6vw 6vw 0vw var(--mobile-left-margin);
 
         .introduction-container {
-            
-          .paragraph {
-            width: 90%;
-          }
-
           .hero_button {
             width: 100% !important;
+            padding: 15px 50px !important;
           }
         }
       }

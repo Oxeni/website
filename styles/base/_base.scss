@@ -45,6 +45,21 @@ body {
     box-sizing: border-box;
     font-family: 'georgian', 'Inter';
 }
+
+.main_main * {
+    color: var(--primary-black);
+}
+.main_main  {
+    background-color: var(--primary-white) !important;
+    cursor: none;
+}
+@media only screen and (max-width: 868px) {
+    .main_main {
+        cursor: initial;
+    }
+}
+
+
 a {
     text-decoration: none !important;
 }

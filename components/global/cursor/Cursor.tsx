@@ -19,6 +19,9 @@ const Cursor = () => {
         window.addEventListener("mousemove", (e) => {
             followCursor(e)
         })
+
+        navigator.userAgent.search("Firefox") > -1 && 
+        document.querySelector("#cursorEl").classList.add("cursor_black")
     }, []);
 
     return (

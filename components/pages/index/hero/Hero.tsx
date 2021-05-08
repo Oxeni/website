@@ -6,7 +6,7 @@ import { fadeOutFadeIn } from "components/pages/index/hero/animation/Hero.Animat
 // import { fixScrollToTop } from "components/utils/animation/global.animation";
 
 const Hero = () => {
-    const [, setVideoSource] = useState<string>("");
+    const [videoSource, setVideoSource] = useState<string>("");
     
   useEffect(() => {
 
@@ -49,7 +49,7 @@ const Hero = () => {
               <div className="line hero_line"></div>
 
               <div className="paragraph">
-                <p className="f-weight-l f-size-p1">
+                <p className="f-weight-l f-size-p2">
                 our team at <strong>Oxeni</strong> creates a new era of the web, where businesses have web experiences that they could be proud of.
                 </p>
               </div>
@@ -77,7 +77,7 @@ const Hero = () => {
           </div>
 
           <div className="intro_video">
-            {/* <video autoPlay  muted src={videoSource} id="videoIntro" /> */}
+            <video autoPlay  muted src={videoSource} id="videoIntro" />
           </div>
 
         </div>

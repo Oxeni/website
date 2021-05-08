@@ -3,6 +3,9 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/color-classes";
+@import "abstracts/spacings";
+@import "abstracts/color-scheme";
+
 //* ================ BASE
 @import "base/base";
 
@@ -17,8 +20,10 @@
 
 
 //* ================ PAGE
-@import "components/pages/index/hero";
-@import "components/pages/index/projects";
+@import "components/pages/index/hero/hero";
+@import "components/pages/index/project/project";
+@import "components/pages/index/project/projectCard";
+
 
 
 @import "components/lib/button/button";

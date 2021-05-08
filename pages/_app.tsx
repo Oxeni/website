@@ -34,27 +34,26 @@ function MyApp({ Component, pageProps }: AppProps) {
 
             <Navigation />
 
-            <Component {...pageProps} />
+            <div className="main_main">
+                <Component {...pageProps} />
+            </div>
 
 
 
 
             <style jsx global>
                 {`
-            @font-face {
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 100 900;
-            src: url(/fonts/Inter.ttf) format("ttf");
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-              U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
-              U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-            }
-
-            #__next {
-                background-color: var(--primary-white) !important;
-            }
-        `}
+                    @font-face {
+                    font-family: "Inter";
+                    font-style: normal;
+                    font-weight: 100 900;
+                    src: url(/fonts/Inter.ttf) format("ttf");
+                    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+                    U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+                    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                    }
+                    
+                `}
             </style>
         </>
     );
