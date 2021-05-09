@@ -3,18 +3,18 @@
 .projectCard {
     width: 100%;
     height: 100%;
-    @include flex(center,initial,column);
+    // @include flex(center,initial,column);
 
 
 
     .projectCard_video {
         width: 100%;
-        height: auto;
-        margin-bottom: calc(2.5rem + 1vw);
+        // height: 100%;
+        border-radius: 12px;
 
         video {
             width: 100%;
-            height: auto; 
+            // height: auto; 
             border-radius: 12px;
         }
     }
@@ -23,11 +23,6 @@
         h1 {
             font-family: 'DM Serif Display', serif;
         }
-    }
-
-    .projectCard_line {
-        // width: 100%;
-        // height: auto;
     }
 
     .projectCard_paragraph {

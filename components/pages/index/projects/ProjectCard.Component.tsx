@@ -25,7 +25,7 @@ const ProjectCard = ({
 
 
         <div className="projectCard_heading">
-          <h1 className="f-size-h6 f-weight-r">{heading}</h1>
+          <h1 className="f-size-h7 f-weight-r">{heading}</h1>
         </div>
 
 

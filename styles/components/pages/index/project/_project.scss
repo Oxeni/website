@@ -1,56 +1,72 @@
-
-
 .project {
-    position: relative;
-    padding: calc(8rem + 2vh);
+  position: relative;
+  padding: 8rem 4rem;
 
-    .circle_container {
-        filter: blur(110px);
+  .circle_container {
+    filter: blur(110px);
 
-        .blue_circle {
-            @include pseudo_elem;
-            width: 20rem;
-            height: 20rem;
-            background: linear-gradient(135deg, #00D1EA 15.83%, #56F97B 82.52%);
-            mix-blend-mode: multiply;
-            transform: rotate(86.5deg);
-            border-radius: 50%;
-        }
-        .red_cicrle {
-            @include pseudo_elem;
-            width: 20rem;
-            height: 20rem;
-            background: linear-gradient(134.74deg, #00D1EA 9.43%, #F868EC 47.36%, #FF1F3A 80.86%);
-            mix-blend-mode: multiply;
-            transform: rotate(-17.94deg);
-            border-radius: 50%;
-        }
+    .blue_circle {
+      @include pseudo_elem;
+      width: 20rem;
+      height: 20rem;
+      background: linear-gradient(135deg, #00d1ea 15.83%, #56f97b 82.52%);
+      mix-blend-mode: multiply;
+      transform: rotate(86.5deg);
+      border-radius: 50%;
     }
-    
+    .red_cicrle {
+      @include pseudo_elem;
+      width: 20rem;
+      height: 20rem;
+      background: linear-gradient(
+        134.74deg,
+        #00d1ea 9.43%,
+        #f868ec 47.36%,
+        #ff1f3a 80.86%
+      );
+      mix-blend-mode: multiply;
+      transform: rotate(-17.94deg);
+      border-radius: 50%;
+    }
+  }
 
+  .project_container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 45% 35%;
 
-    .project_container {
+    .big_projects {
+      @include flex(center, center, column);
+
+      .projectCard_video {
+        max-width: 45rem;
         width: 100%;
-        display: grid;
-        grid-template-columns: 20% 45% 45%;
+        margin-bottom: calc(2.5rem + 1vw);
+      }
+      .projectCard_heading,
+      .projectCard_paragraph {
+        width: 85%;
+      }
 
-        .big_projects {
-            @include flex(center,center,column);
-        }
-
-        .heading {
-            h1 {
-                transform: rotateZ(270deg) 
-                translate(-70%,-25%);
-            }
-        }
+      .balavari {
+        margin-top: calc(10rem + 2vw);
+      }
     }
+
+    .small_projects {
+      @include flex(center, center, column);
+    }
+
+    .heading {
+      h1 {
+        transform: rotateZ(270deg) translate(-70%, -25%);
+      }
+    }
+  }
 }
 
 // @media only screen and (max-width: $large-screen) {}
 
-
 // @media only screen and (max-width: $medium-screen) {}
-
 
 // @media only screen and (max-width: $small-screen) {}

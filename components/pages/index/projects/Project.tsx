@@ -11,13 +11,17 @@ const Project = () => {
             <div className="red_cicrle"></div>
         </div> */}
 
+        
+
         <div className="project_container">
           <div className="heading">
             <h1 className="f-size-h1 f-weight-bl">projects</h1>
           </div>
 
           <div className="big_projects">
-            {ProjectCardJson.idep.map((props,i) => (
+
+
+            {ProjectCardJson.idep.map((props, i) => (
               <ProjectCard
                 key={i}
                 videoSource={props.videoSource}
@@ -27,20 +31,51 @@ const Project = () => {
               />
             ))}
 
-
-           {ProjectCardJson.balavari.map((props,i) => (
+            {ProjectCardJson.balavari.map((props, i) => (
               <ProjectCard
+                className="balavari projectCard"
                 key={i}
                 videoSource={props.videoSource}
                 heading={props.heading}
                 line={props.line}
                 paragraph={props.paragraph}
               />
-            ))}     
+            ))}
+
 
           </div>
 
-          <></>
+          <div className="small_projects">
+            {ProjectCardJson.double_tire.map((props, i) => (
+              <ProjectCard
+                key={i}
+                videoSource={props.videoSource}
+                heading={props.heading}
+                line={props.line}
+              />
+            ))}
+
+
+            {ProjectCardJson.kera_plus.map((props, i) => (
+              <ProjectCard
+                key={i}
+                videoSource={props.videoSource}
+                heading={props.heading}
+                line={props.line}
+              />
+            ))}
+
+
+
+            {ProjectCardJson.archil_snow.map((props, i) => (
+              <ProjectCard
+                key={i}
+                videoSource={props.videoSource}
+                heading={props.heading}
+                line={props.line}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </>
