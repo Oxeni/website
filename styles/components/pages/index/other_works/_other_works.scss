@@ -1,0 +1,25 @@
+.other_works {
+    margin-top: 6rem;
+    .other_works-container {
+        // height: 80vh;
+        @include flex(initial,center,row);
+
+
+        .icons {
+            background: radial-gradient(220.26% 98.14% at 0% 1.86%, #404549 0%, #0A0A0C 100%);
+            padding: 2rem  3rem;
+            @include flex(center,center,column);
+
+            .twitter {
+                margin: calc(2rem + 1vh) 0;
+            }
+        }
+
+        .heading {
+            margin-left: calc(2.5rem + 1vw);
+            h1 {
+                line-height: 99.2%;
+            }
+        }
+    }
+}

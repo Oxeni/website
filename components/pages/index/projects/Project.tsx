@@ -6,10 +6,10 @@ const Project = () => {
   return (
     <>
       <section className="project" id="ElementToTrigger">
-        {/* <div className="circle_container">
+        <div className="circle_container">
             <div className="blue_circle"></div>
             <div className="red_cicrle"></div>
-        </div> */}
+        </div>
 
         
 
@@ -24,7 +24,7 @@ const Project = () => {
             {ProjectCardJson.idep.map((props, i) => (
               <ProjectCard
                 key={i}
-                videoSource={props.videoSource}
+                // videoSource={props.videoSource}
                 heading={props.heading}
                 line={props.line}
                 paragraph={props.paragraph}
@@ -35,7 +35,7 @@ const Project = () => {
               <ProjectCard
                 className="balavari projectCard"
                 key={i}
-                videoSource={props.videoSource}
+                // videoSource={props.videoSource}
                 heading={props.heading}
                 line={props.line}
                 paragraph={props.paragraph}
@@ -49,7 +49,7 @@ const Project = () => {
             {ProjectCardJson.double_tire.map((props, i) => (
               <ProjectCard
                 key={i}
-                videoSource={props.videoSource}
+                // videoSource={props.videoSource}
                 heading={props.heading}
                 line={props.line}
               />
@@ -59,7 +59,7 @@ const Project = () => {
             {ProjectCardJson.kera_plus.map((props, i) => (
               <ProjectCard
                 key={i}
-                videoSource={props.videoSource}
+                // videoSource={props.videoSource}
                 heading={props.heading}
                 line={props.line}
               />
@@ -70,7 +70,7 @@ const Project = () => {
             {ProjectCardJson.archil_snow.map((props, i) => (
               <ProjectCard
                 key={i}
-                videoSource={props.videoSource}
+                // videoSource={props.videoSource}
                 heading={props.heading}
                 line={props.line}
               />

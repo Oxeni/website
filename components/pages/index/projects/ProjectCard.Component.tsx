@@ -1,7 +1,7 @@
 import { HTMLProps } from "react";
 
 interface IProjectComponent {
-  videoSource: string;
+  videoSource?: string;
   heading: string;
   paragraph?: string;
   line: boolean;
@@ -25,7 +25,7 @@ const ProjectCard = ({
 
 
         <div className="projectCard_heading">
-          <h1 className="f-size-h7 f-weight-r">{heading}</h1>
+          <h1 className="f-size-h7 f-weight-l">{heading}</h1>
         </div>
 
 

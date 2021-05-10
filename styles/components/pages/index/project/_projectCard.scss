@@ -2,19 +2,14 @@
 
 .projectCard {
     width: 100%;
-    height: 100%;
-    // @include flex(center,initial,column);
-
-
-
+    
     .projectCard_video {
         width: 100%;
-        // height: 100%;
         border-radius: 12px;
+        border: 1px solid red;
 
         video {
             width: 100%;
-            // height: auto; 
             border-radius: 12px;
         }
     }

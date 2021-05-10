@@ -1,9 +1,13 @@
 .project {
   position: relative;
-  padding: 8rem 4rem;
+  margin: 8rem 4vw;
 
   .circle_container {
     filter: blur(110px);
+    position: absolute;
+    height: 100vh;
+    width: 20rem;
+    left: -14rem;
 
     .blue_circle {
       @include pseudo_elem;
@@ -13,6 +17,8 @@
       mix-blend-mode: multiply;
       transform: rotate(86.5deg);
       border-radius: 50%;
+      left: 0%;
+      top: 0%;
     }
     .red_cicrle {
       @include pseudo_elem;
@@ -27,34 +33,44 @@
       mix-blend-mode: multiply;
       transform: rotate(-17.94deg);
       border-radius: 50%;
+      left: 0%;
+      top: 33%;
     }
   }
 
   .project_container {
-    width: 100%;
+    width: 96%;
     display: grid;
     grid-template-columns: 20% 45% 35%;
+    // z-index: 5;
+
+    // .heading {
+    //   margin-top: -2rem;
+    // }
 
     .big_projects {
-      @include flex(center, center, column);
+      margin-right: calc(3rem + 2vw);
 
       .projectCard_video {
-        max-width: 45rem;
         width: 100%;
         margin-bottom: calc(2.5rem + 1vw);
       }
-      .projectCard_heading,
-      .projectCard_paragraph {
-        width: 85%;
-      }
 
       .balavari {
-        margin-top: calc(10rem + 2vw);
+        margin-top: calc(20.2rem + 1vh);
       }
     }
 
     .small_projects {
-      @include flex(center, center, column);
+      .projectCard {
+        &:not(:first-child) {
+          margin-top: calc(3.5rem + 1vh);
+        }
+      }
+
+      .projectCard_heading {
+        margin-top: calc(0.8rem + 0.5vw);
+      }
     }
 
     .heading {
@@ -65,7 +81,36 @@
   }
 }
 
-// @media only screen and (max-width: $large-screen) {}
+@media only screen and (max-width: $large-screen) {
+  .project {
+    margin: 8rem 8vw !important;
+
+    .project_container {
+      width: 100% !important;
+      grid-template-rows: repeat(6, auto) !important;
+      grid-template-columns: initial !important;
+
+
+      .balavari {
+        margin-top: calc(2rem + 1vh) !important;
+      }
+      .big_projects {
+        margin-right: initial !important;
+        .projectCard_video {
+          height: 100%;
+          max-height: 30rem;
+        }
+      }
+
+      .heading {
+        h1 {
+          text-align: center;
+          transform: initial !important;
+        }
+      }
+    }
+  }
+}
 
 // @media only screen and (max-width: $medium-screen) {}
 
