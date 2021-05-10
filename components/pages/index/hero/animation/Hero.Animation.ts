@@ -3,8 +3,6 @@ const tl = gsap.timeline()
 
 
 export const fadeOutFadeIn = (fadeInElementClassesArray: string[]) => {
-
-
   fadeInElementClassesArray.forEach((className, i) => {
     tl.fromTo(className, {
       opacity: 0,

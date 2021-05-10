@@ -1,7 +1,7 @@
 {
   "idep": [
     {
-      "videoSource": "https://oxeni-sfs.vercel.app/postagram/videos/animation.mp4",
+      "videoSource": "videos/card_video.mp4",
       "heading": "IDEP branding, logo and UI/UX design and website development.",
       "paragraph": "We worked with IDEP on creating the future platform that will push the next generation of NFT tokens and the crypto market.",
       "line": true
@@ -12,7 +12,7 @@
 
   "balavari": [
     {
-      "videoSource": "https://oxeni-sfs.vercel.app/postagram/videos/animation.mp4",
+      "videoSource": "videos/card_video.mp4",
       "heading": "Balavari Lisi, a consept website, with 3D apartaments a and floor selection.",
       "paragraph": "building company websites became stale this couple of years, wo we created a unique experiance with 3D apartament views and modern design.",
       "line": true
@@ -23,7 +23,7 @@
 
   "double_tire": [
     {
-      "videoSource": "https://oxeni-sfs.vercel.app/postagram/videos/animation.mp4",
+      "videoSource": "videos/card_video.mp4",
       "heading": "Balavari Lisi, a consept website, with 3D apartaments a and floor selection.",
       "line": false
     }
@@ -31,13 +31,13 @@
 
 
   "kera_plus":[{
-    "videoSource": "https://oxeni-sfs.vercel.app/postagram/videos/animation.mp4",
+    "videoSource": "videos/card_video.mp4",
     "heading": "Kera Plus  logo|brand|UI/UX design consept.",
     "line": false
   }],
 
    "archil_snow":[{
-    "videoSource": "https://oxeni-sfs.vercel.app/postagram/videos/animation.mp4",
+    "videoSource": "videos/card_video.mp4",
     "heading": "Archil Snow logo|brand|UI/UX design and website development .",
     "line": false
    }] 

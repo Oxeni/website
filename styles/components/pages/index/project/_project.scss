@@ -20,16 +20,15 @@
       left: 0%;
       top: 0%;
     }
+
     .red_cicrle {
       @include pseudo_elem;
       width: 20rem;
       height: 20rem;
-      background: linear-gradient(
-        134.74deg,
-        #00d1ea 9.43%,
-        #f868ec 47.36%,
-        #ff1f3a 80.86%
-      );
+      background: linear-gradient(134.74deg,
+          #00d1ea 9.43%,
+          #f868ec 47.36%,
+          #ff1f3a 80.86%);
       mix-blend-mode: multiply;
       transform: rotate(-17.94deg);
       border-radius: 50%;
@@ -81,7 +80,7 @@
   }
 }
 
-@media only screen and (max-width: $large-screen) {
+@media only screen and (max-width: $small-screen) {
   .project {
     margin: 8rem 8vw !important;
 
@@ -94,8 +93,10 @@
       .balavari {
         margin-top: calc(2rem + 1vh) !important;
       }
+
       .big_projects {
         margin-right: initial !important;
+
         .projectCard_video {
           height: 100%;
           max-height: 30rem;

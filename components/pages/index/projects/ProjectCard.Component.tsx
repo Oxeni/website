@@ -1,4 +1,9 @@
-import { HTMLProps } from "react";
+import { HTMLProps, useState, MouseEvent, useEffect } from 'react';
+import { useRef } from 'react';
+import gsap from 'gsap';
+
+
+
 
 interface IProjectComponent {
   videoSource?: string;
@@ -7,6 +12,10 @@ interface IProjectComponent {
   line: boolean;
 }
 
+
+
+
+
 const ProjectCard = ({
   videoSource,
   heading,
@@ -14,13 +23,65 @@ const ProjectCard = ({
   line,
   ...props
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
+  const cardContainer = useRef<HTMLDivElement>(null)
+  const [hovered, setHovered] = useState()
+
+
+
+
+  useEffect(() => {
+    let video = cardContainer.current.querySelector('.projectCard_video video') as HTMLVideoElement
+
+    if (hovered) {
+      video.playbackRate = 1
+      video.play()
+    }
+    else {
+      video.playbackRate = 1.0 
+      gsap.to(video, {
+        currentTime: 0,
+        autoAlpha: 1,
+        duration: video.currentTime,
+        // ease: "Expo.easeOut",
+        onfinish: () => video.pause(),
+
+      })
+      // let videoPlayback =
+      //   setInterval(() => {
+      //     video.playbackRate = 1.0;
+      //     video.currentTime -= .1
+
+      //     if (video.currentTime == 0) {
+      //       clearInterval(videoPlayback)
+      //       video.pause()
+      //     } else {
+      //       video.currentTime += -.1;
+      //     }
+
+      //   }, 70);
+
+
+    }
+  }, [hovered])
+
+
+
+
+
+
+
   return (
     <>
-      <div className={`projectCard ${props.className}`} {...props}>
+      <div
+        className={`projectCard ${props.className}`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        ref={cardContainer}
+        {...props}>
 
 
         <div className="projectCard_video">
-          <video autoPlay  muted src={videoSource} />
+          <video muted src={videoSource} />
         </div>
 
 
