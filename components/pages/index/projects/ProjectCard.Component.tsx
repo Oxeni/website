@@ -24,7 +24,7 @@ const ProjectCard = ({
   ...props
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
   const cardContainer = useRef<HTMLDivElement>(null)
-  const [hovered, setHovered] = useState()
+  const [hovered, setHovered] = useState<boolean>()
 
 
 
@@ -37,15 +37,17 @@ const ProjectCard = ({
       video.play()
     }
     else {
-      video.playbackRate = 1.0 
-      gsap.to(video, {
-        currentTime: 0,
-        autoAlpha: 1,
-        duration: video.currentTime,
-        // ease: "Expo.easeOut",
-        onfinish: () => video.pause(),
+      video.currentTime = 0
+      video.pause()
+      // video.playbackRate = 1.0
+      // gsap.to(video, {
+      //   currentTime: 0,
+      //   autoAlpha: 1,
+      //   duration: video.currentTime,
+      //   // ease: "Expo.easeOut",
+      //   onfinish: () => video.pause(),
 
-      })
+      // })
       // let videoPlayback =
       //   setInterval(() => {
       //     video.playbackRate = 1.0;
