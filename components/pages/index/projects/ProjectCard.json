@@ -1,16 +1,11 @@
 {
-  "idep": [
+  "big_projects": [
     {
       "videoSource": "videos/card_video.mp4",
       "heading": "IDEP branding, logo and UI/UX design and website development.",
       "paragraph": "We worked with IDEP on creating the future platform that will push the next generation of NFT tokens and the crypto market.",
       "line": true
-    }
-  ],
-
-
-
-  "balavari": [
+    },
     {
       "videoSource": "videos/card_video.mp4",
       "heading": "Balavari Lisi, a consept website, with 3D apartaments a and floor selection.",
@@ -19,27 +14,21 @@
     }
   ],
 
-
-
-  "double_tire": [
+  "small_projects": [
     {
       "videoSource": "videos/card_video.mp4",
       "heading": "Balavari Lisi, a consept website, with 3D apartaments a and floor selection.",
       "line": false
+    },
+    {
+      "videoSource": "videos/card_video.mp4",
+      "heading": "Kera Plus  logo|brand|UI/UX design consept.",
+      "line": false
+    },
+    {
+      "videoSource": "videos/card_video.mp4",
+      "heading": "Archil Snow logo|brand|UI/UX design and website development .",
+      "line": false
     }
-  ],
-
-
-  "kera_plus":[{
-    "videoSource": "videos/card_video.mp4",
-    "heading": "Kera Plus  logo|brand|UI/UX design consept.",
-    "line": false
-  }],
-
-   "archil_snow":[{
-    "videoSource": "videos/card_video.mp4",
-    "heading": "Archil Snow logo|brand|UI/UX design and website development .",
-    "line": false
-   }] 
-
+  ]
 }

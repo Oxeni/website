@@ -6,11 +6,27 @@
     .projectCard_video {
         width: 100%;
         border-radius: 12px;
-        border: 1px solid red;
+        // border: 1px solid red;
+        position: relative;
 
-        video {
+        .base_video_styles {
             width: 100%;
             border-radius: 12px;
+            height: 100%;
+        }
+        .card_video {
+            z-index: 1;
+        }
+
+        .card_video-shadow{
+            position: absolute;
+            left: 0;
+            top: 8%;
+            z-index: -1;
+            // background-color: red;
+            width: 100%;
+            height: 100%;
+            filter: blur(35px);
         }
     }
 

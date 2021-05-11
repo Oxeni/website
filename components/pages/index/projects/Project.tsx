@@ -21,7 +21,7 @@ const Project = () => {
           <div className="big_projects">
 
 
-            {ProjectCardJson.idep.map((props, i) => (
+            {ProjectCardJson.big_projects.map((props, i) => (
               <ProjectCard
                 key={i}
                 videoSource={props.videoSource}
@@ -30,44 +30,11 @@ const Project = () => {
                 paragraph={props.paragraph}
               />
             ))}
-
-            {ProjectCardJson.balavari.map((props, i) => (
-              <ProjectCard
-                className="balavari projectCard"
-                key={i}
-                videoSource={props.videoSource}
-                heading={props.heading}
-                line={props.line}
-                paragraph={props.paragraph}
-              />
-            ))}
-
 
           </div>
 
           <div className="small_projects">
-            {ProjectCardJson.double_tire.map((props, i) => (
-              <ProjectCard
-                key={i}
-                videoSource={props.videoSource}
-                heading={props.heading}
-                line={props.line}
-              />
-            ))}
-
-
-            {ProjectCardJson.kera_plus.map((props, i) => (
-              <ProjectCard
-                key={i}
-                videoSource={props.videoSource}
-                heading={props.heading}
-                line={props.line}
-              />
-            ))}
-
-
-
-            {ProjectCardJson.archil_snow.map((props, i) => (
+            {ProjectCardJson.small_projects.map((props, i) => (
               <ProjectCard
                 key={i}
                 videoSource={props.videoSource}
