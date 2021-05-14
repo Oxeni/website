@@ -5,7 +5,7 @@ import ProjectCardJson from "components/pages/index/projects/ProjectCard.json";
 const Project = () => {
   return (
     <>
-      <section className="project" id="ElementToTrigger">
+      <section className="project section_margin" id="ElementToTrigger">
         <div className="circle_container">
             <div className="blue_circle"></div>
             <div className="red_cicrle"></div>

@@ -1,4 +1,10 @@
 $large-screen: 1486px;
-$medium-screen: 1286px;
+$medium-screen: 1186px;
 $small-screen: 868px;
 $ultra-small-screen: 468px;
+
+
+:root {
+    --container-margin: 13vw 0vw auto var(--left-margin);
+    --padding-top:15rem;
+}
