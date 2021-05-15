@@ -2,6 +2,9 @@ const service = () => {
   return (
     <>
       <section className="services">
+          <div className="services_heading">
+              <h1 className="f-size-h1 f-weight-bl">services.</h1>
+          </div>
         <div className="services_container">
 
 
