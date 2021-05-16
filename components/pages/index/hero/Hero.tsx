@@ -74,11 +74,7 @@ const Hero = () => {
           </div>
 
           <div className="intro_video">
-<<<<<<< HEAD
             <video autoPlay  muted src='https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro.mp4' id="videoIntro" />
-=======
-            <video autoPlay muted src={videoSource} id="videoIntro" />
->>>>>>> 0aa1af9db3ad2fe3d173533567aea1b955a7c71f
           </div>
         </div>
       </div>
