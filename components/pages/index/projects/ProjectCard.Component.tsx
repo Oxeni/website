@@ -1,9 +1,6 @@
-import { HTMLProps, useState, MouseEvent, useEffect } from 'react';
-import { useRef } from 'react';
-import gsap from 'gsap';
-
-
-
+import { HTMLProps, useState, useEffect } from "react";
+import { useRef } from "react";
+// import gsap from 'gsap';
 
 interface IProjectComponent {
   videoSource?: string;
@@ -12,10 +9,6 @@ interface IProjectComponent {
   line: boolean;
 }
 
-
-
-
-
 const ProjectCard = ({
   videoSource,
   heading,
@@ -23,54 +16,29 @@ const ProjectCard = ({
   line,
   ...props
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
-  const cardContainer = useRef<HTMLDivElement>(null)
-  const [hovered, setHovered] = useState<boolean>()
-
-
-
+  const cardContainer = useRef<HTMLDivElement>(null);
+  const [hovered, setHovered] = useState<boolean>();
 
   useEffect(() => {
-    let video = cardContainer.current.querySelector('.projectCard_video video') as HTMLVideoElement
+    let video = cardContainer.current.querySelector(".projectCard_video .card_video") as HTMLVideoElement;
+
+    let videoShadow = cardContainer.current.querySelector(".projectCard_video .card_video-shadow") as HTMLVideoElement;
 
     if (hovered) {
-      video.playbackRate = 1
-      video.play()
+      video.playbackRate = 1;
+      video.play();
+
+      videoShadow.playbackRate = 1;
+      videoShadow.play();
+
+    } else {
+      video.currentTime = 0;
+      video.pause();
+
+      videoShadow.currentTime = 0;
+      videoShadow.pause();
     }
-    else {
-      video.currentTime = 0
-      video.pause()
-      // video.playbackRate = 1.0
-      // gsap.to(video, {
-      //   currentTime: 0,
-      //   autoAlpha: 1,
-      //   duration: video.currentTime,
-      //   // ease: "Expo.easeOut",
-      //   onfinish: () => video.pause(),
-
-      // })
-      // let videoPlayback =
-      //   setInterval(() => {
-      //     video.playbackRate = 1.0;
-      //     video.currentTime -= .1
-
-      //     if (video.currentTime == 0) {
-      //       clearInterval(videoPlayback)
-      //       video.pause()
-      //     } else {
-      //       video.currentTime += -.1;
-      //     }
-
-      //   }, 70);
-
-
-    }
-  }, [hovered])
-
-
-
-
-
-
+  }, [hovered]);
 
   return (
     <>
@@ -80,18 +48,18 @@ const ProjectCard = ({
         onMouseLeave={() => setHovered(false)}
         ref={cardContainer}
         {...props}>
-
-
         <div className="projectCard_video">
-          <video muted src={videoSource} />
+          <video className="card_video base_video_styles" muted src={videoSource} />
+          <video
+            muted
+            src={videoSource}
+            className="base_video_styles card_video-shadow"
+          />
         </div>
-
 
         <div className="projectCard_heading">
-          <h1 className="f-size-h7 f-weight-l">{heading}</h1>
+          <h1 className="f-size-p1 f-weight-l">{heading}</h1>
         </div>
-
-
 
         {line && (
           <div className="projectCard_line">
@@ -100,7 +68,8 @@ const ProjectCard = ({
               height="3"
               viewBox="0 0 39 3"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="M0.117889 1.46606H19.0904H38.0629"
                 stroke="url(#paint0_linear)"
@@ -113,7 +82,8 @@ const ProjectCard = ({
                   y1="1.46606"
                   x2="38.0629"
                   y2="1.46606"
-                  gradientUnits="userSpaceOnUse">
+                  gradientUnits="userSpaceOnUse"
+                >
                   <stop stopColor="#FC3254" />
                   <stop offset="0.5" stopColor="#0042FF" />
                   <stop offset="1" stopColor="#009E48" />
@@ -123,16 +93,9 @@ const ProjectCard = ({
           </div>
         )}
 
-
-
-
-
         <div className="projectCard_paragraph">
-          <p className="f-size-p1 f-weight-l">{paragraph}</p>
+          <p className="f-size-p2 f-weight-l">{paragraph}</p>
         </div>
-
-
-
       </div>
     </>
   );

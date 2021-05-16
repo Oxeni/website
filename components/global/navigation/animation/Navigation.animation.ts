@@ -16,6 +16,6 @@ export const navigationScrollAnim = (triggerElement: string) => {
 
   tl.to(".navigation", {  duration: 0.3, ease: "power3.out" });
 
-  tl.to(".logo", { width: 180, height: 120, duration: 0.5, ease: "power3.out" });
+  tl.to(".navigation_logo", { width: 110, height: 90, duration: 0.5, ease: "power3.out" });
 };
 

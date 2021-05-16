@@ -1,25 +1,113 @@
 .other_works {
-    margin-top: 6rem;
-    .other_works-container {
-        // height: 80vh;
-        @include flex(initial,center,row);
+ padding: 25rem 0 0  0;
 
 
-        .icons {
-            background: radial-gradient(220.26% 98.14% at 0% 1.86%, #404549 0%, #0A0A0C 100%);
-            padding: 2rem  3rem;
-            @include flex(center,center,column);
+  .other_works-container {
+    // height: 80vh;
+    @include flex(center, center, row);
+    position: relative;
 
-            .twitter {
-                margin: calc(2rem + 1vh) 0;
-            }
+    .icons {
+      padding: 20rem 9rem;
+      background: radial-gradient(
+        220.26% 98.14% at 0% 1.86%,
+        #404549 0%,
+        #0a0a0c 100%
+      );
+      position: relative;
+
+      .icons_container {
+        position: absolute;
+        @include flex(center, center, row);
+        @include transform-center;
+        top: 87%;
+
+        a {
+            cursor: none;
         }
 
-        .heading {
-            margin-left: calc(2.5rem + 1vw);
-            h1 {
-                line-height: 99.2%;
+        .blured_icons_base_style {
+          position: absolute;
+          top: 10%;
+          opacity: 60%;
+          filter: blur(12px);
+          z-index: 1;
+        }
+
+        .facebook_copy,
+        .twitter_copy {
+          background-color: var(--primary-blue);
+        }
+        .dribble_copy {
+          background-color: var(--primary-red);
+        }
+      }
+
+      .dribble {
+        margin: 0 calc(2.5rem + 1vh);
+      }
+
+      .dribble,.facebook,.twitter {
+          cursor: pointer;
+      }
+
+      .heading {
+        margin-left: calc(2.5rem + 1vw);
+        mix-blend-mode: difference;
+        left: 26%;
+        position: absolute;
+        top: 36%;
+        @include transform-center;
+
+        h1 {
+          line-height: 99.2%;
+          color: var(--primary-white);
+          font-size: 9rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $small-screen) {
+
+    .other_works {
+        padding: 15rem 0 0  0;
+        .other_works-container {
+            .icons {
+                padding: 15rem 8rem;
+
+                .heading {
+                    left: 22%;
+                    top: 40%;
+
+                    h1 {
+                        font-size: 6rem;
+                    }
+                }
             }
         }
     }
+
+}
+
+
+@media only screen and (max-width: $ultra-small-screen) {
+
+    .other_works {
+        .other_works-container {
+            .icons {
+
+                .heading {
+                    left: 18%;
+                    top: 40%;
+
+                    h1 {
+                        font-size: 4.5rem;
+                    }
+                }
+            }
+        }
+    }
+
 }

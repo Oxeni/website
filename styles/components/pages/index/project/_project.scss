@@ -1,18 +1,20 @@
 .project {
   position: relative;
-  margin: 8rem 4vw;
+  padding: var(--padding-top) 4vw 0rem 4vw;
 
   .circle_container {
-    filter: blur(110px);
+    filter: blur(70px);
     position: absolute;
-    height: 100vh;
-    width: 20rem;
-    left: -14rem;
+    height: 130vh;
+    width: 25rem;
+    left: -30rem;
+    top: -10rem;
+    z-index: 1;
 
     .blue_circle {
       @include pseudo_elem;
-      width: 20rem;
-      height: 20rem;
+      width: 100%;
+      height: 58%;
       background: linear-gradient(135deg, #00d1ea 15.83%, #56f97b 82.52%);
       mix-blend-mode: multiply;
       transform: rotate(86.5deg);
@@ -23,40 +25,41 @@
 
     .red_cicrle {
       @include pseudo_elem;
-      width: 20rem;
-      height: 20rem;
-      background: linear-gradient(134.74deg,
-          #00d1ea 9.43%,
-          #f868ec 47.36%,
-          #ff1f3a 80.86%);
+      width: 100%;
+      height: 42%;
+      background: linear-gradient(
+        134.74deg,
+        #00d1ea 9.43%,
+        #f868ec 47.36%,
+        #ff1f3a 80.86%
+      );
       mix-blend-mode: multiply;
       transform: rotate(-17.94deg);
       border-radius: 50%;
-      left: 0%;
-      top: 33%;
+      left: 13%;
+      top: 20%;
     }
   }
 
   .project_container {
     width: 96%;
     display: grid;
-    grid-template-columns: 20% 45% 35%;
-    // z-index: 5;
-
-    // .heading {
-    //   margin-top: -2rem;
-    // }
+    grid-template-columns: 20% 50% 30%;
+    position: relative;
+    z-index: 2;
 
     .big_projects {
       margin-right: calc(3rem + 2vw);
 
       .projectCard_video {
         width: 100%;
-        margin-bottom: calc(2.5rem + 1vw);
+        margin-bottom: calc(1.5rem + 1vw);
       }
 
-      .balavari {
-        margin-top: calc(20.2rem + 1vh);
+      .projectCard {
+        &:nth-child(2) {
+          margin-top: calc(7rem + 8vw);
+        }
       }
     }
 
@@ -80,18 +83,58 @@
   }
 }
 
-@media only screen and (max-width: $small-screen) {
+
+
+@media only screen and (max-width: $large-screen) {
   .project {
-    margin: 8rem 8vw !important;
+    .project_container {
+      .big_projects {
+        .projectCard {
+          &:nth-child(2) {
+            margin-top: calc(7.7rem + 8vw);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: $medium-screen) {
+  .project {
+    padding: 8rem 6vw !important;
 
     .project_container {
       width: 100% !important;
       grid-template-rows: repeat(6, auto) !important;
       grid-template-columns: initial !important;
 
+      .big_projects,
+      .small_projects {
+        .projectCard {
+          &:not(:first-child) {
+            margin-top: calc(2rem + 2vh) !important;
+          }
+        }
+      }
+
+      .small_projects {
+        .projectCard {
+          &:nth-child(1) {
+            margin-top: calc(2rem + 2vh) !important;
+          }
+        }
+      }
 
       .balavari {
         margin-top: calc(2rem + 1vh) !important;
+
+        .projectCard {
+          &:nth-child(2) {
+            margin-top: initial !important;
+          }
+        }
       }
 
       .big_projects {
@@ -99,20 +142,21 @@
 
         .projectCard_video {
           height: 100%;
-          max-height: 30rem;
+        }
+
+        .projectCard {
+          &:nth-child(2) {
+            margin-top: calc(7rem + 8vw);
+          }
         }
       }
 
       .heading {
+        margin-bottom: 2rem;
         h1 {
-          text-align: center;
           transform: initial !important;
         }
       }
     }
   }
 }
-
-// @media only screen and (max-width: $medium-screen) {}
-
-// @media only screen and (max-width: $small-screen) {}

@@ -1,6 +1,4 @@
-:root {
-  --hero_container-margin: 13vw 0vw auto var(--left-margin);
-}
+
 
 .hero {
   overflow: hidden;
@@ -15,7 +13,7 @@
     grid-template-columns: 1fr 1fr;
 
     .introduction {
-      margin: var(--hero_container-margin);
+      margin: var(--container-margin);
       z-index: 2;
 
       .introduction-container {
