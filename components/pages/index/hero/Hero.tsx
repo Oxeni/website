@@ -6,7 +6,7 @@ import Button from "components/lib/button/Button";
 // import { fixScrollToTop } from "components/utils/animation/global.animation";
 
 const Hero = () => {
-  const [videoSource, setVideoSource] = useState<string>("");
+  const [videoSource, setVideoSource] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro.mp4");
 
   useEffect(() => {
     if (window.innerWidth > 1080) {
@@ -74,7 +74,7 @@ const Hero = () => {
           </div>
 
           <div className="intro_video">
-            <video autoPlay  muted src='https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro.mp4' id="videoIntro" />
+            <video autoPlay  muted src={videoSource} id="videoIntro" />
           </div>
         </div>
       </div>
