@@ -6,13 +6,13 @@ import Button from "components/lib/button/Button";
 // import { fixScrollToTop } from "components/utils/animation/global.animation";
 
 const Hero = () => {
-  const [videoSource, setVideoSource] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro.mp4");
+  const [videoSource, setVideoSource] = useState<string>('');
 
   useEffect(() => {
     if (window.innerWidth > 1080) {
       init();
       setVideoSource(
-        "https://oxeni-sfs.vercel.app/postagram/videos/animation.mp4"
+        "https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro.mp4"
       );
     } else {
       setVideoSource(
