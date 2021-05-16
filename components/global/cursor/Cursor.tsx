@@ -1,16 +1,18 @@
 import { useEffect } from "react";
 
 const Cursor = () => {
-    
+
     const followCursor = (e: any) => {
         const cursor = document.querySelector<HTMLElement>("#cursorEl");
 
-        if(window.innerWidth > 768) {
-            cursor!.style.transform = `translate3d(${e.clientX - 8 + "px"}, ${e.clientY - 10 + "px"}, 0)`;
-        }else {
+        if (window.innerWidth > 768) {
+            cursor!.style.transform = `
+            translate3d(${e.clientX - 8 + "px"}, 
+            ${e.clientY - 10 + "px"}, 
+            0)`;
+        } else {
             cursor!.style.display = "none";
         }
-
     };
 
 
@@ -19,8 +21,8 @@ const Cursor = () => {
             followCursor(e)
         })
 
-        navigator.userAgent.search("Firefox") > -1 && 
-        document.querySelector("#cursorEl").classList.add("cursor_black")
+        navigator.userAgent.search("Firefox") > -1 &&
+            document.querySelector("#cursorEl").classList.add("cursor_black")
     }, []);
 
     return (
