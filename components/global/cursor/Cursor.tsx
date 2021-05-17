@@ -5,7 +5,7 @@ const Cursor = () => {
     const followCursor = (e: any) => {
         const cursor = document.querySelector<HTMLElement>("#cursorEl");
 
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1186) {
             cursor!.style.transform = `
             translate3d(${e.clientX - 8 + "px"}, 
             ${e.clientY - 10 + "px"}, 

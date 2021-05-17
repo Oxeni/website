@@ -107,8 +107,9 @@
 
     .project_container {
       width: 100% !important;
-      grid-template-rows: repeat(6, auto) !important;
-      grid-template-columns: initial !important;
+      grid-template-columns: 0% 60% 40%;
+    //   grid-template-rows: repeat(6, auto) !important;
+    //   grid-template-columns: initial !important;
 
       .big_projects,
       .small_projects {
@@ -138,7 +139,7 @@
       }
 
       .big_projects {
-        margin-right: initial !important;
+        grid-column: 2/3;
 
         .projectCard_video {
           height: 100%;
@@ -153,6 +154,7 @@
 
       .heading {
         margin-bottom: 2rem;
+        grid-column: 2/3;
         h1 {
           transform: initial !important;
         }
@@ -160,3 +162,66 @@
     }
   }
 }
+
+
+@media only screen and (max-width: $small-screen) {
+    .project {
+      padding: 8rem 6vw !important;
+  
+      .project_container {
+        width: 100% !important;
+        grid-template-rows: repeat(6, auto) !important;
+        grid-template-columns: initial !important;
+  
+        .big_projects,
+        .small_projects {
+          .projectCard {
+            &:not(:first-child) {
+              margin-top: calc(2rem + 2vh) !important;
+            }
+          }
+        }
+  
+        .small_projects {
+          .projectCard {
+            &:nth-child(1) {
+              margin-top: calc(2rem + 2vh) !important;
+            }
+          }
+        }
+  
+        .balavari {
+          margin-top: calc(2rem + 1vh) !important;
+  
+          .projectCard {
+            &:nth-child(2) {
+              margin-top: initial !important;
+            }
+          }
+        }
+  
+        .big_projects {
+            margin-right: initial !important;
+          grid-column: initial !important;
+  
+          .projectCard_video {
+            height: 100%;
+          }
+  
+          .projectCard {
+            &:nth-child(2) {
+              margin-top: calc(7rem + 8vw);
+            }
+          }
+        }
+  
+        .heading {
+          margin-bottom: 2rem;
+          grid-column: initial !important;
+          h1 {
+            transform: initial !important;
+          }
+        }
+      }
+    }
+  }

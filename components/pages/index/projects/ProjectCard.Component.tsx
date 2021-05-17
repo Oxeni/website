@@ -1,6 +1,6 @@
 import { HTMLProps, useState, useEffect } from "react";
 import { useRef } from "react";
-// import gsap from 'gsap';
+import Link from "next/link"
 
 interface IProjectComponent {
   videoSource?: string;
@@ -58,7 +58,9 @@ const ProjectCard = ({
         </div>
 
         <div className="projectCard_heading">
-          <h1 className="f-size-p1 f-weight-l">{heading}</h1>
+            <Link href="#">
+                <h1 className="f-size-p1 f-weight-l">{heading}</h1>
+            </Link>
         </div>
 
         {line && (

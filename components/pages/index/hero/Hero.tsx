@@ -38,10 +38,11 @@ const Hero = () => {
     const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
 
     videoIntro.addEventListener("loadeddata", () => {
-      fixScrollToTop(~~videoIntro.duration);
-
-      if (window.innerWidth > 1080) {
+        fixScrollToTop(~~videoIntro.duration * 2);
+        
+        if (window.innerWidth > 1080) {
         return videoIntro.addEventListener("ended", () => {
+
             fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
         });
       }

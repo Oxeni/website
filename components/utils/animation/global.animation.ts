@@ -38,7 +38,7 @@ export const fixScrollToTop = (time: number) => {
   
     window.scrollTo(0, 0);
   
-    tl.to("body", {
+    tl.from("body", {
       overflowY: "hidden",
       duration: time,
     });
