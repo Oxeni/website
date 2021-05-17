@@ -7,8 +7,19 @@ const Loading = () => {
 
 
     useEffect(() => {
-        counter()
+        // counter()
+        init()
     }, []);
+
+    const init = async () => {
+        let finished = await counter();
+        const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
+
+        console.log(finished)
+
+        console.log(videoIntro)
+        if (finished) videoIntro.play();
+    }
 
 
     return (

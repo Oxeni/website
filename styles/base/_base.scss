@@ -44,11 +44,16 @@ body {
     line-height: 1.5;
     box-sizing: border-box;
     font-family: 'georgian', 'Inter';
+    -ms-overflow-style: none;        
+    scrollbar-width: none;           
+    overflow: -moz-scrollbars-none;  
+                                     
+    &::-webkit-scrollbar {           
+        width: 0 !important          
+    } 
 }
 
-// .section_margin {
-//     margin: 15rem 4vw;
-// }
+
 
 .main_main .cursor_container .cursor  {
     color: var(--primary-black);

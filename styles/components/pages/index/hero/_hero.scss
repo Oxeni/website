@@ -20,6 +20,12 @@
         z-index: 1;
         @include flex(center, initial, column);
 
+
+        .heading,.hero_line,.paragraph,.hero_button {
+            opacity: 0;
+            transform: translateY(-15%);
+        }
+
         .heading {
           h1 {
             color: var(--primary-black);
@@ -87,7 +93,8 @@
 
       .intro_video {
         grid-row: 1/2;
-        height: 50vh;
+        height: 64.5vh;
+        border-radius: 0 0 30px 30px;
 
         video {
           position: relative;

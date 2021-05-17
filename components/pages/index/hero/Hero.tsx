@@ -2,33 +2,57 @@ import { useEffect, useState } from "react";
 import { Inbox } from "react-feather";
 
 import Button from "components/lib/button/Button";
-// import { fadeOutFadeIn } from "components/pages/index/hero/animation/Hero.Animation";
-// import { fixScrollToTop } from "components/utils/animation/global.animation";
+import { fadeOutFadeIn } from "components/pages/index/hero/animation/Hero.Animation";
+import { fixScrollToTop } from "components/utils/animation/global.animation";
+
+
+
+
+
 
 const Hero = () => {
-  const [videoSource, setVideoSource] = useState<string>('');
+  const [videoSource, setVideoSource] = useState<string>("");
+
+
+
 
   useEffect(() => {
+    init();
+
     if (window.innerWidth > 1080) {
-      init();
       setVideoSource(
-        "https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro.mp4"
+        "https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro_final.mp4"
       );
     } else {
       setVideoSource(
-        "https://oxeni-sfs.vercel.app/postagram/videos/for_mobile.mp4"
+        "https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro_final_mobile.mp4"
       );
     }
   }, []);
 
+
+
+
   const init = () => {
-    // document.querySelector<HTMLElement>(".navigation").style.opacity = "0";
-    // const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
-    // fixScrollToTop(videoIntro.duration);
-    // videoIntro.addEventListener("ended", () => {
-    //   fadeOutFadeIn([ ".hero_heading",".hero_line",".hero_paragraph",".hero_button" ]);
-    // });
+    document.querySelector<HTMLElement>(".navigation").style.opacity = "0";
+    const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
+
+    videoIntro.addEventListener("loadeddata", () => {
+      fixScrollToTop(~~videoIntro.duration);
+
+      if (window.innerWidth > 1080) {
+        return videoIntro.addEventListener("ended", () => {
+            fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
+        });
+      }
+
+      fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
+      
+    });
   };
+
+
+
 
   return (
     <>
@@ -74,7 +98,7 @@ const Hero = () => {
           </div>
 
           <div className="intro_video">
-            <video autoPlay  muted src={videoSource} id="videoIntro" />
+            <video  muted src={videoSource} id="videoIntro" />
           </div>
         </div>
       </div>
