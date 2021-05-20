@@ -32,6 +32,7 @@ const Project = () => {
                 heading={props.heading}
                 line={props.line}
                 paragraph={props.paragraph}
+                thumbnail={props.thumbnail}
               />
             ))}
 

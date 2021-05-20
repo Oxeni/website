@@ -1,34 +1,40 @@
 {
   "big_projects": [
     {
-      "videoSource": "videos/card_video.mp4",
+      "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/idep.mp4",
       "heading": "IDEP branding, logo and UI/UX design and website development.",
       "paragraph": "We worked with IDEP on creating the future platform that will push the next generation of NFT tokens and the crypto market.",
-      "line": true
+      "line": true,
+      "thumbnail":"pictures/thumbnails/idep.png"
     },
     {
-      "videoSource": "videos/card_video.mp4",
+      "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/balavari.mp4",
       "heading": "Balavari Lisi, a consept website, with 3D apartaments a and floor selection.",
       "paragraph": "building company websites became stale this couple of years, wo we created a unique experiance with 3D apartament views and modern design.",
-      "line": true
+      "line": true,
+      "thumbnail":"pictures/thumbnails/balavari.png"
     }
   ],
+  
 
   "small_projects": [
     {
-      "videoSource": "videos/card_video.mp4",
+      "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/tire.mp4",
       "heading": "Balavari Lisi, a consept website, with 3D apartaments a and floor selection.",
-      "line": false
+      "line": false,
+      "thumbnail":"pictures/thumbnails/tire.png"
     },
     {
-      "videoSource": "videos/card_video.mp4",
+      "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/kera.mp4",
       "heading": "Kera Plus  logo|brand|UI/UX design consept.",
-      "line": false
+      "line": false,
+      "thumbnail":"pictures/thumbnails/kera.png"
     },
     {
-      "videoSource": "videos/card_video.mp4",
+      "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/Archil+Snow.mp4",
       "heading": "Archil Snow logo|brand|UI/UX design and website development.",
-      "line": false
+      "line": false,
+      "thumbnail":"pictures/thumbnails/archili.png"
     }
   ]
 }

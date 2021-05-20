@@ -7,6 +7,7 @@ interface IProjectComponent {
   heading: string;
   paragraph?: string;
   line: boolean;
+  thumbnail?:string;
 }
 
 const ProjectCard = ({
@@ -14,6 +15,7 @@ const ProjectCard = ({
   heading,
   paragraph,
   line,
+  thumbnail,
   ...props
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
   const cardContainer = useRef<HTMLDivElement>(null);
@@ -49,7 +51,9 @@ const ProjectCard = ({
         ref={cardContainer}
         {...props}>
         <div className="projectCard_video">
-          <video className="card_video base_video_styles" muted src={videoSource} />
+          <video className="card_video base_video_styles" poster={"pictures/thumbnails/balavari.png"}  
+          muted src={videoSource} />
+
           <video
             muted
             src={videoSource}
