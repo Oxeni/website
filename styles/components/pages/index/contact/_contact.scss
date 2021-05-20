@@ -1,0 +1,91 @@
+.contact {
+    
+    .contact_container {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: .6fr 1fr;
+
+
+        .contact-heading {
+            @include flex(center,center,column);
+            padding: 0 0 0 6vw;
+
+            a {
+                text-decoration: underline !important;
+                width: 100%;
+                max-width: 43rem;
+                padding: 2rem;
+                line-height: 100%;
+                color:var(--primary-black);
+            }
+
+            .oxeni-mail {
+                @include flex(initial,initial,initial);
+                align-self: flex-start;
+                width: 100%;
+                max-width: 15rem;
+                margin-left: 2rem;
+
+                .copy {
+                    @include flex(center,center,initial);
+                }
+
+                p {
+                    margin-left: 1rem;
+                }
+            }
+        }
+
+
+        .contact-pic {
+            @include background-properties("/pictures/contact_phone.png",cover,center 0%);
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+
+@media only screen and (max-width: $medium-screen) {
+    .contact {
+    
+        .contact_container {
+            grid-template-columns: initial !important;
+            grid-template-rows: .2fr  1fr;
+            
+
+            .contact-heading {
+                padding: initial !important;
+                a {
+                    text-decoration: underline !important;
+                    width: 100% !important;
+                    max-width:initial !important;
+
+                }
+    
+                .oxeni-mail {
+                    @include flex(initial,initial,initial);
+                    align-self: flex-start;
+                    width: 100% !important;
+                    max-width: initial !important;
+                    margin-left: initial !important;
+                    padding:  1rem 0rem 0rem 2rem ;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: $small-screen) {
+    .contact {
+        .contact_container {
+
+
+            .contact-pic {
+                @include background-properties("/pictures/contact_phone.png",cover,30% center);
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+}

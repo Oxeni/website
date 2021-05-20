@@ -2,44 +2,7 @@
   position: relative;
   padding: var(--padding-top) 4vw 0rem 4vw;
 
-  .circle_container {
-    filter: blur(70px);
-    position: absolute;
-    height: 130vh;
-    width: 25rem;
-    left: -30rem;
-    top: -10rem;
-    z-index: 1;
 
-    .blue_circle {
-      @include pseudo_elem;
-      width: 100%;
-      height: 58%;
-      background: linear-gradient(135deg, #00d1ea 15.83%, #56f97b 82.52%);
-      mix-blend-mode: multiply;
-      transform: rotate(86.5deg);
-      border-radius: 50%;
-      left: 0%;
-      top: 0%;
-    }
-
-    .red_cicrle {
-      @include pseudo_elem;
-      width: 100%;
-      height: 42%;
-      background: linear-gradient(
-        134.74deg,
-        #00d1ea 9.43%,
-        #f868ec 47.36%,
-        #ff1f3a 80.86%
-      );
-      mix-blend-mode: multiply;
-      transform: rotate(-17.94deg);
-      border-radius: 50%;
-      left: 13%;
-      top: 20%;
-    }
-  }
 
   .project_container {
     width: 96%;
@@ -108,8 +71,7 @@
     .project_container {
       width: 100% !important;
       grid-template-columns: 0% 60% 40%;
-    //   grid-template-rows: repeat(6, auto) !important;
-    //   grid-template-columns: initial !important;
+
 
       .big_projects,
       .small_projects {

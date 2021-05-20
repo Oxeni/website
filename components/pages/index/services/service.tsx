@@ -1,15 +1,24 @@
+import Gradients from "components/lib/gradients/Gradients";
+
+
+
+
 const service = () => {
   return (
     <>
       <section className="services">
-          <div className="services_heading">
-              <h1 className="f-size-h1 f-weight-bl">services.</h1>
-          </div>
+
+        <div className="circle_container">
+          <Gradients />
+        </div>
+
+        <div className="services_heading">
+          <h1 className="f-size-h1 f-weight-bl">services.</h1>
+        </div>
         <div className="services_container">
 
 
           <div className="card">
-
             <div className="card_heading_gradient"></div>
 
             <div className="card_heading">
@@ -26,13 +35,10 @@ const service = () => {
               </p>
             </div>
 
-            {/* <div className="card-red_gradient card_big_gradient"></div> */}
           </div>
 
 
-
           <div className="card">
-
             <div className="card_heading_gradient"></div>
 
             <div className="card_heading">
@@ -48,15 +54,12 @@ const service = () => {
               </p>
             </div>
 
-            {/* <div className="card-blue_gradient card_big_gradient"></div> */}
           </div>
 
 
-
           <div className="card">
-
             <div className="card_heading_gradient"></div>
-            
+
             <div className="card_heading">
               <h1 className="f-size-p1 f-weight-bl">
                 <span className="creating">Creating</span> unique
@@ -69,11 +72,7 @@ const service = () => {
                 market. We don’t limit ourselves with standards.
               </p>
             </div>
-            {/* <div className="card-black_gradient card_big_gradient"></div> */}
           </div>
-
-
-
         </div>
       </section>
     </>
