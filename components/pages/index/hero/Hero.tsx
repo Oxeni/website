@@ -17,7 +17,7 @@ const Hero = () => {
 
 
   useEffect(() => {
-    // init();
+    init();
 
     if (window.innerWidth > 1080) {
       setVideoSource(
@@ -33,24 +33,24 @@ const Hero = () => {
 
 
 
-//   const init = () => {
-//     document.querySelector<HTMLElement>(".navigation").style.opacity = "0";
-//     const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
+  const init = () => {
+    document.querySelector<HTMLElement>(".navigation").style.opacity = "0";
+    const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
 
-//     videoIntro.addEventListener("loadeddata", () => {
-//         fixScrollToTop(~~videoIntro.duration * 2);
+    videoIntro.addEventListener("loadeddata", () => {
+        fixScrollToTop(~~videoIntro.duration * 2);
         
-//         if (window.innerWidth > 1080) {
-//         return videoIntro.addEventListener("ended", () => {
+        if (window.innerWidth > 1080) {
+        return videoIntro.addEventListener("ended", () => {
 
-//             fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
-//         });
-//       }
+            fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
+        });
+      }
 
-//       fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
+      fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
       
-//     });
-//   };
+    });
+  };
 
 
 
@@ -88,6 +88,8 @@ const Hero = () => {
                   <a
                     className="f-size-p1 f-weight-r primary-white contactUs"
                     href="mailto: hello@oxeni.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     contact us
                   </a>
@@ -97,7 +99,7 @@ const Hero = () => {
           </div>
 
           <div className="intro_video">
-            {/* <video  muted src={videoSource} id="videoIntro" /> */}
+            <video  muted src={videoSource} id="videoIntro" />
           </div>
         </div>
       </div>
