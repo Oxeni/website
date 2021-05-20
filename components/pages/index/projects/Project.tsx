@@ -1,9 +1,10 @@
 import ProjectCard from "./ProjectCard.Component";
+// import dynamic from "next/dynamic";
 import Gradients from "components/lib/gradients/Gradients";
 
 
 import ProjectCardJson from "components/pages/index/projects/ProjectCard.json";
-
+// const ProjectCard = dynamic(() => import('./ProjectCard.Component'), { ssr: false })
 
 
 
@@ -12,10 +13,10 @@ const Project = () => {
     <>
       <section className="project section_margin" id="ElementToTrigger">
         <div className="circle_container">
-            <Gradients/>
+          <Gradients />
         </div>
 
-        
+
 
         <div className="project_container">
           <div className="heading">
@@ -45,6 +46,7 @@ const Project = () => {
                 videoSource={props.videoSource}
                 heading={props.heading}
                 line={props.line}
+                thumbnail={props.thumbnail}
               />
             ))}
           </div>

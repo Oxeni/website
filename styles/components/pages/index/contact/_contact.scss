@@ -24,7 +24,8 @@
                 align-self: flex-start;
                 width: 100%;
                 max-width: 15rem;
-                margin-left: 2rem;
+                margin: 2rem 0 2rem 2rem;
+                cursor: pointer;
 
                 .copy {
                     @include flex(center,center,initial);

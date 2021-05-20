@@ -16,7 +16,7 @@ const Contact = () => {
         el.select();
         document.execCommand("copy");
         el.remove();
-        email.innerText = "copied ✅"    
+        email.innerText = "copied ✔"    
 
         setTimeout(() => {
             email.innerText = "hello@oxeni.dev"
