@@ -7,8 +7,12 @@ interface IProjectComponent {
   heading: string;
   paragraph?: string;
   line: boolean;
-  thumbnail?:string;
+  thumbnail?: string;
 }
+
+
+
+
 
 const ProjectCard = ({
   videoSource,
@@ -21,26 +25,45 @@ const ProjectCard = ({
   const cardContainer = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState<boolean>();
 
+
+
+  useEffect(() => {
+    const allVideos = cardContainer.current.querySelectorAll('video')
+    Array.from(allVideos).map(video => {
+      video.currentTime = ~~video.duration
+      video.playsInline = true
+      video.autoplay = true
+    })
+
+      
+  }, [])
+
+
   useEffect(() => {
     let video = cardContainer.current.querySelector(".projectCard_video .card_video") as HTMLVideoElement;
-
     let videoShadow = cardContainer.current.querySelector(".projectCard_video .card_video-shadow") as HTMLVideoElement;
 
     if (hovered) {
       video.playbackRate = 1;
+      video.currentTime = 0
       video.play();
 
       videoShadow.playbackRate = 1;
+      videoShadow.currentTime = 0
       videoShadow.play();
 
     } else {
-      video.currentTime = 0;
+      video.currentTime = ~~video.duration;
       video.pause();
 
-      videoShadow.currentTime = 0;
+      videoShadow.currentTime = ~~video.duration;
       videoShadow.pause();
     }
   }, [hovered]);
+
+
+
+
 
   return (
     <>
@@ -51,8 +74,10 @@ const ProjectCard = ({
         ref={cardContainer}
         {...props}>
         <div className="projectCard_video">
-          <video className="card_video base_video_styles" poster={"pictures/thumbnails/balavari.png"}  
-          muted src={videoSource} />
+          <video
+            className="card_video base_video_styles"
+            muted
+            src={videoSource} />
 
           <video
             muted
@@ -62,9 +87,9 @@ const ProjectCard = ({
         </div>
 
         <div className="projectCard_heading">
-            <Link href="#">
-                <h1 className="f-size-p1 f-weight-l">{heading}</h1>
-            </Link>
+          <Link href="#">
+            <h1 className="f-size-p1 f-weight-l">{heading}</h1>
+          </Link>
         </div>
 
         {line && (

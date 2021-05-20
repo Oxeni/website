@@ -3,7 +3,7 @@ import gsap from "gsap";
 
 
 
-export const counter = (functionOnCompleate: () => void): void => {
+export const counter = (functionOnComplete: () => void): void => {
   const tl = gsap.timeline()
   let time = { start: 0 }
 
@@ -26,7 +26,7 @@ export const counter = (functionOnCompleate: () => void): void => {
       duration: 1.2,
       clipPath: 'polygon(0 0, 100% 0, 100% 0%, 0% 0%)',
       onComplete: () => {
-        functionOnCompleate()
+        functionOnComplete()
       }
     })
 };
