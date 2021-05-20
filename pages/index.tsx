@@ -13,7 +13,7 @@ const index = () => {
 
   return (
     <>
-      {/* <Loading /> */}
+      <Loading />
       <Landing />
       <Projects />
       <Other_works/>
