@@ -32,6 +32,7 @@ const ProjectCard = ({
     Array.from(allVideos).map(video => {
       video.currentTime = ~~video.duration
       video.playsInline = true
+      video.autoplay = true
     })
 
       
