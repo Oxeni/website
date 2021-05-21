@@ -109,13 +109,14 @@
 
         video {
           position: relative;
-          width: 50% !important;
-          transform: none !important;
+          width: 80% !important;
+          transform: scale(1.25);
           min-height: initial !important;
           min-width: initial !important;
           height: 100%;
           top: initial;
           left: initial;
+          margin-bottom: 4rem;
           // transform: none !important;
         }
       }
