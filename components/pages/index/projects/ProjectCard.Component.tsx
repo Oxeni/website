@@ -35,7 +35,7 @@ const ProjectCard = ({
       video.autoplay = true
     })
 
-      
+
   }, [])
 
 

@@ -1,9 +1,22 @@
 import { useEffect, useState } from "react";
 import { Inbox } from "react-feather";
 
+
+//! ─── OWN ────────────────────────────────────────────────────────────────────────
+//? components 
 import Button from "components/lib/button/Button";
-import { fadeOutFadeIn } from "components/pages/index/hero/animation/Hero.Animation";
-import { fixScrollToTop } from "components/utils/animation/global.animation";
+import { baseHeroAnimations } from "components/pages/index/hero/animation/Hero.Animation";
+import { resizeAction } from "components/utils/resize.util";
+
+//? utils
+import { setCurrentVideoSizeVideo } from "./hero.utils";
+
+//? content
+import { videosAndSizes } from "./hero.content";
+import { disableFixScrollTop } from "components/utils/animation/global.animation";
+
+
+
 
 
 
@@ -11,45 +24,23 @@ import { fixScrollToTop } from "components/utils/animation/global.animation";
 
 
 const Hero = () => {
-  const [videoSource, setVideoSource] = useState<string>("");
-
-
+  const [videoSource,] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final.mp4");
 
 
   useEffect(() => {
     init();
-
-    if (window.innerWidth > 1080) {
-      setVideoSource(
-        "https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro_final.mp4"
-      );
-    } else {
-      setVideoSource(
-        "https://oxeni.s3.eu-central-1.amazonaws.com/hero_intro_final_mobile.mp4"
-      );
-    }
   }, []);
 
 
-
-
   const init = () => {
-    document.querySelector<HTMLElement>(".navigation").style.opacity = "0";
-    const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
+    let heroVideo = document.querySelector('.hero .intro_video video') as HTMLVideoElement
 
-    videoIntro.addEventListener("loadeddata", () => {
-        fixScrollToTop(~~videoIntro.duration * 2);
-        
-        if (window.innerWidth > 1080) {
-        return videoIntro.addEventListener("ended", () => {
+    baseHeroAnimations()
 
-            fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
-        });
-      }
-
-      fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
-      
-    });
+    resizeAction(async () => {
+      await setCurrentVideoSizeVideo(heroVideo, window.innerWidth, videosAndSizes)
+      disableFixScrollTop()
+    })
   };
 
 
@@ -99,7 +90,7 @@ const Hero = () => {
           </div>
 
           <div className="intro_video">
-            <video  muted src={videoSource} id="videoIntro" />
+            <video muted src={videoSource} id="videoIntro" />
           </div>
         </div>
       </div>

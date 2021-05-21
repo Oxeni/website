@@ -10,6 +10,7 @@ const Loading = () => {
         init()
     }, []);
 
+    
     const init = async () => {
         await counter(() => {
             const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
