@@ -4,6 +4,7 @@
   width: 100%;
 
   .projectCard_video {
+    background-size: 0%;
     width: 100%;
     border-radius: 12px;
     // border: 1px solid red;
@@ -53,3 +54,21 @@
   }
 }
 
+
+@media screen and (max-width: $small-screen) {
+  .projectCard {
+
+    .projectCard_video {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 30vh;
+      width: 100%;
+
+      video {
+        display: none;
+      }
+
+    }
+  }
+}

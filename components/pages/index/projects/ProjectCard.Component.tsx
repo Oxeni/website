@@ -24,21 +24,22 @@ const ProjectCard = ({
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
   const cardContainer = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState<boolean>();
-  const [mobilePictures, setMobilePictures] = useState(0);
 
-  useEffect(() => {
-    setMobilePictures(mobilePictures)
-  }, [])
+
+
 
   useEffect(() => {
     const allVideos = cardContainer.current.querySelectorAll('video')
+
+
     Array.from(allVideos).map(video => {
       video.currentTime = ~~video.duration
       video.playsInline = true
       video.autoplay = true
     })
-
   }, [])
+
+
 
 
   useEffect(() => {
@@ -75,27 +76,19 @@ const ProjectCard = ({
         onMouseLeave={() => setHovered(false)}
         ref={cardContainer}
         {...props}>
-        <div className="projectCard_video" 
-        style={mobilePictures < 500 && {
-            backgroundImage:`url(${thumbnail})`
-        }}>
-
-
-        <>
+        <div className="projectCard_video"
+          style={{ backgroundImage: `url(${thumbnail})` }}>
           <video
-            className="card_video base_video_styles" 
-            style={mobilePictures < 500 ? {display:"none"}: {display:"block"}}
+            className="card_video base_video_styles"
             muted
             src={videoSource} />
 
           <video
             muted
-            src={videoSource}
             className="base_video_styles card_video-shadow"
-            style={mobilePictures < 500 ? {display:"none"}: {display:"block"}}
+            src={videoSource}
           />
-          </>
-         
+
         </div>
 
         <div className="projectCard_heading">

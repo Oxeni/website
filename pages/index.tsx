@@ -1,7 +1,7 @@
 // import dynamic from 'next/dynamic';
 // const Projects = dynamic(() => import("components/pages/index/projects/Project"),{ssr:false})
 
-import Landing from "components/pages/index/hero/Hero";
+import Hero from "components/pages/index/hero/Hero";
 import Projects from "components/pages/index/projects/Project";
 
 import Loading from "components/global/loading/Loading";
@@ -16,7 +16,7 @@ const index = () => {
   return (
     <>
       <Loading />
-      <Landing />
+      <Hero />
       <Projects />
       <Other_works />
       <Services />

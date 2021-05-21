@@ -17,21 +17,14 @@ export const fadeOutFadeIn = (fadeInElementClassesArray: string[]) => {
 
 
 
-export const baseHeroAnimations = () => {
-  const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
+export const baseHeroAnimations = (videoIntro: HTMLVideoElement) => {
   document.querySelector<HTMLElement>(".navigation").style.opacity = "0";
 
-
-  videoIntro.addEventListener("loadeddata", () => {
-    if (window.innerWidth > 1080) {
-      fixScrollToTop(~~videoIntro.duration * 2);
-      videoIntro.addEventListener("ended", () => {
-        debugger
-        fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
-      });
-    }
-    debugger
-    fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
-
-  });
+  if (window.innerWidth > 1080) {
+    fixScrollToTop(~~videoIntro.duration * 2);
+    return videoIntro.addEventListener("ended", () => {
+      fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
+    });
+  }
+  fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
 }

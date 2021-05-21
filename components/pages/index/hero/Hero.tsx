@@ -24,7 +24,7 @@ import { disableFixScrollTop } from "components/utils/animation/global.animation
 
 
 const Hero = () => {
-  const [videoSource,] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final.mp4");
+  const [videoSource, setVideoSource] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final.mp4");
 
 
   useEffect(() => {
@@ -34,8 +34,7 @@ const Hero = () => {
 
   const init = () => {
     let heroVideo = document.querySelector('.hero .intro_video video') as HTMLVideoElement
-
-    baseHeroAnimations()
+    baseHeroAnimations(heroVideo)
 
     resizeAction(async () => {
       await setCurrentVideoSizeVideo(heroVideo, window.innerWidth, videosAndSizes)

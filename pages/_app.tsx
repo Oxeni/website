@@ -1,13 +1,14 @@
 
 import type { AppProps } from "next/app";
 import "../styles/main.scss";
+import dynamic from 'next/dynamic';
 
 
 
 import HeadAndMeta from "./../components/global/head/HeadAndMeta";
 import Navigation from "components/global/navigation/Navigation";
-import Cursor from "components/global/cursor/Cursor";
-// const Cursor = dynamic(() => import("components/global/cursor/Cursor"), { ssr: false, });
+// import Cursor from "components/global/cursor/Cursor";
+const Cursor = dynamic(() => import("components/global/cursor/Cursor"), { ssr: false, });
 
 
 function MyApp({ Component, pageProps }: AppProps) {

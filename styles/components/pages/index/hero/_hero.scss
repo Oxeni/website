@@ -4,7 +4,8 @@
 
   .hero_container {
     width: 100%;
-    // height: 100vh;
+    height: 100vh;
+    // height: 130vh;
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -58,20 +59,22 @@
 
     .intro_video {
       overflow: hidden;
+      position: absolute;
       //   width: 100vw;
       z-index: 1;
-    //   height: 100vh;
+      // height: 100vh;
+
 
       video {
         // z-index: -1;
-        position: absolute;
-        top: 50%;
+        position: relative;
+        transform: translateX(-50%) translateY(-50%);
+        // top: 50%;
         left: 50%;
         min-width: 100%;
         min-height: 100%;
         width: 100%;
-        // height: 100%;
-        transform: translateX(-50%) translateY(-50%);
+        height: auto;
         background-size: cover;
         outline: none !important;
         user-select: none;
