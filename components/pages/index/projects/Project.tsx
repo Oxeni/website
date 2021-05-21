@@ -34,6 +34,7 @@ const Project = () => {
                 line={props.line}
                 paragraph={props.paragraph}
                 thumbnail={props.thumbnail}
+                link={props.link}
               />
             ))}
 
@@ -47,6 +48,7 @@ const Project = () => {
                 heading={props.heading}
                 line={props.line}
                 thumbnail={props.thumbnail}
+                link={props.link}
               />
             ))}
           </div>

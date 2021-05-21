@@ -5,14 +5,16 @@
       "heading": "IDEP branding, logo and UI/UX design and website development.",
       "paragraph": "We worked with IDEP on creating the future platform that will push the next generation of NFT tokens and the crypto market.",
       "line": true,
-      "thumbnail":"pictures/thumbnails/idep.png"
+      "thumbnail":"pictures/thumbnails/idep.png",
+      "link":"https://idep.network/"
     },
     {
       "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/balavari.mp4",
       "heading": "Balavari Lisi, a consept website, with 3D apartaments a and floor selection.",
       "paragraph": "building company websites became stale this couple of years, wo we created a unique experiance with 3D apartament views and modern design.",
       "line": true,
-      "thumbnail":"pictures/thumbnails/balavari.png"
+      "thumbnail":"pictures/thumbnails/balavari.png",
+      "link":"https://balavari-lisi.vercel.app/"
     }
   ],
   
@@ -22,19 +24,22 @@
       "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/tire.mp4",
       "heading": "Balavari Lisi, a consept website, with 3D apartaments a and floor selection.",
       "line": false,
-      "thumbnail":"pictures/thumbnails/tire.png"
+      "thumbnail":"pictures/thumbnails/tire.png",
+      "link":"https://dribbble.com/shots/7356757-Double-Tire-website-hero-section"
     },
     {
       "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/kera.mp4",
       "heading": "Kera Plus  logo|brand|UI/UX design consept.",
       "line": false,
-      "thumbnail":"pictures/thumbnails/kera.png"
+      "thumbnail":"pictures/thumbnails/kera.png",
+      "link":"https://www.facebook.com/105570448150835/videos/233326348288305"
     },
     {
       "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/Archil+Snow.mp4",
       "heading": "Archil Snow logo|brand|UI/UX design and website development.",
       "line": false,
-      "thumbnail":"pictures/thumbnails/archili.png"
+      "thumbnail":"pictures/thumbnails/archili.png",
+      "link":"https://archilsnow.com/"
     }
   ]
 }

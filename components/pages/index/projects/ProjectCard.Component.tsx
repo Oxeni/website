@@ -8,6 +8,7 @@ interface IProjectComponent {
   paragraph?: string;
   line: boolean;
   thumbnail?: string;
+  link?:string;
 }
 
 
@@ -20,6 +21,8 @@ const ProjectCard = ({
   paragraph,
   line,
   thumbnail,
+  link,
+  className = '',
   ...props
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
   const cardContainer = useRef<HTMLDivElement>(null);
@@ -70,14 +73,17 @@ const ProjectCard = ({
 
   return (
     <>
+
       <div
-        className={`projectCard ${props.className}`}
+        className={`projectCard  ${className}`}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         ref={cardContainer}
+        onClick={()=> window.open(link, '_blank')}
         {...props}>
         <div className="projectCard_video"
           style={{ backgroundImage: `url(${thumbnail})` }}>
+
           <video
             className="card_video base_video_styles"
             muted
