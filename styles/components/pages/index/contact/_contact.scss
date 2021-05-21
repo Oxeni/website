@@ -7,7 +7,7 @@
 
 
         .contact-heading {
-            @include flex(center,center,column);
+            @include flex(center,flex-start,column);
             padding: 0 0 0 6vw;
 
             a {

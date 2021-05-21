@@ -8,8 +8,12 @@
 
   .services_container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
     // grid-template-columns: repeat(3, 1fr);
-    gap: 0 4vw;
+
+
 
     .card {
       background: #ffffff;
@@ -17,27 +21,35 @@
         9px 11px 30.73px rgba(0, 0, 0, 0.0298054),
         0px 0.598509px 7.18615px rgba(0, 0, 0, 0.0201946);
       border-radius: 21px;
-    //   height: 100%;
       position: relative;
       z-index: 2;
-    //   width: 100%;
       max-width: 30rem;
+
+
+      &:not(:last-child){
+        margin-right: 3.5vw;
+      }
 
       .card_heading_gradient {
         border-radius: 21px 21px 0 0;
         height: 15rem;
       }
 
+
+
+
       &:nth-child(1) {
         .card_heading_gradient {
           @include background-properties("/pictures/noise_gradient_1.png");
         }
       }
+
       &:nth-child(2) {
         .card_heading_gradient {
           @include background-properties("/pictures/noise_gradient_2.png");
         }
       }
+
       &:nth-child(3) {
         .card_heading_gradient {
           @include background-properties("/pictures/noise_gradient_3.png");
@@ -51,32 +63,26 @@
           line-height: 146.52%;
 
           .designing {
-            background: -webkit-linear-gradient(
-              -90deg,
-              #f15de1 0%,
-              #ff7c53 55.21%
-            );
+            background: -webkit-linear-gradient(-90deg,
+                #f15de1 0%,
+                #ff7c53 55.21%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
         }
 
         .fullstack {
-          background: -webkit-linear-gradient(
-            -90deg,
-            #0042ff 0%,
-            #2df1ff 61.46%
-          );
+          background: -webkit-linear-gradient(-90deg,
+              #0042ff 0%,
+              #2df1ff 61.46%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
 
         .creating {
-          background: -webkit-linear-gradient(
-            -90deg,
-            #0d0d0e 9.38%,
-            rgba(255, 255, 255, 0) 97.4%
-          );
+          background: -webkit-linear-gradient(-90deg,
+              #0d0d0e 9.38%,
+              rgba(255, 255, 255, 0) 97.4%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -101,7 +107,7 @@
     padding: 25rem 8vw 15rem 8vw;
 
     .services_heading {
-        margin-bottom: 5rem;
+      margin-bottom: 5rem;
     }
   }
 }
@@ -110,10 +116,21 @@
   .services {
     padding: 15rem 6vw 8rem 6vw;
 
+    .services_heading{
+      h1{
+        text-align: center;
+      }
+    }
+
     .services_container {
-    //   grid-template-columns: initial !important;
-    //   grid-template-rows: repeat(3, 1fr) !important;
-      gap: 4vw 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .card{
+        margin-bottom: 18vh;
+      }
+
     }
   }
 }

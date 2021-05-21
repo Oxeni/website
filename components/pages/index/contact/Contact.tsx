@@ -36,9 +36,9 @@ const Contact = () => {
 
                         <div className="oxeni-mail" onClick={(e) => copyClipboard(e.currentTarget)}>
                             <div className="copy">
-                                <Copy size={20}/>
+                                <Copy size={24}/>
                             </div>
-                            <p className="f-size-p2 f-weight-r">hello@oxeni.dev</p>
+                            <p className="f-size-h6 f-weight-r">hello@oxeni.dev</p>
                         </div>
                     </div>
 
