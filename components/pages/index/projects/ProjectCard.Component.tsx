@@ -20,6 +20,7 @@ const ProjectCard = ({
   paragraph,
   line,
   thumbnail,
+  className = '',
   ...props
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
   const cardContainer = useRef<HTMLDivElement>(null);
@@ -71,7 +72,7 @@ const ProjectCard = ({
   return (
     <>
       <div
-        className={`projectCard ${props.className}`}
+        className={`projectCard ${className}`}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         ref={cardContainer}

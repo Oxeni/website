@@ -1,4 +1,3 @@
-
 .projectCard {
   width: 100%;
 
@@ -55,20 +54,28 @@
 
 
 @media screen and (max-width: $small-screen) {
-  .projectCard {
-    margin-bottom: 12vh;
+  .big_projects {
+    .projectCard {
+      // margin-bottom: 12vh;
 
-    .projectCard_video {
-      background-size: cover;
-      background-position: top !important;
-      background-repeat: no-repeat;
-      height: calc(11rem + 22vh);
-      width: 100%;
+      .projectCard_video {
+        background-size: cover;
+        background-position: top !important;
+        background-repeat: no-repeat;
+        height: calc(11rem + 22vh);
+        width: 100%;
 
-      video {
-        display: none;
+        video {
+          display: none;
+        }
       }
+    }
+  }
 
+  .small_projects {
+    .projectCard {
+      margin-top: 0 !important;
+      // margin-bottom: 12vh !important;
     }
   }
 }
