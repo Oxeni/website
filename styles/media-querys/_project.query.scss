@@ -1,0 +1,142 @@
+@media only screen and (max-width: $large-screen) {
+    .project {
+      .project_container {
+        .big_projects {
+          .projectCard {
+            &:nth-child(2) {
+              margin-top: calc(7.7rem + 8vw);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: $medium-screen) {
+    .project {
+      padding: 8rem 6vw !important;
+  
+      .project_container {
+        width: 100% !important;
+        grid-template-columns: 0% 60% 40%;
+  
+        .big_projects,
+        .small_projects {
+          .projectCard {
+            &:not(:first-child) {
+              margin-top: calc(2rem + 2vh) !important;
+            }
+          }
+        }
+  
+        .small_projects {
+          .projectCard {
+            &:nth-child(1) {
+              margin-top: calc(2rem + 2vh) !important;
+            }
+          }
+        }
+  
+        .balavari {
+          margin-top: calc(2rem + 1vh) !important;
+  
+          .projectCard {
+            &:nth-child(2) {
+              margin-top: initial !important;
+            }
+          }
+        }
+  
+        .big_projects {
+          grid-column: 2/3;
+  
+          // .projectCard_video {
+          //   height: 100%;
+          // }
+  
+          .projectCard {
+            &:nth-child(2) {
+              margin-top: calc(7rem + 8vw);
+            }
+          }
+        }
+  
+        .heading {
+          margin-bottom: 2rem;
+          grid-column: 2/3;
+          h1 {
+            transform: initial !important;
+          }
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: $small-screen) {
+    .project {
+      .project_container {
+        width: 100% !important;
+        grid-template-rows: repeat(6, auto) !important;
+        grid-template-columns: initial !important;
+  
+        .big_projects,
+        .small_projects {
+          .projectCard {
+            &:not(:first-child) {
+              margin-top: calc(2rem + 2vh) !important;
+            }
+          }
+        }
+  
+        .small_projects {
+          .projectCard {
+            &:nth-child(1) {
+              margin-top: calc(2rem + 2vh) !important;
+            }
+          }
+        }
+  
+        .balavari {
+          margin-top: calc(2rem + 1vh) !important;
+  
+          .projectCard {
+            &:nth-child(2) {
+              margin-top: initial !important;
+            }
+          }
+        }
+  
+        .big_projects {
+          margin-right: initial !important;
+          grid-column: initial !important;
+  
+          .projectCard {
+            &:nth-child(2) {
+              margin-top: calc(7rem + 8vw);
+            }
+          }
+        }
+  
+        .heading {
+          margin-bottom: 2rem;
+          grid-column: initial !important;
+          h1 {
+            transform: initial !important;
+          }
+        }
+      }
+    }
+  }
+  
+  
+  
+  @media only screen and (max-width: $ultra-small-screen) {
+    .projectCard {
+      .projectCard_video {
+        @include background-properties("/pictures/thumbnails/idep.png");
+        width: 100% !important;
+        height: 13rem !important;
+      }
+    }
+  }
+  
