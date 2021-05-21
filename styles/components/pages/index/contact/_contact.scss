@@ -13,7 +13,7 @@
             a {
                 text-decoration: underline !important;
                 width: 100%;
-                max-width: 43rem;
+                max-width: 45rem;
                 padding: 2rem;
                 line-height: 100%;
                 color:var(--primary-black);
@@ -23,8 +23,8 @@
                 @include flex(initial,initial,initial);
                 align-self: flex-start;
                 width: 100%;
-                max-width: 15rem;
-                margin: 2rem 0 2rem 2rem;
+                max-width: 20rem;
+                padding: 2rem 0 2rem 5rem;
                 cursor: pointer;
 
                 .copy {
