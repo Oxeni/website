@@ -68,22 +68,23 @@ const Hero = () => {
               </div>
 
               <div className="contact_btn">
-                <Button
+                  <a href="mailto: hello@oxeni.dev" rel="noopener noreferrer">
+                  <Button
                   className="hero_button"
                   color="black"
                   size="large"
                   width="20rem"
                   iconRight={<Inbox color="#80888E" size={28} />}
+                  
                 >
-                  <a
+                  <p
                     className="f-size-p1 f-weight-r primary-white contactUs"
-                    href="mailto: hello@oxeni.dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     contact us
-                  </a>
+                  </p>
                 </Button>
+                  </a>
+               
               </div>
             </div>
           </div>
