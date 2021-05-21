@@ -24,7 +24,7 @@ import { disableFixScrollTop } from "components/utils/animation/global.animation
 
 
 const Hero = () => {
-  const [videoSource, setVideoSource] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final.mp4");
+  const [videoSource, ] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final.mp4");
 
 
   useEffect(() => {
