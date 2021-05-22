@@ -128,15 +128,5 @@
     }
   }
   
-  
-  
-  @media only screen and (max-width: $ultra-small-screen) {
-    .projectCard {
-      .projectCard_video {
-        @include background-properties("/pictures/thumbnails/idep.png");
-        width: 100% !important;
-        height: 13rem !important;
-      }
-    }
-  }
+
   

@@ -53,7 +53,7 @@
 
 
 @media screen and (max-width: $small-screen) {
-  .big_projects {
+  .big_projects,.small_projects {
     .projectCard {
       // margin-bottom: 12vh;
 
@@ -78,3 +78,15 @@
     }
   }
 }
+
+  
+  
+@media only screen and (max-width: $ultra-small-screen) {
+    .projectCard {
+      .projectCard_video {
+        @include background-properties("/pictures/thumbnails/idep.png");
+        width: 100% !important;
+        height: 15rem !important;
+      }
+    }
+  }
