@@ -90,7 +90,7 @@ const Hero = () => {
           </div>
 
           <div className="intro_video">
-            <video muted src={videoSource} id="videoIntro" />
+            <video playsInline muted src={videoSource} id="videoIntro" />
           </div>
         </div>
       </div>

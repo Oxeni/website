@@ -1,6 +1,9 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+
+
+
 export const scrollElemAnim = (elementsToAnimation: string) => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +30,8 @@ export const scrollElemAnim = (elementsToAnimation: string) => {
     })
   })
 };
+
+
 
 
 export const fixScrollToTop = (time: number) => {
