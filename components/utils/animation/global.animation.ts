@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 
 
-export const scrollElemAnim = (elementsToAnimation: string) => {
+export const GlobalScrollElemAnim = (elementsToAnimation: string) => {
   gsap.registerPlugin(ScrollTrigger);
 
   const el = document.querySelectorAll(elementsToAnimation);

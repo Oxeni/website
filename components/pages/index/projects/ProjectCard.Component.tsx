@@ -2,6 +2,8 @@ import { HTMLProps, useState, useEffect } from "react";
 import { useRef } from "react";
 import Link from "next/link"
 
+import { GlobalScrollElemAnim } from "components/utils/animation/global.animation";
+
 interface IProjectComponent {
   videoSource?: string;
   heading: string;
@@ -70,6 +72,9 @@ const ProjectCard = ({
 
 
 
+  useEffect(() => {
+    GlobalScrollElemAnim(".scrollAnim")
+    }, [])
 
   return (
     <>
@@ -81,7 +86,7 @@ const ProjectCard = ({
         ref={cardContainer}
         onClick={()=> window.open(link, '_blank')}
         {...props}>
-        <div className="projectCard_video"
+        <div className="projectCard_video scrollAnim"
           style={{ backgroundImage: `url(${thumbnail})` }}>
 
           <video

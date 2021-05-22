@@ -4,6 +4,7 @@ import Gradients from "components/lib/gradients/Gradients";
 
 
 const service = () => {
+
   return (
     <>
       <section className="services">
@@ -18,7 +19,7 @@ const service = () => {
         <div className="services_container">
 
 
-          <div className="card">
+          <div className="card scrollAnim" >
             <div className="card_heading_gradient"></div>
 
             <div className="card_heading">
@@ -38,7 +39,7 @@ const service = () => {
           </div>
 
 
-          <div className="card">
+          <div className="card scrollAnim">
             <div className="card_heading_gradient"></div>
 
             <div className="card_heading">
@@ -57,7 +58,7 @@ const service = () => {
           </div>
 
 
-          <div className="card">
+          <div className="card scrollAnim">
             <div className="card_heading_gradient"></div>
 
             <div className="card_heading">
