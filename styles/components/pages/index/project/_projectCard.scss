@@ -65,7 +65,7 @@
         width: 100%;
 
         video {
-          display: none;
+          display: none !important;
         }
       }
     }
