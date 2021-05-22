@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Inbox } from "react-feather";
 
 
 //! ─── OWN ────────────────────────────────────────────────────────────────────────
 //? components 
 import Button from "components/lib/button/Button";
-import { baseHeroAnimations } from "components/pages/index/hero/animation/Hero.Animation";
-import { resizeAction } from "components/utils/resize.util";
+// import { baseHeroAnimations } from "components/pages/index/hero/animation/Hero.Animation";
+// import { resizeAction } from "components/utils/resize.util";
 
-//? utils
-import { setCurrentVideoSizeVideo } from "./hero.utils";
+// //? utils
+// import { setCurrentVideoSizeVideo } from "./hero.utils";
 
-//? content
-import { videosAndSizes } from "./hero.content";
-import { disableFixScrollTop } from "components/utils/animation/global.animation";
+// //? content
+// import { videosAndSizes } from "./hero.content";
+// import { disableFixScrollTop } from "components/utils/animation/global.animation";
 
 
 
@@ -24,23 +24,23 @@ import { disableFixScrollTop } from "components/utils/animation/global.animation
 
 
 const Hero = () => {
-  const [videoSource, ] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final.mp4");
+//   const [videoSource, ] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final.mp4");
 
 
   useEffect(() => {
-    init();
+    // init();
   }, []);
 
 
-  const init = () => {
-    let heroVideo = document.querySelector('.hero .intro_video video') as HTMLVideoElement
-    baseHeroAnimations(heroVideo)
+//   const init = () => {
+//     let heroVideo = document.querySelector('.hero .intro_video video') as HTMLVideoElement
+//     baseHeroAnimations(heroVideo)
 
-    resizeAction(async () => {
-      await setCurrentVideoSizeVideo(heroVideo, window.innerWidth, videosAndSizes)
-      disableFixScrollTop()
-    })
-  };
+//     resizeAction(async () => {
+//       await setCurrentVideoSizeVideo(heroVideo, window.innerWidth, videosAndSizes)
+//       disableFixScrollTop()
+//     })
+//   };
 
 
 
@@ -90,7 +90,7 @@ const Hero = () => {
           </div>
 
           <div className="intro_video">
-            <video playsInline muted src={videoSource} id="videoIntro" />
+            <video playsInline muted src={"https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final_mobile_2.mp4"} id="videoIntro" />
           </div>
         </div>
       </div>
