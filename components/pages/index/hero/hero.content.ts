@@ -9,6 +9,6 @@ export const videosAndSizes = [
     },
     {
         size: 1200,
-        videoUrl: "https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final_mobile.mp4",
+        videoUrl: "https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final_mobile_2.mp4",
     },
 ]
