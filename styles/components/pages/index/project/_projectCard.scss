@@ -2,6 +2,7 @@
   width: 100%;
 
   .projectCard_video {
+    background-image:none;
     background-size: 0%;
     width: 100%;
     border-radius: 12px;
@@ -15,6 +16,7 @@
     img,
     video {
       border-radius: 12px !important;
+      overflow: hidden;
     }
 
     .card_video {
@@ -27,7 +29,6 @@
       left: 0 !important;
       top: 8% !important;
       z-index: -1 !important;
-      // background-color: red;
       width: 100%;
       height: 100%;
       filter: blur(35px);
@@ -55,13 +56,10 @@
 @media screen and (max-width: $small-screen) {
   .big_projects,.small_projects {
     .projectCard {
-      // margin-bottom: 12vh;
 
       .projectCard_video {
-        background-size: cover;
-        background-position: top !important;
-        background-repeat: no-repeat;
-        height: calc(11rem + 22vh);
+        @include background-properties("/pictures/thumbnails/idep.png");
+        height: calc(10rem + 20vh);
         width: 100%;
 
         video {
@@ -71,12 +69,6 @@
     }
   }
 
-  .small_projects {
-    .projectCard {
-      margin-top: 0 !important;
-      // margin-bottom: 12vh !important;
-    }
-  }
 }
 
   
@@ -84,9 +76,7 @@
 @media only screen and (max-width: $ultra-small-screen) {
     .projectCard {
       .projectCard_video {
-        @include background-properties("/pictures/thumbnails/idep.png");
-        width: 100% !important;
-        height: 15rem !important;
+        height: calc(7rem + 10vh) !important;
       }
     }
-  }
+}
