@@ -55,7 +55,7 @@ const Hero = () => {
             <div className="introduction-container">
               <div className="heading">
                 <h1 className="f-weight-bl f-size-h1">
-                  Creating the future of the web
+                     Building a better web
                 </h1>
               </div>
 
