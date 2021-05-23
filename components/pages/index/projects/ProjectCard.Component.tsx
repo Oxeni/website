@@ -32,7 +32,7 @@ const ProjectCard = ({
 
 
 
-
+    //* ეს აუცილებელია?
   useEffect(() => {
     const allVideos = cardContainer.current.querySelectorAll('video')
 
@@ -42,6 +42,7 @@ const ProjectCard = ({
       video.playsInline = true
       video.autoplay = true
     })
+
   }, [])
 
 

@@ -24,9 +24,9 @@ export const GlobalScrollElemAnim = (elementsToAnimation: string) => {
     tl.to(elem, {
       ease: "Expo.easeOut",
       opacity: 1,
+      display:"block",
       transform: "translateY(0) skewY(0)",
-      duration: i * .5,
-      deley: 0.3
+      duration: i * .5
     })
   })
 };
