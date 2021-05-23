@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Link from "next/link"
 
 import { GlobalScrollElemAnim } from "components/utils/animation/global.animation";
+import { hoverHandler } from "./project.utils";
 
 interface IProjectComponent {
   videoSource?: string;
@@ -10,7 +11,7 @@ interface IProjectComponent {
   paragraph?: string;
   line: boolean;
   thumbnail?: string;
-  link?:string;
+  link?: string;
 }
 
 
@@ -32,50 +33,17 @@ const ProjectCard = ({
 
 
 
-    //* ეს აუცილებელია?
   useEffect(() => {
-    const allVideos = cardContainer.current.querySelectorAll('video')
-
-
-    Array.from(allVideos).map(video => {
-      video.currentTime = ~~video.duration
-      video.playsInline = true
-      video.autoplay = true
-    })
-
+    GlobalScrollElemAnim(".scrollAnim")
   }, [])
 
 
 
-
   useEffect(() => {
-    let video = cardContainer.current.querySelector(".projectCard_video .card_video") as HTMLVideoElement;
-    let videoShadow = cardContainer.current.querySelector(".projectCard_video .card_video-shadow") as HTMLVideoElement;
-
-    if (hovered) {
-      video.playbackRate = 1;
-      video.currentTime = 0
-      video.play();
-
-      videoShadow.playbackRate = 1;
-      videoShadow.currentTime = 0
-      videoShadow.play();
-
-    } else {
-      video.currentTime = ~~video.duration;
-      video.pause();
-
-      videoShadow.currentTime = ~~video.duration;
-      videoShadow.pause();
-    }
+    hoverHandler(cardContainer, hovered)
   }, [hovered]);
 
 
-
-
-  useEffect(() => {
-    GlobalScrollElemAnim(".scrollAnim")
-    }, [])
 
   return (
     <>
@@ -85,7 +53,7 @@ const ProjectCard = ({
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         ref={cardContainer}
-        onClick={()=> window.open(link, '_blank')}
+        onClick={() => window.open(link, '_blank')}
         {...props}>
         <div className="projectCard_video scrollAnim"
           style={{ backgroundImage: `url(${thumbnail})` }}>
@@ -93,12 +61,12 @@ const ProjectCard = ({
           <video
             className="card_video base_video_styles"
             muted
-            src={videoSource} />
+            src={videoSource + '#t=20'} />
 
           <video
             muted
             className="base_video_styles card_video-shadow"
-            src={videoSource}
+            src={videoSource + '#t=20'}
           />
 
         </div>

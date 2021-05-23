@@ -6,5 +6,10 @@ $ultra-small-screen: 500px;
 
 :root {
     --container-margin: 13vw 0vw auto var(--left-margin);
-    --padding-top:15rem;
+    --padding-top: 15rem;
+
+    --large-screen: 1490px;
+    --medium-screen: 1200px;
+    --small-screen: 760px;
+    --ultra-small-screen: 500px;
 }

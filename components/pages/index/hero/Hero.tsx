@@ -9,7 +9,7 @@ import { baseHeroAnimations } from "components/pages/index/hero/animation/Hero.A
 import { resizeAction } from "components/utils/resize.util";
 
 //? utils
-import { setCurrentVideoSizeVideo } from "./hero.utils";
+import { setCurrentVideoSizeVideo, setVideoAcordingToScreen } from './hero.utils';
 
 //? content
 import { videosAndSizes } from "./hero.content";
@@ -32,9 +32,11 @@ const Hero = () => {
   }, []);
 
 
-  const init = () => {
+  const init = async () => {
     let heroVideo = document.querySelector('.hero .intro_video video') as HTMLVideoElement
     baseHeroAnimations(heroVideo)
+    setVideoAcordingToScreen(heroVideo, 1200, videosAndSizes[videosAndSizes.length - 1].videoUrl)
+
 
     resizeAction(async () => {
       await setCurrentVideoSizeVideo(heroVideo, window.innerWidth, videosAndSizes)
@@ -53,7 +55,7 @@ const Hero = () => {
             <div className="introduction-container">
               <div className="heading">
                 <h1 className="f-weight-bl f-size-h1">
-                  building the future of web
+                  Creating the future of the web
                 </h1>
               </div>
 
@@ -62,8 +64,8 @@ const Hero = () => {
               <div className="paragraph">
                 <p className="f-weight-l f-size-p2">
                   We at <strong>Oxeni</strong> are dedicated to bringing a new
-                   era of design to the web. We want our customers to have web 
-                   experiences they can be proud of.
+                  era of design to the web. We want our customers to have web
+                  experiences they can be proud of.
                 </p>
               </div>
 
