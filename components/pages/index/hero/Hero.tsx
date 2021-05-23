@@ -24,7 +24,7 @@ import { disableFixScrollTop } from "components/utils/animation/global.animation
 
 
 const Hero = () => {
-  const [videoSource, ] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final.mp4");
+  const [videoSource,] = useState<string>("https://oxeni.s3.eu-central-1.amazonaws.com/hero_videos/hero_intro_final.mp4");
 
 
   useEffect(() => {
@@ -61,30 +61,30 @@ const Hero = () => {
 
               <div className="paragraph">
                 <p className="f-weight-l f-size-p2">
-                  our team at <strong>Oxeni</strong> creates a new era of the
-                  web, where businesses have web experiences that they could be
-                  proud of.
+                  We at <strong>Oxeni</strong> are dedicated to bringing a new
+                   era of design to the web. We want our customers to have web 
+                   experiences they can be proud of.
                 </p>
               </div>
 
               <div className="contact_btn">
-                  <a href="mailto: hello@oxeni.dev" rel="noopener noreferrer">
+                <a href="mailto: hello@oxeni.dev" rel="noopener noreferrer">
                   <Button
-                  className="hero_button"
-                  color="black"
-                  size="large"
-                  width="20rem"
-                  iconRight={<Inbox color="#80888E" size={28} />}
-                  
-                >
-                  <p
-                    className="f-size-p1 f-weight-r primary-white contactUs"
+                    className="hero_button"
+                    color="black"
+                    size="large"
+                    width="20rem"
+                    iconRight={<Inbox color="#80888E" size={28} />}
+
                   >
-                    contact us
-                  </p>
-                </Button>
-                  </a>
-               
+                    <p
+                      className="f-size-p1 f-weight-r primary-white contactUs"
+                    >
+                      contact us
+                    </p>
+                  </Button>
+                </a>
+
               </div>
             </div>
           </div>

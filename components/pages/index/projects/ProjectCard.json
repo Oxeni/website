@@ -10,8 +10,8 @@
     },
     {
       "videoSource": "https://oxeni.s3.eu-central-1.amazonaws.com/projects/balavari_final.mp4",
-      "heading": "Balavari Lisi, a consept website, with 3D apartaments a and floor selection.",
-      "paragraph": "building company websites became stale this couple of years, wo we created a unique experiance with 3D apartament views and modern design.",
+      "heading": "Balavari Lisi is a concept website with 3D apartments and a floor selection.",
+      "paragraph": "Building company websites have become stale this coupe of years, so we created a unique experience with 3D apartment views and modern design.",
       "line": true,
       "thumbnail":"pictures/thumbnails/balavari.png",
       "link":"https://balavari-lisi.vercel.app/"
