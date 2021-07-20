@@ -19,7 +19,7 @@ const service = () => {
         <div className="services_container">
 
 
-          <div className="card scrollAnim" >
+          <div className="card" >
             <div className="card_heading_gradient"></div>
 
             <div className="card_heading">
@@ -38,7 +38,7 @@ const service = () => {
           </div>
 
 
-          <div className="card scrollAnim">
+          <div className="card">
             <div className="card_heading_gradient"></div>
 
             <div className="card_heading">
@@ -56,7 +56,7 @@ const service = () => {
           </div>
 
 
-          <div className="card scrollAnim">
+          <div className="card">
             <div className="card_heading_gradient"></div>
 
             <div className="card_heading">
