@@ -1,4 +1,6 @@
 import Gradients from "components/lib/gradients/Gradients";
+import dynamic from "next/dynamic";
+const OxeniCube = dynamic(() => import('../oxeni_cubes/OxeniCubes'), {ssr: false})
 
 
 
@@ -8,6 +10,8 @@ const service = () => {
   return (
     <>
       <section className="services">
+
+        <OxeniCube />
 
         <div className="circle_container">
           <Gradients />

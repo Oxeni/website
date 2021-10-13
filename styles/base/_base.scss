@@ -10,7 +10,7 @@ ol[class] {
     padding: 0;
 }
 
-.main{
+.main {
     margin-top: 6rem;
 }
 
@@ -43,15 +43,15 @@ body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     box-sizing: border-box;
-    font-family: 'georgian', 'Inter';
-    -ms-overflow-style: none;        
-    scrollbar-width: none;           
-    overflow: -moz-scrollbars-none;  
-    scrollbar-width: none;       
-                                     
-    &::-webkit-scrollbar {           
-        width: 0 !important    
-    } 
+    font-family: 'Inter';
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        width: 0 !important
+    }
 
     @media only screen and (max-width: $ultra-small-screen) {
         overflow: initial !important;
@@ -60,14 +60,15 @@ body {
 
 
 
-.main_main .cursor_container .cursor  {
+.main_main .cursor_container .cursor {
     color: var(--primary-black);
 }
 
-.main_main  {
+.main_main {
     background-color: var(--primary-white) !important;
     cursor: none;
 }
+
 @media only screen and (max-width: 868px) {
     .main_main {
         cursor: initial;
@@ -106,7 +107,7 @@ select {
 }
 
 img:not([alt]) {
-  filter: blur(10px);
+    filter: blur(10px);
 }
 
 // @media (prefers-reduced-motion: reduce) {
@@ -115,6 +116,6 @@ img:not([alt]) {
 //         animation-iteration-count: 1 !important;
 //         transition-duration: 0.01ms !important;
 //         scroll-behavior: auto !important;
-        
+
 //     }
 // }

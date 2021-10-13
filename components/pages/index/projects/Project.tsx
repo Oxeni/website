@@ -15,17 +15,12 @@ const Project = () => {
         <div className="circle_container">
           <Gradients />
         </div>
-
-
-
         <div className="project_container">
           <div className="heading">
             <h1 className="f-size-h1 f-weight-bl">projects</h1>
           </div>
 
           <div className="big_projects">
-
-
             {ProjectCardJson.big_projects.map((props, i) => (
               <ProjectCard
                 key={i}
@@ -37,7 +32,6 @@ const Project = () => {
                 link={props.link}
               />
             ))}
-
           </div>
 
           <div className="small_projects">
