@@ -9,19 +9,19 @@
   },
   "dependencies": {
     "glslify": "^7.1.1",
-    "gsap": "^3.7.1",
-    "next": "11.0.1",
+    "gsap": "^3.8.0",
+    "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-feather": "^2.0.9",
-    "react-hover-video-player": "^8.1.0",
-    "sass": "^1.33.0",
-    "three": "^0.130.1"
+    "react-hover-video-player": "^9.3.1",
+    "sass": "^1.42.1",
+    "three": "^0.133.1"
   },
   "devDependencies": {
-    "@types/node": "^15.6.0",
-    "@types/react": "^17.0.6",
-    "@types/three": "^0.130.0",
-    "typescript": "^4.2.4"
+    "@types/node": "^16.10.5",
+    "@types/react": "^17.0.29",
+    "@types/three": "^0.133.1",
+    "typescript": "^4.4.4"
   }
 }

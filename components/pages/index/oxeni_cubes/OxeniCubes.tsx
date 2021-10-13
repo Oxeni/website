@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import * as THREE from "three";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 // import { FlakesTexture } from "three/examples/jsm/textures/FlakesTexture";
-const FlakesTexture = require("three/examples/jsm/textures/FlakesTexture");
+// const FlakesTexture = require("three/examples/jsm/textures/FlakesTexture");
 import gsap from "gsap";
 // import { fragment } from "./shaders/fragmentShader";
 // import { vertex } from "./shaders/vertexShader";
