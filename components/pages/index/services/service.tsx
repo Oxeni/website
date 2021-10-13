@@ -11,7 +11,7 @@ const service = () => {
     <>
       <section className="services">
 
-        <OxeniCube />
+        {/* <OxeniCube /> */}
 
         <div className="circle_container">
           <Gradients />
