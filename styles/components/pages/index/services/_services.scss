@@ -8,13 +8,11 @@
   }
 
   .services_container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    // grid-template-columns: repeat(3, 1fr);
-
-
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:60px;
+    align-items: center;
+    justify-content: space-between;
 
     .card {
       background: #ffffff;
@@ -24,12 +22,15 @@
       border-radius: 21px;
       position: relative;
       z-index: 2;
-      max-width: 30rem;
+      max-width: 27rem;
+      width: 100%;
+      margin: 0 auto;
+      height: auto;
+      min-height: 32rem;
 
-
-      &:not(:last-child){
-        margin-right: 3.5vw;
-      }
+    //   &:not(:last-child){
+    //     margin-right: 3.5vw;
+    //   }
 
       .card_heading_gradient {
         border-radius: 21px 21px 0 0;
@@ -103,6 +104,7 @@
 
 
 
+
 @media only screen and (max-width: $large-screen) {
   .services {
     padding: 25rem 8vw 15rem 8vw;
@@ -111,11 +113,15 @@
       margin-bottom: 5rem;
     }
   }
+
+  
 }
+
+
 
 @media only screen and (max-width: $medium-screen) {
   .services {
-    padding: 15rem 6vw 8rem 6vw;
+    padding: 15rem 8vw 8rem 8vw;
 
     .services_heading{
       h1{
@@ -130,8 +136,26 @@
 
       .card{
         margin-bottom: 18vh;
+        min-height: 36rem;
       }
 
     }
   }
 }
+
+
+
+
+@media only screen and (max-width: $small-screen) {
+    .services {
+  
+      .services_container {
+        grid-template-columns: initial !important;
+        grid-template-rows: repeat(3,1fr);
+
+        .card {
+            min-height: initial !important;
+        }
+      }
+    }
+  }
