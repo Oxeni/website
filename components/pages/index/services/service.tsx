@@ -1,6 +1,6 @@
 import Gradients from "components/lib/gradients/Gradients";
-import dynamic from "next/dynamic";
-const OxeniCube = dynamic(() => import('../oxeni_cubes/OxeniCubes'), {ssr: false})
+// import dynamic from "next/dynamic";
+// const OxeniCube = dynamic(() => import('../oxeni_cubes/OxeniCubes'), {ssr: false})
 
 
 
