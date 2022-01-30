@@ -22,6 +22,8 @@ const Cursor = () => {
         })
     }, false)
 
+
+    
     const followCursor = (e: MouseEvent) => {
         const cursor = document.querySelector<HTMLElement>("#cursorEl");
         const textElementTagsArray = ['P', 'H1', 'H1', 'H2', 'H3', 'H4', 'H6', 'SPAN', 'STRONG', 'I', 'B']
