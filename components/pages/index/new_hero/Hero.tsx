@@ -39,7 +39,7 @@ import { Inbox } from "react-feather";
 
 const Hero = () => {
     let water: any
-    let _leptop: any
+    let _leptop: THREE.Group
     const [cursor,] = useState({ x: 0, y: 0 })
 
 
@@ -124,12 +124,6 @@ const Hero = () => {
 
 
 
-
-
-
-
-
-
         //============================ ENV
         let envmapLoader = new THREE.PMREMGenerator(renderer)
 
@@ -163,12 +157,6 @@ const Hero = () => {
                 new RGBELoader().setPath("/hdr_textures/").load("main.hdr", (hdrmap: any) => {
                     let envmap = envmapLoader.fromCubemap(hdrmap)
 
-                    // gsap.to(envmap.texture, {
-                    //     rotationY: Math.PI *2,
-                    //     ease: 'none',
-                    //     duration: 6,
-                    //     repeat: -1
-                    // })
                     colorTexture.flipY = false
                     colorTexture.encoding = THREE.sRGBEncoding
 
@@ -186,23 +174,22 @@ const Hero = () => {
                     ktx2Loader.load('/textures/normals (Custom).ktx2', async (normalMapTexture) => {
                         let shineMaterial = new THREE.MeshStandardMaterial({
                             color: 0x000000,
-                            // roughnessMap: roughnessMapTexture,
-                            roughness: .3,
+                            roughness: .1,
                             normalMap: normalMapTexture,
                             normalScale: new THREE.Vector2(.5, .5),
-                            emissive: 0x3357FA,
-                            emissiveIntensity: 0.005,
                             envMap: envmap.texture,
-                            envMapIntensity: 10,
-                            side: THREE.DoubleSide,
+                            envMapIntensity: 8,
+                            flatShading: false
                         });
 
-                        const geometry = new THREE.SphereGeometry(2.4, 32, 32);
-                        const sphere = new THREE.Mesh(geometry, shineMaterial);
+
+                        const geometry1 = new THREE.SphereGeometry(1.4, 32, 32);
+                        const sphere = new THREE.Mesh(geometry1, shineMaterial);
                         sphere.position.set(5, -3, 4)
                         scene.add(sphere);
 
-                        const sphere1 = new THREE.Mesh(geometry, shineMaterial);
+                        const geometry2 = new THREE.SphereGeometry(2.4, 32, 32);
+                        const sphere1 = new THREE.Mesh(geometry2, shineMaterial);
                         sphere1.position.set(1, 3, -8)
                         scene.add(sphere1);
 
@@ -211,7 +198,11 @@ const Hero = () => {
                         small_sphere.position.set(-1, -2, 4)
                         scene.add(small_sphere);
 
-                        [small_sphere, sphere1, sphere].map((mesh) => mesh.material.flatShading = false)
+
+                        [small_sphere, sphere1, sphere].map((mesh) => {
+                            mesh.geometry.computeVertexNormals()
+                            mesh.material.flatShading = false
+                        })
 
 
                         gsap.to(sphere.rotation, {
@@ -221,7 +212,7 @@ const Hero = () => {
                             repeat: -1,
                         })
                         gsap.to(sphere1.rotation, {
-                            x: Math.PI * 2,
+                            y: Math.PI * 2,
                             duration: 16,
                             ease: 'none',
                             repeat: -1,
@@ -261,7 +252,7 @@ const Hero = () => {
 
 
                     loader.load(
-                        '/glb/hero_section_for_web.glb',
+                        '/glb/hero_test.glb',
                         (gltf) => {
                             gltf.scene.traverse((child: THREE.Object3D) => {
                                 if ((child as THREE.Mesh).isMesh) {
@@ -270,38 +261,46 @@ const Hero = () => {
                                     (child as THREE.Mesh).receiveShadow = true;
                                 }
 
-                                if (child.name == 'Camera') {
+                                if (child.name == 'Camera001') {
                                     camera.position.set(
-                                        child.position.x + 20,
+                                        child.position.x + window.innerWidth > 750 ? 0 : 2.1,
                                         child.position.y - 1.5,
-                                        child.position.z + 8)
-
-                                    const tl = gsap.timeline()
-                                    tl.to(camera.position, {
-                                        x: child.position.x,
-                                        delay: 3,
-                                        duration: 5,
-                                        ease: 'power4.out'
-                                    })
-                                        .fromTo('.animate_UI', {
-                                            x: 15,
-                                            opacity: 0,
-                                        }, {
-                                            x: 0,
-                                            opacity: 1,
-                                            duration: 1,
-                                            stagger: {
-                                                each: 0.3
-                                            }
-                                        })
+                                        child.position.z + 7)
                                 }
-                                if (child.name == 'Lenovo_laptop001') {
-                                    _leptop = child as THREE.Mesh
 
+
+                                if (child.name == 'Lenovo_laptop001') {
+                                    const screen = gltf.scene.children.find(obj => obj.name === 'Plane') as THREE.Mesh
+
+                                    const videoTextureEl = document.createElement('video')
+                                    videoTextureEl.muted = true
+                                    videoTextureEl.controls = true
+                                    videoTextureEl.playsInline = true
+                                    videoTextureEl.autoplay = true
+                                    videoTextureEl.src = '/textures/hero.mp4'
+                                    videoTextureEl.play()
+
+
+                                    const videoTexture = new THREE.VideoTexture(videoTextureEl as HTMLVideoElement)
+                                    videoTexture.encoding = THREE.sRGBEncoding
+                                    // videoTexture.magFilter = THREE.NearestFilter
+                                    const videoMaterial = new THREE.MeshBasicMaterial({
+                                        map: videoTexture,
+                                        toneMapped: true
+                                    })
+
+                                    screen.material = videoMaterial
+
+
+                                    const group = new THREE.Group();
+                                    group.add(child);
+                                    group.add(screen);
+                                    _leptop = group
+                                    scene.add(group)
 
                                     const tl = gsap.timeline()
                                     tl.add('laptop')
-                                    tl.fromTo(child.position, {
+                                    tl.fromTo(group.position, {
                                         y: -.2,
                                     }, {
                                         y: .145,
@@ -313,10 +312,10 @@ const Hero = () => {
                                 }
                             })
 
+
                             gltf.scene.castShadow = true;
                             gltf.scene.receiveShadow = true;
                             gltf.scene.position.set(0, 0, 0);
-                            // console.log(gltf.scene);
                             scene.add(gltf.scene);
                         },
                     );
@@ -329,13 +328,10 @@ const Hero = () => {
         });
 
 
-
-
-
         //============================ RESIZE
         window.addEventListener("resize", () => {
             sizes.width = window.innerWidth;
-            sizes.height = window.innerWidth < 750 ? window.innerHeight * .5 : window.innerHeight;
+            sizes.height = window.innerWidth < 800 ? window.innerHeight * .5 : window.innerHeight;
             camera.aspect = sizes.width / sizes.height;
             camera.updateProjectionMatrix();
 
@@ -343,6 +339,12 @@ const Hero = () => {
             composer.setSize(sizes.width, sizes.height);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             composer.setSize(window.innerWidth, window.innerHeight);
+
+            if (window.innerWidth < 800) {
+                camera.position.x = 2.1
+            }else{
+                camera.position.x = 0
+            }
         })
 
 
@@ -361,8 +363,8 @@ const Hero = () => {
         const animate = () => {
             requestAnimationFrame(animate);
             if (camera && _leptop) {
-                gsap.to(camera!.rotation, { y: cursor.x });
-                gsap.to(camera!.rotation, { x: cursor.y });
+                gsap.to(camera!.rotation, { y: cursor.x * 0.5 });
+                gsap.to(camera!.rotation, { x: cursor.y * 0.5 });
 
 
                 gsap.to(_leptop!.rotation, { y: cursor.x * 35 });
