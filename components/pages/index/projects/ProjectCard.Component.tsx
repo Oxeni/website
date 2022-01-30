@@ -1,9 +1,9 @@
-import { HTMLProps, useState, useEffect } from "react";
+import { HTMLProps,  useEffect } from "react";
 import { useRef } from "react";
 import Link from "next/link"
 
 import { GlobalScrollElemAnim } from "components/utils/animation/global.animation";
-import { hoverHandler } from "./project.utils";
+// import { hoverHandler } from "./project.utils";
 
 interface IProjectComponent {
   videoSource?: string;
@@ -29,7 +29,7 @@ const ProjectCard = ({
   ...props
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
   const cardContainer = useRef<HTMLDivElement>(null);
-  const [hovered, setHovered] = useState<boolean>();
+//   const [hovered, setHovered] = useState<boolean>();
 
 
 
@@ -39,9 +39,9 @@ const ProjectCard = ({
 
 
 
-  useEffect(() => {
-    hoverHandler(cardContainer, hovered)
-  }, [hovered]);
+//   useEffect(() => {
+//     hoverHandler(cardContainer, hovered)
+//   }, [hovered]);
 
 
 
@@ -50,14 +50,14 @@ const ProjectCard = ({
 
       <div
         className={`projectCard  ${className}`}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        // onMouseEnter={() => setHovered(true)}
+        // onMouseLeave={() => setHovered(false)}
         ref={cardContainer}
         onClick={() => window.open(link, '_blank')}
         {...props}>
         <div className="projectCard_video scrollAnim"
           style={{ backgroundImage: `url(${thumbnail})` }}>
-
+{/* 
           <video
             className="card_video base_video_styles"
             muted
@@ -67,7 +67,7 @@ const ProjectCard = ({
             muted
             className="base_video_styles card_video-shadow"
             src={videoSource + '#t=20'}
-          />
+          /> */}
 
         </div>
 

@@ -7,16 +7,16 @@ const Loading = () => {
 
 
     useEffect(() => {
-        init()
+        counter()
     }, []);
 
     
-    const init = async () => {
-        await counter(() => {
-            const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
-            videoIntro.play();
-        });
-    }
+    // const init = async () => {
+    //     await counter(() => {
+    //         const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
+    //         videoIntro.play();
+    //     });
+    // }
 
 
     return (

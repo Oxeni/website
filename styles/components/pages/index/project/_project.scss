@@ -1,45 +1,52 @@
 .project {
-  position: relative;
-  padding: var(--padding-top) 4vw 0rem 4vw;
-
-  .project_container {
-    width: 96%;
-    display: grid;
-    grid-template-columns: 20% 50% 30%;
     position: relative;
-    z-index: 2;
+    padding: var(--padding-top) 4vw 0rem 4vw;
 
-    .big_projects {
-      margin-right: calc(3rem + 2vw);
+    .project_container {
+        width: 96%;
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        position: relative;
+        z-index: 2;
 
-      .projectCard_video {
-        width: 100%;
-        margin-bottom: calc(1.5rem + 1vw);
-      }
-      .projectCard {
-        &:nth-child(2) {
-          margin-top: calc(6.7rem + 8vw);
+        .big_projects {
+            margin-right: calc(3rem + 2vw);
+
+            .projectCard_video {
+                width: 100%;
+                margin-bottom: calc(1.5rem + 1vw);
+                height: 27rem;
+            }
+            .projectCard {
+                .projectCard_video {
+                    &:nth-child(1) {
+                        transform: translateY(0%) !important;
+                    }
+                }
+            }
+            .projectCard {
+                &:nth-child(2) {
+                    margin-top: calc(10.2rem + 8vw);
+                }
+            }
         }
-      }
-    }
 
-    .small_projects {
-      .projectCard {
-        &:not(:first-child) {
-          margin-top: calc(3.5rem + 1vh);
+        .small_projects {
+            .projectCard {
+                &:not(:first-child) {
+                    margin-top: calc(3.5rem + 1vh);
+                }
+            }
+
+            .projectCard_heading {
+                margin-top: calc(0.8rem + 0.5vw);
+            }
         }
-      }
 
-      .projectCard_heading {
-        margin-top: calc(0.8rem + 0.5vw);
-      }
+        .heading {
+            h1 {
+                transform: rotateZ(270deg) translate(-70%, -25%);
+            }
+        }
     }
-
-    .heading {
-      h1 {
-        transform: rotateZ(270deg) translate(-70%, -25%);
-      }
-    }
-  }
 }
-

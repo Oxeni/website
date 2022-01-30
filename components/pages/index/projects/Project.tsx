@@ -22,7 +22,7 @@ const Project = () => {
             {ProjectCardJson.big_projects.map((props, i) => (
               <ProjectCard
                 key={i}
-                videoSource={props.videoSource}
+                // videoSource={props.videoSource}
                 heading={props.heading}
                 line={props.line}
                 paragraph={props.paragraph}
@@ -36,7 +36,7 @@ const Project = () => {
             {ProjectCardJson.small_projects.map((props, i) => (
               <ProjectCard
                 key={i}
-                videoSource={props.videoSource}
+                // videoSource={props.videoSource}
                 heading={props.heading}
                 line={props.line}
                 thumbnail={props.thumbnail}

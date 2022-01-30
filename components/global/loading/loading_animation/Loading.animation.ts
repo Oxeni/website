@@ -3,12 +3,12 @@ import gsap from "gsap";
 
 
 
-export const counter = (functionOnComplete: () => void): void => {
+export const counter = () =>  {
   const tl = gsap.timeline()
   let time = { start: 0 }
 
   tl.to(time, {
-    duration: 4.5,
+    duration: 4,
     start: 100,
     roundProps: "start",
 
@@ -25,8 +25,8 @@ export const counter = (functionOnComplete: () => void): void => {
       ease: "Expo.easeOut",
       duration: 1.2,
       clipPath: 'polygon(0 0, 100% 0, 100% 0%, 0% 0%)',
-      onComplete: () => {
-        functionOnComplete()
-      }
+    //   onComplete: () => {
+    //     functionOnComplete()
+    //   }
     })
 };
