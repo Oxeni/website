@@ -12,9 +12,9 @@ export const fadeOutFadeIn = (el:string) => {
         }, {
             opacity: 1,
             translateY: 0,
-            stagger:0.3,
+            stagger:0.2,
             delay:6.5,
-            duration: .6,
+            duration: .3,
             ease: "Expo.easeOut",
         });
 };
