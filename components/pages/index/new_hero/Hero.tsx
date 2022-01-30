@@ -8,7 +8,7 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-
+import { baseHeroAnimations } from "components/pages/index/hero/animation/Hero.Animation";
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 // import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
@@ -27,7 +27,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 // COMPONENETS
-// import Button from "components/lib/button/Button"
+import Button from "components/lib/button/Button"
+import { Inbox } from "react-feather";
 // import Loading from '../../../global/Loading/Loading';
 // import Button from "components/lib/button/Button";
 // import { TextureLoader } from "three";
@@ -44,6 +45,7 @@ const Hero = () => {
 
     useEffect(() => {
         init();
+        baseHeroAnimations()
     });
 
 
@@ -52,7 +54,6 @@ const Hero = () => {
 
     const init = () => {
         const canvas = document.querySelector(".hero_landing_canvas") as HTMLElement;
-
 
         const sizes = {
             width: window.innerWidth,
@@ -117,12 +118,6 @@ const Hero = () => {
         const renderPass = new RenderPass(scene, camera);
         renderPass.clear = false
         renderPass.clearAlpha = 0
-
-
-
-
-
-
 
 
 
@@ -259,8 +254,6 @@ const Hero = () => {
                     loader.load(
                         '/glb/hero_test.glb',
                         (gltf) => {
-                            console.log(gltf.scene);
-
                             gltf.scene.traverse((child: THREE.Object3D) => {
                                 if ((child as THREE.Mesh).isMesh) {
                                     (child as THREE.Mesh).material = sceneMatterial;
@@ -270,7 +263,7 @@ const Hero = () => {
 
                                 if (child.name == 'Camera001') {
                                     camera.position.set(
-                                        child.position.x,
+                                        child.position.x + window.innerWidth > 750 ? 0 : 2.1,
                                         child.position.y - 1.5,
                                         child.position.z + 7)
                                 }
@@ -335,9 +328,6 @@ const Hero = () => {
         });
 
 
-
-
-
         //============================ RESIZE
         window.addEventListener("resize", () => {
             sizes.width = window.innerWidth;
@@ -349,6 +339,12 @@ const Hero = () => {
             composer.setSize(sizes.width, sizes.height);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             composer.setSize(window.innerWidth, window.innerHeight);
+
+            if (window.innerWidth < 750) {
+                camera.position.x = 2.1
+            }else{
+                camera.position.x = 0
+            }
         })
 
 
@@ -389,24 +385,48 @@ const Hero = () => {
 
     return (
         <>
-            <div className="hero_landing_main">
-
-                {/* <Loading /> */}
-                <div className="hero_landing_container">
+            <div className="hero">
+                <div className="hero_container">
                     <canvas className="hero_landing_canvas" />
-                    {/* 
-                    <div className="content">
-                        <h1 className="f-size-h2 f-weight-bl animate_UI">
-                            analyze <br />
-                            develop <br />
-                            deliver. <br />
-                        </h1>
-                        <p className="description f-size-p2 f-weight-l animate_UI">
-                            In today’s reality servers and data storage <br />
-                            systems are vitally essential equipment <br />
-                            for any company’s efficient workflow.
-                        </p>
-                    </div> */}
+                    <div className="introduction">
+                        <div className="introduction-container">
+                            <div className="heading">
+                                <h1 className="f-weight-bl f-size-h1">
+                                    Building a better web
+                                </h1>
+                            </div>
+
+                            <div className="line hero_line"></div>
+
+                            <div className="paragraph">
+                                <p className="f-weight-l f-size-p2">
+                                    We at <strong>Oxeni</strong> are dedicated to bringing a new
+                                    era of design to the web. We want our customers to have web
+                                    experiences they can be proud of.
+                                </p>
+                            </div>
+
+                            <div className="contact_btn">
+                                <a href="mailto: hello@oxeni.dev" rel="noopener noreferrer">
+                                    <Button
+                                        className="hero_button"
+                                        color="black"
+                                        size="large"
+                                        width="20rem"
+                                        iconRight={<Inbox color="#80888E" size={28} />}
+
+                                    >
+                                        <p
+                                            className="f-size-p1 f-weight-r primary-white contactUs"
+                                        >
+                                            contact us
+                                        </p>
+                                    </Button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>

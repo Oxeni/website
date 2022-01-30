@@ -4,27 +4,34 @@ import { fixScrollToTop } from 'components/utils/animation/global.animation';
 
 
 export const fadeOutFadeIn = (fadeInElementClassesArray: string[]) => {
-  fadeInElementClassesArray.forEach((className, i) => {
-    gsap.to(className, {
-      opacity: 1,
-      translateY: 0,
-      duration: i < 1 ? (i + .5) * .3 : i * .3,
-      ease: "Expo.easeOut",
+    fadeInElementClassesArray.forEach((className, i) => {
+
+        gsap.fromTo(className, {
+            opacity: 0,
+            translateY: '10%',
+        }, {
+            opacity: 1,
+            translateY: 0,
+            delay:7,
+            duration: .5,
+            ease: "Expo.easeOut",
+        });
     });
-  });
 };
 
 
 
 
-export const baseHeroAnimations = (videoIntro: HTMLVideoElement) => {
-  document.querySelector<HTMLElement>(".navigation").style.opacity = "0";
+export const baseHeroAnimations = () => {
+    document.querySelector<HTMLElement>(".navigation").style.opacity = "0";
 
-  if (window.innerWidth > 1080) {
-    fixScrollToTop(~~videoIntro.duration * 2);
-    return videoIntro.addEventListener("ended", () => {
-      fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
-    });
-  }
-  fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
+    //   if (window.innerWidth > 1080) {
+    //     fixScrollToTop(~~videoIntro.duration * 2);
+    //     return videoIntro.addEventListener("ended", () => {
+    //       fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
+    //     });
+    //   }
+
+    fixScrollToTop(4)
+    fadeOutFadeIn([".heading", ".hero_line", ".paragraph", ".hero_button"]);
 }
