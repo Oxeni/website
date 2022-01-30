@@ -331,7 +331,7 @@ const Hero = () => {
         //============================ RESIZE
         window.addEventListener("resize", () => {
             sizes.width = window.innerWidth;
-            sizes.height = window.innerWidth < 750 ? window.innerHeight * .5 : window.innerHeight;
+            sizes.height = window.innerWidth < 800 ? window.innerHeight * .5 : window.innerHeight;
             camera.aspect = sizes.width / sizes.height;
             camera.updateProjectionMatrix();
 
@@ -340,7 +340,7 @@ const Hero = () => {
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             composer.setSize(window.innerWidth, window.innerHeight);
 
-            if (window.innerWidth < 750) {
+            if (window.innerWidth < 800) {
                 camera.position.x = 2.1
             }else{
                 camera.position.x = 0

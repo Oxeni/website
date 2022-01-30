@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import * as React from 'react';
 
 const Cursor = () => {
+    const [mouse, setMouse] = useState({x:0, y:0});
     const cursor = document.querySelector<HTMLElement>("#cursorEl");
 
     document.addEventListener('mousedown', () => {
@@ -23,6 +24,7 @@ const Cursor = () => {
     }, false)
 
     const followCursor = (e: MouseEvent) => {
+        setMouse({x: e.clientX, y: e.clientY})
         const cursor = document.querySelector<HTMLElement>("#cursorEl");
         const textElementTagsArray = ['P', 'H1', 'H1', 'H2', 'H3', 'H4', 'H6', 'SPAN', 'STRONG', 'I', 'B']
 
@@ -48,6 +50,7 @@ const Cursor = () => {
 
         if (window.innerWidth > 1186) {
             // cursor.style.transform = `translate3d(${e.clientX - 8 + "px"}, ${e.clientY - 10 + "px"}, 0)`;
+            
             gsap.to(cursor, {
                 x: e.clientX,
                 y: e.clientY,
