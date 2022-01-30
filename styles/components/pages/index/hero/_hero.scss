@@ -1,141 +1,94 @@
 .hero {
-  position: relative;
-
-  .hero_container {
-    width: 100%;
-    height: 100vh;
-
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    .introduction {
-      margin: 11.5vw 0 13vw var(--left-margin);
-      z-index: 2;
-
-      .introduction-container {
-        z-index: 1;
-        @include flex(center, initial, column);
-
-
-        .heading,
-        .hero_line,
-        .paragraph,
-        .hero_button {
-          opacity: 0;
-          transform: translateY(-15%);
-        }
-
-        .heading {
-          h1 {
-            color: var(--primary-black);
-            line-height: 121.7%;
-          }
-        }
-
-        .line {
-          width: 35px;
-          height: 3px;
-          background-color: var(--light-black);
-          margin: calc(1rem + .8vw) 0vw;
-        }
-
-        .paragraph {
-          width: 100%;
-          max-width: 39rem;
-
-          p {
-            color: var(--light-black);
-            line-height: 156.2%;
-          }
-        }
-
-        .hero_button {
-          margin-top: calc(2.5rem + 1vw);
-        }
-      }
-    }
-
-    .intro_video {
-      overflow: hidden;
-      z-index: 1;
-
-
-      video {
-        position: absolute;
-        transform: translateX(-50%) translateY(-50%);
-        left: 50%;
-        top: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: 100%;
-        // height: auto;
-        height: 100vh;
-        background-size: cover;
-        outline: none !important;
-        user-select: none;
-        object-fit: cover;
-      }
-    }
-  }
-}
-
-
-
-
-@media only screen and (max-width: $medium-screen) {
-  .hero {
-    background-color: white !important;
 
     .hero_container {
-      display: grid;
-      grid-template-rows: 1fr auto;
-      grid-template-columns: initial !important;
-      height: initial !important;
+        width: 100%;
+        height: 100vh;
 
-      .intro_video {
-        grid-row: 1/2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .introduction {
+            margin: 11.5vw 0 13vw var(--left-margin);
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            top: 0;
+            @media only screen and (max-width: 986px) {
+                position: relative;
+            }
+            .introduction-container {
+                @include flex(center, initial, column);
 
 
-        video {
-          position: relative;
-          width: 80% !important;
-          transform: scale(1.25);
-          min-height: initial !important;
-          min-width: initial !important;
-          height: 100%;
-          top: initial;
-          left: initial;
-          margin-bottom: 4rem;
+                .heading {
+                    width: 100%;
+                    max-width: 40rem;
+                    h1 {
+                        color: var(--primary-black);
+                        line-height: 121.7%;
+                    }
+                }
+
+                .line {
+                    width: 35px;
+                    height: 3px;
+                    background-color: var(--light-black);
+                    margin: calc(1rem + 0.8vw) 0vw;
+                }
+
+                .paragraph {
+                    width: 100%;
+                    max-width: 39rem;
+
+                    p {
+                        color: var(--light-black);
+                        line-height: 156.2%;
+                    }
+                }
+
+                .hero_button {
+                    margin-top: calc(2.5rem + 1vw);
+                }
+            }
         }
-      }
 
-      .introduction {
-        margin: 6vw 6vw 0vw var(--mobile-left-margin);
-
-        .introduction-container {
-          .hero_button {
-            width: 100% !important;
-            padding: 15px 50px !important;
-          }
-        }
-      }
     }
-  }
+}
+
+@media only screen and (max-width: $medium-screen) {
+    .hero {
+        background-color: white !important;
+
+        .hero_container {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            grid-template-columns: initial !important;
+            height: initial !important;
+
+
+            .introduction {
+                margin: 12vw 6vw 0vw 8vw;
+
+                .introduction-container {
+                    .hero_button {
+                        width: 100% !important;
+                        padding: 15px 50px !important;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: $small-screen) {
-  .hero {
-
-    .hero_container {
-
-      .intro_video {
-        height: 100%;
-        overflow: initial !important;
-      }
+    .hero {
+        .hero_container {
+            .intro_video {
+                height: 100%;
+                overflow: initial !important;
+            }
+        }
     }
-  }
 }

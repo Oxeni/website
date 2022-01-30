@@ -5,7 +5,7 @@ import { Inbox } from "react-feather";
 //! ─── OWN ────────────────────────────────────────────────────────────────────────
 //? components 
 import Button from "components/lib/button/Button";
-import { baseHeroAnimations } from "components/pages/index/hero/animation/Hero.Animation";
+// import { baseHeroAnimations } from "components/pages/index/hero/animation/Hero.Animation";
 import { resizeAction } from "components/utils/resize.util";
 
 //? utils
@@ -34,7 +34,7 @@ const Hero = () => {
 
   const init = async () => {
     let heroVideo = document.querySelector('.hero .intro_video video') as HTMLVideoElement
-    baseHeroAnimations(heroVideo)
+    // baseHeroAnimations(heroVideo)
     setVideoAcordingToScreen(heroVideo, 1200, videosAndSizes[videosAndSizes.length - 1].videoUrl)
 
 

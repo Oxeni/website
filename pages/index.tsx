@@ -1,5 +1,6 @@
 // import dynamic from 'next/dynamic';
 // const Projects = dynamic(() => import("components/pages/index/projects/Project"),{ssr:false})
+import { useEffect } from "react";
 
 // import Hero from "components/pages/index/hero/Hero";
 import Hero from "components/pages/index/new_hero/Hero";
@@ -18,9 +19,22 @@ import Services from "components/pages/index/services/service"
 
 const index = () => {
 
+    
+     useEffect(() => {
+        window.addEventListener("load", () => {
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+            window.scrollTo(0, 0)
+        })
+    })
+
+
   return (
     <>
-      {/* <Loading /> */}
+      <Loading />
       <Hero />
       
       <Projects />
