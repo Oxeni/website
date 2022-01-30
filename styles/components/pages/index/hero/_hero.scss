@@ -9,15 +9,21 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
 
+        .hero_landing_canvas {
+            position: absolute;
+            
+            @media only screen and (max-width: 800px) {
+                position: relative;
+            }
+
+        }
+
         .introduction {
             margin: 11.5vw 0 13vw var(--left-margin);
             z-index: 2;
-            position: absolute;
-            left: 0;
-            top: 0;
-            @media only screen and (max-width: 850px) {
-                position: relative;
-            }
+
+
+
             .introduction-container {
                 @include flex(center, initial, column);
 
@@ -81,7 +87,6 @@
 
                 .introduction-container {
                     .hero_button {
-                        width: 60% !important;
                         padding: 15px 50px !important;
                     }
                 }
