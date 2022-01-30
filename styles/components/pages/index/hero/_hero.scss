@@ -15,7 +15,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            @media only screen and (max-width: 986px) {
+            @media only screen and (max-width: 850px) {
                 position: relative;
             }
             .introduction-container {
@@ -25,6 +25,10 @@
                 .heading {
                     width: 100%;
                     max-width: 40rem;
+
+                    @media only screen and (max-width: 1200px) {
+                        max-width: 30rem;
+                    }
                     h1 {
                         color: var(--primary-black);
                         line-height: 121.7%;
@@ -41,6 +45,10 @@
                 .paragraph {
                     width: 100%;
                     max-width: 39rem;
+
+                    @media only screen and (max-width: 1200px) {
+                        max-width: 28rem;
+                    }
 
                     p {
                         color: var(--light-black);
@@ -69,11 +77,11 @@
 
 
             .introduction {
-                margin: 12vw 6vw 0vw 8vw;
+                margin: 12vw 6vw 0vw 6vw;
 
                 .introduction-container {
                     .hero_button {
-                        width: 100% !important;
+                        width: 60% !important;
                         padding: 15px 50px !important;
                     }
                 }
