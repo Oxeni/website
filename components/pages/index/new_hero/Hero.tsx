@@ -388,15 +388,15 @@ const Hero = () => {
                     <canvas className="hero_landing_canvas" />
                     <div className="introduction">
                         <div className="introduction-container">
-                            <div className="heading">
+                            <div className="heading hero_anim">
                                 <h1 className="f-weight-bl f-size-h1">
                                     Building a better web
                                 </h1>
                             </div>
 
-                            <div className="line hero_line"></div>
+                            <div className="line hero_line hero_anim"></div>
 
-                            <div className="paragraph">
+                            <div className="paragraph hero_anim">
                                 <p className="f-weight-l f-size-p2">
                                     We at <strong>Oxeni</strong> are dedicated to bringing a new
                                     era of design to the web. We want our customers to have web
@@ -404,7 +404,7 @@ const Hero = () => {
                                 </p>
                             </div>
 
-                            <div className="contact_btn">
+                            <div className="contact_btn hero_anim">
                                 <a href="mailto: hello@oxeni.dev" rel="noopener noreferrer">
                                     <Button
                                         className="hero_button"
@@ -415,7 +415,7 @@ const Hero = () => {
 
                                     >
                                         <p
-                                            className="f-size-p1 f-weight-r primary-white contactUs"
+                                            className="f-size-p2 f-weight-r primary-white contactUs"
                                         >
                                             contact us
                                         </p>

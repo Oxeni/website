@@ -53,7 +53,7 @@ const Hero = () => {
         <div className="hero_container">
           <div className="introduction">
             <div className="introduction-container">
-              <div className="heading">
+              <div className="heading hero_anim">
                 <h1 className="f-weight-bl f-size-h1">
                      Building a better web
                 </h1>
