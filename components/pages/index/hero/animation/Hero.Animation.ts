@@ -4,7 +4,7 @@ import { fixScrollToTop } from 'components/utils/animation/global.animation';
 
 
 export const fadeOutFadeIn = (fadeInElementClassesArray: string[]) => {
-    fadeInElementClassesArray.forEach((className, i) => {
+    fadeInElementClassesArray.forEach((className, _) => {
 
         gsap.fromTo(className, {
             opacity: 0,
