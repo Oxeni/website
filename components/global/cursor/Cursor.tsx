@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import gsap from 'gsap';
 import * as React from 'react';
 
@@ -12,7 +12,7 @@ const Cursor = () => {
             ease: 'power1.out'
         })
         console.log('asdas');
-        
+
     }, false)
     document.addEventListener('mouseup', () => {
         gsap.to(cursor, {
@@ -48,7 +48,7 @@ const Cursor = () => {
 
         if (window.innerWidth > 1186) {
             // cursor.style.transform = `translate3d(${e.clientX - 8 + "px"}, ${e.clientY - 10 + "px"}, 0)`;
-            
+
             gsap.to(cursor, {
                 x: e.clientX,
                 y: e.clientY,
