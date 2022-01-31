@@ -274,10 +274,11 @@ const Hero = () => {
 
                                     const videoTextureEl = document.createElement('video')
                                     videoTextureEl.muted = true
+                                    videoTextureEl.loop = true
                                     videoTextureEl.controls = true
                                     videoTextureEl.playsInline = true
                                     videoTextureEl.autoplay = true
-                                    videoTextureEl.src = '/textures/hero.mp4'
+                                    videoTextureEl.src = '/textures/hero_2.mp4'
                                     videoTextureEl.play()
 
 
