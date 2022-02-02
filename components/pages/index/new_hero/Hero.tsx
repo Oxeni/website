@@ -29,6 +29,7 @@ gsap.registerPlugin(ScrollTrigger)
 // COMPONENETS
 import Button from "components/lib/button/Button"
 import { Inbox } from "react-feather";
+// import Loading from "components/global/loading/Loading";
 // import Loading from '../../../global/Loading/Loading';
 // import Button from "components/lib/button/Button";
 // import { TextureLoader } from "three";
@@ -40,6 +41,7 @@ import { Inbox } from "react-feather";
 const Hero = () => {
     let water: any
     let _leptop: THREE.Group
+    const [isLoaded, setIsLoaded] = useState(false)
     const [cursor,] = useState({ x: 0, y: 0 })
 
 
@@ -228,7 +230,7 @@ const Hero = () => {
                             ease: 'none'
                         })
 
-                    })
+                    }).dispose()
 
 
 
@@ -318,15 +320,19 @@ const Hero = () => {
                             gltf.scene.receiveShadow = true;
                             gltf.scene.position.set(0, 0, 0);
                             scene.add(gltf.scene);
+                            
                         },
                     );
+
+
                 })
-            })
-        }, function () {
-            console.log('onProgress');
+            }).dispose()
+        }, function (xhr) {
+            const percentComplete = xhr.loaded / xhr.total * 100;
+            console.log('model ' + Math.round(percentComplete) + '% downloaded');
         }, function (e) {
             console.error(e);
-        });
+        }).dispose();
 
 
         //============================ RESIZE
@@ -343,12 +349,10 @@ const Hero = () => {
 
             if (window.innerWidth < 800) {
                 camera.position.x = 2.1
-            }else{
+            } else {
                 camera.position.x = 0
             }
         })
-
-
 
 
         //============================  MOUSEMOVE EVENT
@@ -386,6 +390,8 @@ const Hero = () => {
 
     return (
         <>
+        {/* <Loading />  */}
+
             <div className="hero">
                 <div className="hero_container">
                     <canvas className="hero_landing_canvas" />

@@ -14,7 +14,7 @@
 
 @media only screen and (max-width: $medium-screen) {
   .project {
-    padding: 8rem 6vw !important;
+    padding: 20rem 6vw;
 
     .project_container {
       width: 100% !important;
@@ -43,6 +43,7 @@
 
 @media only screen and (max-width: $small-screen) {
   .project {
+    padding: 8rem 6vw !important;
     .project_container {
       width: 100% !important;
       grid-template-rows: repeat(6, auto) !important;

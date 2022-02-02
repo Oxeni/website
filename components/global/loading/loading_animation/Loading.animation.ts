@@ -8,7 +8,7 @@ export const counter = () =>  {
   let time = { start: 0 }
 
   tl.to(time, {
-    duration: 3.5,
+    duration: 4.5,
     start: 100,
     roundProps: "start",
 

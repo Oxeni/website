@@ -83,7 +83,7 @@
 
 
             .introduction {
-                margin: 12vw 6vw 0vw 6vw;
+                margin: 23vw 6vw 0vw 6vw;
 
                 .introduction-container {
                     .hero_button {
@@ -98,9 +98,9 @@
 @media only screen and (max-width: $small-screen) {
     .hero {
         .hero_container {
-            .intro_video {
-                height: 100%;
-                overflow: initial !important;
+
+            .introduction {
+                margin: 8vw 6vw 0vw 5vw;
             }
         }
     }
