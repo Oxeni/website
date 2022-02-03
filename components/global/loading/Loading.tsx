@@ -13,8 +13,8 @@ const Loading = () => {
             counter(4.5)
             setDuration(4.5)
         } else {
-            counter(10)
-            setDuration(10)
+            counter(15)
+            setDuration(15)
         }
 
     });
