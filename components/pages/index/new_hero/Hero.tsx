@@ -41,9 +41,7 @@ import { Inbox } from "react-feather";
 const Hero = () => {
     let water: any
     let _leptop: THREE.Group
-    const [isLoaded, setIsLoaded] = useState(false)
     const [cursor,] = useState({ x: 0, y: 0 })
-
 
     useEffect(() => {
         init();
@@ -330,6 +328,9 @@ const Hero = () => {
         }, function (xhr) {
             const percentComplete = xhr.loaded / xhr.total * 100;
             console.log('model ' + Math.round(percentComplete) + '% downloaded');
+            
+            localStorage.setItem('time',`${percentComplete}`)
+            
         }, function (e) {
             console.error(e);
         }).dispose();

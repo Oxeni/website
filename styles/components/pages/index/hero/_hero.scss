@@ -11,22 +11,23 @@
 
         .hero_landing_canvas {
             position: absolute;
-            
+
             @media only screen and (max-width: 800px) {
                 position: relative;
             }
-
         }
 
         .introduction {
             margin: 11.5vw 0 13vw var(--left-margin);
             z-index: 2;
 
-
-
             .introduction-container {
                 @include flex(center, initial, column);
 
+                .contact_btn,.heading,.line,.paragraph {
+                    opacity: 0;
+                    transform: translateY(20%);
+                }
 
                 .heading {
                     width: 100%;
@@ -61,13 +62,12 @@
                         line-height: 156.2%;
                     }
                 }
-
+                
                 .hero_button {
                     margin-top: calc(2.5rem + 1vw);
                 }
             }
         }
-
     }
 }
 
@@ -80,7 +80,6 @@
             grid-template-rows: 1fr auto;
             grid-template-columns: initial !important;
             height: initial !important;
-
 
             .introduction {
                 margin: 23vw 6vw 0vw 6vw;
@@ -98,7 +97,6 @@
 @media only screen and (max-width: $small-screen) {
     .hero {
         .hero_container {
-
             .introduction {
                 margin: 8vw 6vw 0vw 5vw;
             }

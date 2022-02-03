@@ -6,10 +6,7 @@ import { fixScrollToTop } from 'components/utils/animation/global.animation';
 export const fadeOutFadeIn = (el:string) => {
     const hero_anim = document.querySelectorAll(el)
 
-        gsap.fromTo(hero_anim, {
-            opacity: 0,
-            translateY: '20%',
-        }, {
+        gsap.to(hero_anim, {
             opacity: 1,
             translateY: 0,
             stagger:0.2,
