@@ -42,7 +42,7 @@ const index = () => {
 
     return (
         <>
-            {isLoaded && <Loading />}
+            <Loading />
 
 
             <Hero />
