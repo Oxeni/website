@@ -1,6 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect,memo } from 'react';
 import gsap from 'gsap';
 import * as React from 'react';
+
+
 
 const Cursor = () => {
     const cursor = document.querySelector<HTMLElement>("#cursorEl");
@@ -48,7 +50,7 @@ const Cursor = () => {
         }
 
 
-        if (window.innerWidth > 1186) {
+        if (window.innerWidth > 800) {
             // cursor.style.transform = `translate3d(${e.clientX - 8 + "px"}, ${e.clientY - 10 + "px"}, 0)`;
 
             gsap.to(cursor, {
@@ -80,4 +82,4 @@ const Cursor = () => {
     );
 };
 
-export default Cursor;
+export default memo(Cursor);

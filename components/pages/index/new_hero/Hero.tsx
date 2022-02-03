@@ -43,6 +43,7 @@ const Hero = () => {
     let _leptop: THREE.Group
     const [cursor,] = useState({ x: 0, y: 0 })
 
+
     useEffect(() => {
         init();
         baseHeroAnimations()
@@ -318,7 +319,7 @@ const Hero = () => {
                             gltf.scene.receiveShadow = true;
                             gltf.scene.position.set(0, 0, 0);
                             scene.add(gltf.scene);
-                            
+
                         },
                     );
 
@@ -328,13 +329,17 @@ const Hero = () => {
         }, function (xhr) {
             const percentComplete = xhr.loaded / xhr.total * 100;
             console.log('model ' + Math.round(percentComplete) + '% downloaded');
-            
-            localStorage.setItem('time',`${percentComplete}`)
-            
+
+
         }, function (e) {
             console.error(e);
         }).dispose();
+ 
 
+        THREE.DefaultLoadingManager.onLoad = function () {
+            localStorage.setItem('state','true')
+        };
+      
 
         //============================ RESIZE
         window.addEventListener("resize", () => {
@@ -391,7 +396,7 @@ const Hero = () => {
 
     return (
         <>
-        {/* <Loading />  */}
+            {/* <Loading />  */}
 
             <div className="hero">
                 <div className="hero_container">

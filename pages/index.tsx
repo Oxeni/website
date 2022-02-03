@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 
 
@@ -16,37 +16,18 @@ import { smoothScroll } from "components/utils/smoothScroll.utils";
 
 
 const index = () => {
-    const [isLoaded, setIsLoaded] = useState(false)
-
-    const controlLoading = (time: number) => {
-        if (time == 100) {
-            setIsLoaded(true)
-        } else {
-            setIsLoaded(false)
-        }
-
-    }
-
-
     useEffect(() => {
         window.addEventListener("load", () => {
             smoothScroll()
         })
-        let storedTime = localStorage.getItem('time')
-        // console.log(typeof (+storedTime));
-        controlLoading(+storedTime)
-        // console.log(isLoaded);
-
-    }, [isLoaded])
+    }, [])
 
 
     return (
         <>
+
             <Loading />
-
-
             <Hero />
-
             <Projects />
             <Other_works />
             <Services />

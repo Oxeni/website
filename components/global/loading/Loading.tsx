@@ -1,22 +1,23 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { counter } from "./loading_animation/Loading.animation"
 
 const Loading = () => {
+    const [duration, setDuration] = useState(0)
     const path = 'M410.426 206.07C410.426 318.801 319.04 410.187 206.309 410.187C93.5777 410.187 2.19116 318.801 2.19116 206.07C2.19116 93.3386 93.5777 1.95209 206.309 1.95209C319.04 1.95209 410.426  93.3386  410.426  206.07Z'
 
 
-
     useEffect(() => {
-        counter()
-    }, []);
+        let loadingState = localStorage.getItem('state')
 
-    
-    // const init = async () => {
-    //     await counter(() => {
-    //         const videoIntro = document.getElementById("videoIntro") as HTMLVideoElement;
-    //         videoIntro.play();
-    //     });
-    // }
+        if (loadingState) {
+            counter(4.5)
+            setDuration(4.5)
+        } else {
+            counter(10)
+            setDuration(10)
+        }
+
+    });
 
 
     return (
@@ -39,6 +40,27 @@ const Loading = () => {
                     </div>
                 </div>
             </div>
+
+
+            <style jsx>
+                {`
+                @keyframes animatePath {
+                    0% {
+                        background-position: 1300;
+                    }
+      
+                    100% {
+                        stroke-dashoffset: 0;
+                    }
+                }
+
+                .loading-screen_container .loading_circle path  {
+                    stroke-dashoffset: 1300;
+                    stroke-dasharray: 1300;
+                    animation: animatePath ${duration}s ease-in forwards;
+                }
+                `}
+            </style>
         </>
     )
 }

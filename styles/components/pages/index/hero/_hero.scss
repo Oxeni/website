@@ -1,3 +1,7 @@
+.display {
+    display: none;
+}
+
 .hero {
     position: relative;
 
@@ -54,7 +58,7 @@
                     max-width: 29rem;
 
                     @media only screen and (max-width: 1200px) {
-                        max-width: 28rem;
+                        max-width: 23rem;
                     }
 
                     p {
