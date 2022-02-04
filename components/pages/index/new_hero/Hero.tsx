@@ -322,8 +322,6 @@ const Hero = () => {
 
                         },
                     );
-
-
                 })
             }).dispose()
         }, function (xhr) {
@@ -336,8 +334,8 @@ const Hero = () => {
         }).dispose();
  
 
-        THREE.DefaultLoadingManager.onLoad = function () {
-            localStorage.setItem('state','true')
+        THREE.DefaultLoadingManager.onLoad = () => {
+            localStorage.setItem('state','true');
         };
       
 

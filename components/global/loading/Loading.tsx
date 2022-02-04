@@ -9,13 +9,29 @@ const Loading = () => {
     useEffect(() => {
         let loadingState = localStorage.getItem('state')
 
-        if (loadingState) {
-            counter(4.5)
-            setDuration(4.5)
-        } else {
-            counter(15)
-            setDuration(15)
-        }
+        // while (JSON.parse(localStorage.state)) {
+        //     counter(0.5)
+        //     setDuration(0.5)
+        //     continue
+        // }
+
+        const checkIfLoaded = setInterval(() => {
+            if (JSON.parse(localStorage.state)) {
+                counter(0.5)
+                setDuration(0.5)
+                console.log(JSON.parse(localStorage.state));
+                console.log('loaded');
+                clearInterval(checkIfLoaded)
+            }
+        }, 500)
+
+        // if (loadingState) {
+        //     counter(4.5)
+        //     setDuration(4.5)
+        // } else {
+        //     counter(15)
+        //     setDuration(15)
+        // }
 
     });
 
