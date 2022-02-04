@@ -7,13 +7,6 @@ const Loading = () => {
 
 
     useEffect(() => {
-        let loadingState = localStorage.getItem('state')
-
-        // while (JSON.parse(localStorage.state)) {
-        //     counter(0.5)
-        //     setDuration(0.5)
-        //     continue
-        // }
 
         const checkIfLoaded = setInterval(() => {
             if (JSON.parse(localStorage.state)) {
@@ -24,7 +17,6 @@ const Loading = () => {
                 clearInterval(checkIfLoaded)
             }
         }, 500)
-
         // if (loadingState) {
         //     counter(4.5)
         //     setDuration(4.5)
@@ -32,7 +24,6 @@ const Loading = () => {
         //     counter(15)
         //     setDuration(15)
         // }
-
     });
 
 
