@@ -6,11 +6,14 @@ const Loading = () => {
 
     useEffect(() => {
 
-        if (JSON.parse(localStorage.state)) {
-            counter(5)
-        } else {
-            counter(12)
-        }
+        const checkIfLoaded = setInterval(() => {
+            if (JSON.parse(localStorage.state) ) {
+                counter(5)
+            }else {
+                counter(12)
+            }
+            clearInterval(checkIfLoaded)
+        }, 500)
     });
 
 
@@ -36,7 +39,7 @@ const Loading = () => {
             </div>
 
 
-
+           
         </>
     )
 }
