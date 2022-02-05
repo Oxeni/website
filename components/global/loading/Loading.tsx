@@ -11,7 +11,7 @@ const Loading = () => {
                 counter(5)
             }else {
                 if(window.innerWidth > 1100) {
-                    counter(11)
+                    counter(12)
                 }else {
                     counter(16)
                 }
