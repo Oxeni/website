@@ -10,7 +10,7 @@ const Loading = () => {
             if (JSON.parse(localStorage.state) ) {
                 counter(5)
             }else {
-                counter(12)
+                counter(15)
             }
             clearInterval(checkIfLoaded)
         }, 500)
