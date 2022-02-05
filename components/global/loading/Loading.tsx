@@ -8,9 +8,9 @@ const Loading = () => {
 
         const checkIfLoaded = setInterval(() => {
             if (JSON.parse(localStorage.state) && window.innerWidth > 800) {
-                counter(3)
-            }else {
                 counter(4)
+            }else {
+                counter(6)
             }
             console.log("loaded");
             
