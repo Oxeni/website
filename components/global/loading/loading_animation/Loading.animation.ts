@@ -11,7 +11,7 @@ export const counter = (duration:number) =>  {
     duration: duration,
     start: 100,
     roundProps: "start",
-    ease:"circ.inOut",
+    ease:"circ.in",
 
     onUpdate: () => {
       document.getElementById("counter")!.innerHTML = `${time.start}`;

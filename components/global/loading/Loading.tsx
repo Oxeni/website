@@ -7,10 +7,8 @@ const Loading = () => {
     useEffect(() => {
 
         const checkIfLoaded = setInterval(() => {
-            if (JSON.parse(localStorage.state) && window.innerWidth > 800) {
-                counter(5)
-            }else {
-                counter(7)
+            if (JSON.parse(localStorage.state) ) {
+                counter(8)
             }
             clearInterval(checkIfLoaded)
         }, 500)
