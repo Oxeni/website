@@ -282,7 +282,7 @@ const Hero = () => {
                                     videoTextureEl.src = '/textures/hero_2.mp4'
                                     setTimeout(function() {
                                         videoTextureEl.play()
-                                    }, 7000);
+                                    }, 6000);
                                     
 
 
