@@ -1,7 +1,7 @@
 import gsap from "gsap";
+import CustomEase from "gsap/dist/CustomEase"
 
-
-
+gsap.registerPlugin(CustomEase)
 
 export const counter = (duration:number) =>  {
   const tl = gsap.timeline()
@@ -11,6 +11,7 @@ export const counter = (duration:number) =>  {
     duration: duration,
     start: 100,
     roundProps: "start",
+    ease:"circ.inOut",
 
     onUpdate: () => {
       document.getElementById("counter")!.innerHTML = `${time.start}`;

@@ -280,7 +280,10 @@ const Hero = () => {
                                     videoTextureEl.playsInline = true
                                     videoTextureEl.autoplay = true
                                     videoTextureEl.src = '/textures/hero_2.mp4'
-                                    videoTextureEl.play()
+                                    setTimeout(function() {
+                                        videoTextureEl.play()
+                                    }, 3500);
+                                    
 
 
                                     const videoTexture = new THREE.VideoTexture(videoTextureEl as HTMLVideoElement)
