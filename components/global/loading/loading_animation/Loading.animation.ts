@@ -22,7 +22,7 @@ export const counter = (duration:number) =>  {
     .to('.loading-screen',{
       delay: .5,
       ease: "Expo.easeOut",
-      duration: 1.2,
+      duration: 1,
       clipPath: 'polygon(0 0, 100% 0, 100% 0%, 0% 0%)',
     //   onComplete: () => {
     //     functionOnComplete()
