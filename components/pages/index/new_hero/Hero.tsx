@@ -157,7 +157,7 @@ const Hero = () => {
             ktx2Loader.load('/textures/scene.ktx2', async (colorTexture) => {
                 new RGBELoader().setPath("/hdr_textures/").load("main.hdr", (hdrmap: any) => {
                     let envmap = envmapLoader.fromCubemap(hdrmap)
-
+                    
                     colorTexture.flipY = false
                     colorTexture.encoding = THREE.sRGBEncoding
 
@@ -322,6 +322,7 @@ const Hero = () => {
                             gltf.scene.receiveShadow = true;
                             gltf.scene.position.set(0, 0, 0);
                             scene.add(gltf.scene);
+                            (window as any).isLoaded = true
 
                         },
                     );

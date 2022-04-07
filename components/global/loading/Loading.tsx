@@ -5,19 +5,14 @@ const Loading = () => {
     const path = 'M410.426 206.07C410.426 318.801 319.04 410.187 206.309 410.187C93.5777 410.187 2.19116 318.801 2.19116 206.07C2.19116 93.3386 93.5777 1.95209 206.309 1.95209C319.04 1.95209 410.426  93.3386  410.426  206.07Z'
 
     useEffect(() => {
-
-        const checkIfLoaded = setInterval(() => {
-            if (JSON.parse(localStorage.state)) {
-                counter(5)
-            }else {
-                if(window.innerWidth > 1100) {
-                    counter(12)
-                }else {
-                    counter(16)
-                }
+        (window as any).isLoaded = false
+        
+        const interval = setInterval(() => {
+            if ((window as any).isLoaded == true) {
+                counter()
+                clearInterval(interval);
             }
-            clearInterval(checkIfLoaded)
-        }, 500)
+        }, 500);
     });
 
 
