@@ -32,7 +32,9 @@ const Loading = () => {
 
                     </svg>
                     <div className="loading_poligon">
-                        <h1 className="f-weight-bo f-size-h1" id="counter"></h1>
+                        <h1 className="f-weight-bo f-size-h1" id="counter">
+                            <p className="f-size-p1 f-weight-bo">loading</p>
+                        </h1>
                     </div>
                 </div>
             </div>
