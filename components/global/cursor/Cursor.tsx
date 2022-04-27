@@ -13,8 +13,6 @@ const Cursor = () => {
             duration: .1,
             ease: 'power1.out'
         })
-        console.log('asdas');
-
     }, false)
     document.addEventListener('mouseup', () => {
         gsap.to(cursor, {

@@ -56,7 +56,9 @@ const ProjectCard = ({
         onClick={() => window.open(link, '_blank')}
         {...props}>
         <div className="projectCard_video scrollAnim"
-          style={{ backgroundImage: `url(${thumbnail})` }}>
+        //   style={{ backgroundImage: `url(${thumbnail})` }}
+          >
+              <img src={thumbnail} alt="pic" />
 {/* 
           <video
             className="card_video base_video_styles"
