@@ -17,9 +17,7 @@
             background-size: contain !important;
         }
 
-        @media only screen and (max-width: 750px) {
-            margin-bottom: 3rem;
-        }
+       
 
         .base_video_styles {
             width: 100%;
@@ -69,7 +67,7 @@
     .small_projects {
         .projectCard {
             .projectCard_video {
-                @include background-properties("/pictures/thumbnails/idep.png");
+                // @include background-properties("/pictures/thumbnails/idep.png");
                 height: calc(10rem + 20vh);
                 width: 100%;
 
