@@ -14,7 +14,7 @@ const Navigation = () => {
             </Link>
 
             <div className="navigation_links">
-
+{/* 
 
                 <Link href='/blog'>
                     <div className="link">
@@ -26,7 +26,7 @@ const Navigation = () => {
                             <p className='f-size-p3 f-weight-r'> blog </p>
                         </Button>
                     </div>
-                </Link>
+                </Link> */}
             </div>
         </nav>
     );
