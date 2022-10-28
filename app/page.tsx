@@ -9,8 +9,8 @@ import Services from "components/pages/index/services/service";
 
 const Index = () => (
     <>
-        {/* <Loading /> */}
-        {/* <Hero /> */}
+        <Loading />
+        <Hero />
         <Projects />
         <Other_works />
         <Services />
