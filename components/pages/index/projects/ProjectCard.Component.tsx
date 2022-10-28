@@ -1,6 +1,6 @@
-import { HTMLProps,  useEffect } from "react";
+import { HTMLProps, useEffect } from "react";
 import { useRef } from "react";
-import Link from "next/link"
+import Link from "next/link";
 
 import { GlobalScrollElemAnim } from "components/utils/animation/global.animation";
 // import { hoverHandler } from "./project.utils";
@@ -29,19 +29,19 @@ const ProjectCard = ({
   ...props
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
   const cardContainer = useRef<HTMLDivElement>(null);
-//   const [hovered, setHovered] = useState<boolean>();
+  //   const [hovered, setHovered] = useState<boolean>();
 
 
 
   useEffect(() => {
-    GlobalScrollElemAnim(".scrollAnim")
-  }, [])
+    GlobalScrollElemAnim(".scrollAnim");
+  }, []);
 
 
 
-//   useEffect(() => {
-//     hoverHandler(cardContainer, hovered)
-//   }, [hovered]);
+  //   useEffect(() => {
+  //     hoverHandler(cardContainer, hovered)
+  //   }, [hovered]);
 
 
 
@@ -57,9 +57,9 @@ const ProjectCard = ({
         {...props}>
         <div className="projectCard_video scrollAnim"
         //   style={{ backgroundImage: `url(${thumbnail})` }}
-          >
-              <img src={thumbnail} alt="pic" />
-{/* 
+        >
+          <img src={thumbnail} alt="pic" />
+          {/* 
           <video
             className="card_video base_video_styles"
             muted
@@ -70,7 +70,6 @@ const ProjectCard = ({
             className="base_video_styles card_video-shadow"
             src={videoSource + '#t=20'}
           /> */}
-
         </div>
 
         <div className="projectCard_heading">

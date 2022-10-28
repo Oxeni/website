@@ -1,8 +1,9 @@
+"use client"
+
+
 import Gradients from "components/lib/gradients/Gradients";
 import ProjectCardJson from "components/pages/index/projects/ProjectCard.json";
-// import ProjectCard from "./ProjectCard.Component";
-import dynamic from "next/dynamic";
-const ProjectCard = dynamic(() => import('./ProjectCard.Component'), { ssr: false })
+import ProjectCard from "./ProjectCard.Component";
 
 
 

@@ -82,7 +82,7 @@ const Button: FC<buttonInterface> = ({
           }
 
           .icon {
-            margin-right: calc(1rem + .5vw);
+            margin-right: ${size==='small' ? ".5vw" : "calc(1rem + .5vw)"};
           }
 
           .iconRight {

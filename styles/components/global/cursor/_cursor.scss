@@ -5,6 +5,7 @@
   user-select: none;
   pointer-events: none;
 }
+
 .cursor_container {
   position: fixed;
   width: 100vw;
@@ -15,7 +16,7 @@
 }
 
 .cursor_black {
-    background-color: var(--primary-black) !important;
+  background-color: var(--primary-black) !important;
 }
 
 .cursor {
@@ -29,13 +30,14 @@
   transform: translate(-50%, -50%);
   border: 0.5px solid #ffffff;
   box-sizing: border-box;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06),
     0px 12px 18px rgba(0, 0, 0, 0.17),
     inset 0px 2px 5px rgba(0, 0, 0, 0.09);
-    left: 0%;
+  left: 0%;
 }
+
 @media only screen and (max-width: $small-screen) {
-    .cursor {
-        display: none !important;
-    }
+  .cursor {
+    display: none !important;
+  }
 }

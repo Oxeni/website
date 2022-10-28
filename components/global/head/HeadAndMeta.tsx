@@ -8,7 +8,7 @@ type HeadAndMetaTypes = {
     ogTitle: string,
     ogDescription: string,
     ogImagePath: string,
-}
+};
 
 const HeadAndMeta = ({
     title,
@@ -17,16 +17,14 @@ const HeadAndMeta = ({
     baseUrl,
     ogTitle,
     ogDescription,
-    ogImagePath 
-    }: HeadAndMetaTypes) => {
+    ogImagePath
+}: HeadAndMetaTypes) => {
+
     return (
         <>
-
-            <Head>
+            <head>
                 <title>{title}</title>
                 <link rel="shortcut icon" href={favIconImagePath} />
-            </Head>
-            <Head>
                 <meta name="title" content={title} />
                 <meta name="description" content={description} />
                 <meta property="og:type" content="website" />
@@ -51,10 +49,9 @@ const HeadAndMeta = ({
                 minimum-scale=1.0, maximum-scale=1.0, 
                 user-scalable=no, target-densitydpi=device-dpi">
                 </meta>
-            </Head>
-
+            </head>
         </>
-    )
-}
+    );
+};
 
 export default HeadAndMeta;
