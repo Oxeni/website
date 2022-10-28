@@ -30,7 +30,7 @@ export const sizeStyles = {
         fontSizeClass: 'f-size-p3'
     },
     small: {
-        padding: '18px 15px',
+        padding: '10px 15px',
         fontSizeClass: 'f-size-p4'
     }
 }

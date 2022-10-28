@@ -1,3 +1,6 @@
+"use client"
+
+
 import { useEffect, useState } from "react";
 import * as THREE from "three";
 
@@ -229,7 +232,7 @@ const Hero = () => {
                             ease: 'none'
                         })
 
-                    }).dispose()
+                    })?.dispose()
 
 
 
@@ -327,15 +330,13 @@ const Hero = () => {
                         },
                     );
                 })
-            }).dispose()
+            })?.dispose()
         }, function (xhr) {
             const percentComplete = xhr.loaded / xhr.total * 100;
             console.log('model ' + Math.round(percentComplete) + '% downloaded');
-
-
         }, function (e) {
             console.error(e);
-        }).dispose();
+        })?.dispose();
  
 
         THREE.DefaultLoadingManager.onLoad = () => {
@@ -429,7 +430,6 @@ const Hero = () => {
                                         size="large"
                                         width="20rem"
                                         iconRight={<Inbox color="#80888E" size={28} />}
-
                                     >
                                         <p
                                             className="f-size-p2 f-weight-r primary-white contactUs"

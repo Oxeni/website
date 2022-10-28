@@ -36,7 +36,7 @@ html {
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased !important;
     font-weight: 400;
-
+    background-color: var(--primary-white);
 }
 
 body {
@@ -79,6 +79,7 @@ body {
 
 a {
     text-decoration: none !important;
+    color: var(--primary-black);
 }
 
 ul[class],

@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect,memo } from 'react';
 import gsap from 'gsap';
 import * as React from 'react';
@@ -5,23 +7,26 @@ import * as React from 'react';
 
 
 const Cursor = () => {
-    const cursor = document.querySelector<HTMLElement>("#cursorEl");
+    useEffect(() => {
+        const cursor = document.querySelector<HTMLElement>("#cursorEl");
 
-    document.addEventListener('mousedown', () => {
-        gsap.to(cursor, {
-            scale: 0.5,
-            duration: .1,
-            ease: 'power1.out'
-        })
-    }, false)
-    document.addEventListener('mouseup', () => {
-        gsap.to(cursor, {
-            scale: 1,
-            duration: .1,
-            ease: 'power1.out'
-        })
-    }, false)
-
+        document.addEventListener('mousedown', () => {
+            gsap.to(cursor, {
+                scale: 0.5,
+                duration: .05,
+                ease: 'power1.out'
+            })
+        }, false)
+        document.addEventListener('mouseup', () => {
+            gsap.to(cursor, {
+                scale: 1,
+                duration: .05,
+                ease: 'power1.out'
+            })
+        }, false)
+    
+    }, [])
+    
 
     
     const followCursor = (e: MouseEvent) => {
@@ -52,14 +57,16 @@ const Cursor = () => {
             // cursor.style.transform = `translate3d(${e.clientX - 8 + "px"}, ${e.clientY - 10 + "px"}, 0)`;
 
             gsap.to(cursor, {
-                x: e.clientX,
-                y: e.clientY,
+                x: e.clientX - 15,
+                y: e.clientY + 5,
                 ease: 'power1.out'
             })
         } else {
-            cursor.style.display = "none";
+            cursor!.style.display = "none";
         }
     };
+
+
 
 
     useEffect(() => {
@@ -68,7 +75,7 @@ const Cursor = () => {
         })
 
         navigator.userAgent.search("Firefox") > -1 &&
-            document.querySelector("#cursorEl").classList.add("cursor_black")
+            document.querySelector("#cursorEl")!.classList.add("cursor_black")
     }, []);
 
     return (

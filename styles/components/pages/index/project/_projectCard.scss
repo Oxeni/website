@@ -1,6 +1,11 @@
 .projectCard {
     width: 100%;
 
+    a{
+        text-decoration: none;
+        color: var(--black)
+    }
+
     .projectCard_video {
         // background-image:none;
         // display: block;
