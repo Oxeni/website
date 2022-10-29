@@ -1,4 +1,4 @@
-import fs from "fs/promises";
+import fs from "fs";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import MdxWrapper from 'components/blog/mdxWrapper';
@@ -6,34 +6,36 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrism from 'rehype-prism-plus';
 import "./syntax-hightlight.css";
+import path from "path";
 
 
 
 
 const getMarkdownFile = async (fileName: string) => {
     try {
-        const promises = new Promise(async (resolve) => {
-            const rawMarkdownFile = await fs.readFile("posts/" + fileName + ".mdx", "utf8");
-            const { content, data } = matter(rawMarkdownFile);
+        const postPath = path.join(process.cwd(), "posts/");
+        const rawMarkdownFile = fs.readFileSync(path.join(postPath + fileName + ".mdx"), "utf8");
+        const { content, data } = matter(rawMarkdownFile);
 
-            const compiledSource = await serialize(content, {
-                mdxOptions: {
-                    rehypePlugins: [
-                        rehypeSlug,
-                        [rehypeAutolinkHeadings, {
-                            behavior: 'wrap'
-                        }],
-                        rehypePrism
-                    ]
-                }
-            });
-            resolve({ undefined, compiledSource, data });
+        const compiledSource = await serialize(content, {
+            mdxOptions: {
+                rehypePlugins: [
+                    rehypeSlug,
+                    [rehypeAutolinkHeadings, {
+                        behavior: 'wrap'
+                    }],
+                    rehypePrism
+                ]
+            }
         });
-        return Promise.resolve(promises);
+        return { undefined, compiledSource, data };
     } catch (err) {
         return { err, compiledSource: undefined, data: undefined };
     }
 };
+
+
+
 
 //@ts-ignore
 const Page = async ({ params }: any) => {
