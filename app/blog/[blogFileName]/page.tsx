@@ -27,24 +27,32 @@ const getMarkdownFile = async (fileName: string) => {
             }
         });
 
-        Promise.resolve(compiledSource)
-        return { compiledSource, data };
+        Promise.resolve(compiledSource);
+        return { undefined, compiledSource, data };
     } catch (err) {
-        return "error accoured";
+        return { err, compiledSource: undefined, data: undefined };
     }
 };
 
 //@ts-ignore
 const BlogPage = async ({ params }: any) => {
-    const { compiledSource, data }: any = await getMarkdownFile(params.blogFileName);
+    const { error, compiledSource, data }: any = await getMarkdownFile(params.blogFileName);
 
     return (
         <div>
-            <h1 className="f-size-h1 f-weight-bl">
-                {/* {data?.title} */}
-                title
-            </h1>
-            <MdxWrapper compiledSource={compiledSource} />
+            {!error ?
+                (
+                    <>
+                        <h1 className="f-size-h1 f-weight-bl">
+                            title
+                        </h1>
+                        <MdxWrapper compiledSource={compiledSource} />
+                    </>
+                ) : (
+                    <pre>
+                        {JSON.stringify(error, null, 4)}
+                    </pre>
+                )}
         </div>
     );
 };
