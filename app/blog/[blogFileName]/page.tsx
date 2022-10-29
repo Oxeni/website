@@ -36,11 +36,11 @@ const getMarkdownFile = async (fileName: string) => {
 
 //@ts-ignore
 const Page = async ({ params }: any) => {
-    const { error, compiledSource, data }: any = await getMarkdownFile(params.blogFileName);
+    const { err, compiledSource, data }: any = await getMarkdownFile(params.blogFileName);
 
     return (
         <div>
-            {!error ?
+            {!err ?
                 (
                     <>
                         <h1 className="f-size-h1 f-weight-bl">
@@ -50,7 +50,7 @@ const Page = async ({ params }: any) => {
                     </>
                 ) : (
                     <pre>
-                        {JSON.stringify(error, null, 4)}
+                        {JSON.stringify(err, null, 4)}
                     </pre>
                 )}
         </div>
