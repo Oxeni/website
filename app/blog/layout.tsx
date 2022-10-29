@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-const SingleBlogPageLayout = ({ children }: { children: ReactNode; }) => {
+const Layout = ({ children }: { children: ReactNode; }) => {
     return (
         <div
             style={{ padding: "15vh 8vw 0 8vh" }}>
@@ -9,4 +9,4 @@ const SingleBlogPageLayout = ({ children }: { children: ReactNode; }) => {
     );
 };
 
-export default SingleBlogPageLayout;
+export default Layout;

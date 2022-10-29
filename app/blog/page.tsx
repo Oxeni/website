@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import Link from 'next/link';
 
 
-const getBlogPosts = async () => {
+const Page = async () => {
   let blogPosts: { title: string, fileName: string; }[] = [];
   const allBlogFiles = await fs.readdir("posts/");
 
@@ -25,7 +25,7 @@ const getBlogPosts = async () => {
 
 
 const Blog = async () => {
-  const blogPosts = await getBlogPosts();
+  const blogPosts = await Page();
 
 
   return (

@@ -7,7 +7,7 @@ import Services from "components/pages/index/services/service";
 
 
 
-const Index = () => (
+const Page = () => (
     <>
         <Loading />
         <Hero />
@@ -18,4 +18,4 @@ const Index = () => (
     </>
 );
 
-export default Index;
+export default Page;

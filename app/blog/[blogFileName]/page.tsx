@@ -35,7 +35,7 @@ const getMarkdownFile = async (fileName: string) => {
 };
 
 //@ts-ignore
-const BlogPage = async ({ params }: any) => {
+const Page = async ({ params }: any) => {
     const { error, compiledSource, data }: any = await getMarkdownFile(params.blogFileName);
 
     return (
@@ -57,4 +57,4 @@ const BlogPage = async ({ params }: any) => {
     );
 };
 
-export default BlogPage;
+export default Page;

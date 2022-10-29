@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-const SingleBlogPageLayout = ({ children }: { children: ReactNode; }) => {
+const Layout = ({ children }: { children: ReactNode; }) => {
     return (
         <div>
             {children}
@@ -8,4 +8,4 @@ const SingleBlogPageLayout = ({ children }: { children: ReactNode; }) => {
     );
 };
 
-export default SingleBlogPageLayout;
+export default Layout;
