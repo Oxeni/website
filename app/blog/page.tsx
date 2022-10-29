@@ -36,7 +36,7 @@ const Blog = async () => {
       <h1>blog</h1>
       <ul>
         {blogPosts.map(blog => (
-          <li>
+          <li key={blog.fileName}>
             <Link href={`/blog/${blog.fileName}`}>
               <p className="f-size-p2 f-weight-r">
                 {blog.title}

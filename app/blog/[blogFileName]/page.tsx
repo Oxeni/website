@@ -12,23 +12,24 @@ import "./syntax-hightlight.css";
 
 const getMarkdownFile = async (fileName: string) => {
     try {
-        const rawMarkdownFile = await fs.readFile("posts/" + fileName + ".mdx", "utf8");
-        const { content, data } = matter(rawMarkdownFile);
+        const promises = new Promise(async (resolve) => {
+            const rawMarkdownFile = await fs.readFile("posts/" + fileName + ".mdx", "utf8");
+            const { content, data } = matter(rawMarkdownFile);
 
-        const compiledSource = await serialize(content, {
-            mdxOptions: {
-                rehypePlugins: [
-                    rehypeSlug,
-                    [rehypeAutolinkHeadings, {
-                        behavior: 'wrap'
-                    }],
-                    rehypePrism
-                ]
-            }
+            const compiledSource = await serialize(content, {
+                mdxOptions: {
+                    rehypePlugins: [
+                        rehypeSlug,
+                        [rehypeAutolinkHeadings, {
+                            behavior: 'wrap'
+                        }],
+                        rehypePrism
+                    ]
+                }
+            });
+            resolve({ undefined, compiledSource, data });
         });
-
-        Promise.resolve(compiledSource);
-        return { undefined, compiledSource, data };
+        return Promise.resolve(promises);
     } catch (err) {
         return { err, compiledSource: undefined, data: undefined };
     }
