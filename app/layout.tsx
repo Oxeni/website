@@ -23,7 +23,7 @@ const RootLayout = ({ children }: { children: ReactNode; }) => {
             />  
             
             <body>
-                <Cursor />
+                {/* <Cursor /> */}
                 <Navigation />
                 <div className="main_main">
                     {children}

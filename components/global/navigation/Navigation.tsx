@@ -7,14 +7,13 @@ const Navigation = () => {
 
     return (
         <nav className='navigation'>
-            <Link href="/">
+            <Link href="/" >
                 <Logo
                     className="navigation_logo"
                     pathFill='var(--primary-black)' />
             </Link>
 
             <div className="navigation_links">
-{/* 
 
                 <Link href='/blog'>
                     <div className="link">
@@ -26,7 +25,7 @@ const Navigation = () => {
                             <p className='f-size-p3 f-weight-r'> blog </p>
                         </Button>
                     </div>
-                </Link> */}
+                </Link>
             </div>
         </nav>
     );

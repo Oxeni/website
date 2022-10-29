@@ -8,6 +8,10 @@
   padding: 3.2rem var(--left-margin) 0 var(--left-margin);
   align-items: center;
   justify-content: space-between;
+
+  .navigation_logo *{
+    mix-blend-mode: difference;
+  }
  
   
   .navigation_links{

@@ -1,3 +1,5 @@
+"use client"
+
 import { HTMLProps, useEffect } from "react";
 import { useRef } from "react";
 import Link from "next/link";
@@ -50,26 +52,11 @@ const ProjectCard = ({
 
       <div
         className={`projectCard  ${className}`}
-        // onMouseEnter={() => setHovered(true)}
-        // onMouseLeave={() => setHovered(false)}
         ref={cardContainer}
         onClick={() => window.open(link, '_blank')}
         {...props}>
-        <div className="projectCard_video scrollAnim"
-        //   style={{ backgroundImage: `url(${thumbnail})` }}
-        >
+        <div className="projectCard_video scrollAnim">
           <img src={thumbnail} alt="pic" />
-          {/* 
-          <video
-            className="card_video base_video_styles"
-            muted
-            src={videoSource + '#t=20'} />
-
-          <video
-            muted
-            className="base_video_styles card_video-shadow"
-            src={videoSource + '#t=20'}
-          /> */}
         </div>
 
         <div className="projectCard_heading">

@@ -34,7 +34,6 @@ html {
     scroll-behavior: smooth;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased !important;
     font-weight: 400;
     background-color: var(--primary-white);
 }
@@ -66,8 +65,8 @@ body {
 }
 
 .main_main {
-    background-color: var(--primary-white) !important;
-    cursor: none;
+    background-color: var(--primary-white);
+    // cursor: none;
 }
 
 @media only screen and (max-width: 868px) {
@@ -78,7 +77,7 @@ body {
 
 
 a {
-    text-decoration: none !important;
+    text-decoration: none;
     color: var(--primary-black);
 }
 

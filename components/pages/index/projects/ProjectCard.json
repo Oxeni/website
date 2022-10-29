@@ -4,14 +4,14 @@
       "heading": "IDEP branding, logo and UI/UX design and website development.",
       "paragraph": "We worked with IDEP on creating the future platform that will push the next generation of NFT tokens and the crypto market.",
       "line": true,
-      "thumbnail":"pictures/thumbnails/idep.png",
+      "thumbnail":"idep.png",
       "link":"https://idep.network/"
     },
     {
       "heading": "Liquid ICP website and branding.",
       "paragraph": "Liquid ICP is world's first s-Bridge where bridged and staked assets remain liquid. Fractional reserve is governed by Liquid ICP community and ensures immediate withdrawal of ICP coins at any given time.",
       "line": true,
-      "thumbnail":"pictures/thumbnails/icp.png",
+      "thumbnail":"icp.png",
       "link":"https://www.icp-20.com/"
     }
   ],
@@ -21,19 +21,19 @@
     {
       "heading": "Unity capital website and branding.",
       "line": false,
-      "thumbnail":"pictures/thumbnails/unity.png",
+      "thumbnail":"unity.png",
       "link":"https://www.unitycapital.vc/"
     },
     {
       "heading": "Gamify platform website",
       "line": false,
-      "thumbnail":"pictures/thumbnails/gamify.png",
+      "thumbnail":"gamify.png",
       "link":"https://gamyfi.vercel.app/"
     },
     {
       "heading": "Archil Snow logo|brand|UI/UX design and website development.",
       "line": false,
-      "thumbnail":"pictures/thumbnails/archili.png",
+      "thumbnail":"archili.png",
       "link":"https://archilsnow.com/"
     }
   ]
