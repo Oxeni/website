@@ -21,6 +21,7 @@
     "rehype-prism-plus": "^1.5.0",
     "rehype-slug": "^5.0.1",
     "sass": "^1.55.0",
+    "sharp": "^0.31.1",
     "three": "^0.146.0"
   },
   "devDependencies": {
