@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "fs/promises";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import MdxWrapper from 'components/blog/mdxWrapper';
@@ -14,7 +14,7 @@ import path from "path";
 const getMarkdownFile = async (fileName: string) => {
     try {
         const postPath = path.join(process.cwd(), "posts/");
-        const rawMarkdownFile = fs.readFileSync(path.join(postPath + fileName + ".mdx"), "utf8");
+        const rawMarkdownFile = await fs.readFile(path.join(postPath + fileName + ".mdx"), "utf8");
         const { content, data } = matter(rawMarkdownFile);
 
         const compiledSource = await serialize(content, {
