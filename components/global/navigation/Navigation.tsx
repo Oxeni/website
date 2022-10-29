@@ -1,7 +1,7 @@
 import Logo from './Logo';
 import Link from 'next/link';
-import BlogIcon from './Blog.icon';
-import Button from 'components/lib/button/Button';
+// import BlogIcon from './Blog.icon';
+// import Button from 'components/lib/button/Button';
 
 const Navigation = () => {
 
