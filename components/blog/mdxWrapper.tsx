@@ -19,6 +19,7 @@ const Image = ({ ...props }: ImageProps) => {
             style={{
                 maxWidth: '100%',
                 height: 'auto',
+                margin: "0 auto"
             }}
         />
     );

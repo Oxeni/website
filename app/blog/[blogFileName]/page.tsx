@@ -47,7 +47,7 @@ const Page = async ({ params }: any) => {
                 (
                     <>
                         <h1 className="f-size-h1 f-weight-bl">
-                            title
+                            {data.title}
                         </h1>
                         <MdxWrapper compiledSource={compiledSource} />
                     </>
