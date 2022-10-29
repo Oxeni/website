@@ -40,7 +40,7 @@ const BlogPage = async ({ params }: any) => {
     return (
         <div>
             <h1 className="f-size-h1 f-weight-bl">
-                {data.title}
+                {data?.title}
             </h1>
             <MdxWrapper compiledSource={compiledSource} />
         </div>
