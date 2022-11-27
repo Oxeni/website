@@ -7,10 +7,10 @@ import Services from "components/pages/index/services/service";
 
 
 
-const Page = () => (
+const HomePage = () => (
     <>
-        <Loading />
-        <Hero />
+        {/* <Loading />
+        <Hero /> */}
         <Projects />
         <Other_works />
         <Services />
@@ -19,4 +19,4 @@ const Page = () => (
 );
 
 
-export default Page;
+export default HomePage;

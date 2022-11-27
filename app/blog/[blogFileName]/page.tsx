@@ -1,44 +1,21 @@
-import fs from "fs/promises";
-import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
 import MdxWrapper from 'components/blog/mdxWrapper';
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrism from 'rehype-prism-plus';
 import "./syntax-hightlight.css";
-import path from "path";
+import { getBlogPosts, getMarkdownFile } from "actions/blog.actions";
+
+
+
+export async function generateStaticParams() {
+    const blogPosts = await getBlogPosts();
+
+    return blogPosts.map((post) => ({
+        blogFileName: post.fileName,
+    }));
+}
 
 
 
 
-const getMarkdownFile = async (fileName: string) => {
-    try {
-        const postPath = path.join(process.cwd(), "posts/");
-        const rawMarkdownFile = await fs.readFile(path.join(postPath + fileName + ".mdx"), "utf8");
-        const { content, data } = matter(rawMarkdownFile);
-
-        const compiledSource = await serialize(content, {
-            mdxOptions: {
-                rehypePlugins: [
-                    rehypeSlug,
-                    [rehypeAutolinkHeadings, {
-                        behavior: 'wrap'
-                    }],
-                    rehypePrism
-                ]
-            }
-        });
-        return { undefined, compiledSource, data };
-    } catch (err) {
-        return { err, compiledSource: undefined, data: undefined };
-    }
-};
-
-
-
-
-//@ts-ignore
-const Page = async ({ params }: any) => {
+const BlogPostPage = async ({ params }: any) => {
     const { err, compiledSource, data }: any = await getMarkdownFile(params.blogFileName);
 
     return (
@@ -60,4 +37,4 @@ const Page = async ({ params }: any) => {
     );
 };
 
-export default Page;
+export default BlogPostPage;

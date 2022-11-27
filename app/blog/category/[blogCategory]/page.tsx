@@ -1,12 +1,23 @@
-import { getBlogPosts } from 'actions/blog.actions';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { blogCategoryNames } from 'components/blog/blog.types';
+import { getBlogPosts } from 'actions/blog.actions';
 
 
 
-const BlogPage = async () => {
-  const blogPosts = await getBlogPosts();
+
+
+
+export async function generateStaticParams() {
+  return blogCategoryNames.map((names) => ({
+    blogCategory: names,
+  }));
+}
+
+
+const CategoryBlogPage = async ({ params }: { params: { blogCategory: typeof blogCategoryNames[number]; }; }) => {
+  const blogPosts = await getBlogPosts({ category: params.blogCategory });
 
 
   return (
@@ -28,8 +39,8 @@ const BlogPage = async () => {
                 style={{
                   position: 'relative',
                   overflow: 'hidden',
-                  height: "100%",
-                  width: "450px",
+                  height: "20rem",
+                  width: "20rem",
                 }}>
                 <Image
                   src={blog.thumbnail_image_url}
@@ -38,9 +49,9 @@ const BlogPage = async () => {
                   alt={`image of ${blog.title}`}
                   fill
                   style={{
-                    objectFit: "contain",
+                    objectFit: "cover",
                     maxWidth: "100%",
-                    maxHeight: "auto",
+                    maxHeight: "auto"
                   }}
                 />
               </div>
@@ -58,4 +69,4 @@ const BlogPage = async () => {
   );
 };
 
-export default BlogPage;
+export default CategoryBlogPage;

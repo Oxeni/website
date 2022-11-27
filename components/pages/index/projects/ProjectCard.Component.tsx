@@ -1,11 +1,12 @@
-"use client"
+"use client";
 
 import { HTMLProps, useEffect } from "react";
 import { useRef } from "react";
 import Link from "next/link";
-
 import { GlobalScrollElemAnim } from "components/utils/animation/global.animation";
-// import { hoverHandler } from "./project.utils";
+import Image from 'next/image';
+
+
 
 interface IProjectComponent {
   videoSource?: string;
@@ -15,8 +16,6 @@ interface IProjectComponent {
   thumbnail?: string;
   link?: string;
 }
-
-
 
 
 
@@ -31,19 +30,12 @@ const ProjectCard = ({
   ...props
 }: HTMLProps<HTMLDivElement> & IProjectComponent) => {
   const cardContainer = useRef<HTMLDivElement>(null);
-  //   const [hovered, setHovered] = useState<boolean>();
 
 
 
   useEffect(() => {
     GlobalScrollElemAnim(".scrollAnim");
   }, []);
-
-
-
-  //   useEffect(() => {
-  //     hoverHandler(cardContainer, hovered)
-  //   }, [hovered]);
 
 
 
@@ -55,8 +47,23 @@ const ProjectCard = ({
         ref={cardContainer}
         onClick={() => window.open(link, '_blank')}
         {...props}>
-        <div className="projectCard_video scrollAnim">
-          <img src={thumbnail} alt="pic" />
+        <div
+          className="projectCard_video scrollAnim"
+          style={{
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+          <Image
+            src={`${thumbnail}`}
+            blurDataURL={`/_next/image?url=${thumbnail}&w=16&q=10`}
+            width={800}
+            height={500}
+            style={{
+              objectFit: "contain",
+              maxWidth: "100%",
+              height: "auto"
+            }}
+            alt={`${heading} project image`} />
         </div>
 
         <div className="projectCard_heading">

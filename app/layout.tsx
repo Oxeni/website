@@ -1,17 +1,17 @@
 import "@/styles/main.scss";
-
 import HeadAndMeta from "components/global/head/HeadAndMeta";
 import Navigation from "components/global/navigation/Navigation";
-import Cursor from "components/global/cursor/Cursor";
 import { ReactNode } from "react";
+import { Inter } from '@next/font/google';
 
+const inter = Inter();
 
 
 
 const RootLayout = ({ children }: { children: ReactNode; }) => {
 
     return (
-        <html lang="en">
+        <html lang="en" className={inter.className}>
             <HeadAndMeta
                 title="Oxeni"
                 description="cutting edge technology to create true technical beauty of the future"
@@ -21,7 +21,6 @@ const RootLayout = ({ children }: { children: ReactNode; }) => {
                 ogDescription="cutting edge technology to create true technical beauty of the future"
                 ogImagePath="/meta_images/og_image.png"
             />  
-            
             <body>
                 {/* <Cursor /> */}
                 <Navigation />

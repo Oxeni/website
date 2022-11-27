@@ -3,8 +3,7 @@
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import NextImage from "next/image";
 import { ImageProps } from "next/image";
-import { defaultStyles } from '../lib/button/Button.style';
-
+import "./tokyo-night-dark.css"
 
 
 interface IMdxWrapper {
@@ -12,10 +11,15 @@ interface IMdxWrapper {
 }
 
 const Image = ({ ...props }: ImageProps) => {
+
     return (
         <NextImage
             {...props}
             alt="some image"
+            quality={75}
+            blurDataURL={`/_next/image?url=${props.src}&w=16&q=10`}
+            placeholder="blur"
+            // blurDataURL={`${props.src}`}
             style={{
                 maxWidth: '100%',
                 height: 'auto',
